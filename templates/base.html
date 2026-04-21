@@ -88,45 +88,15 @@
 </head>
 
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
-  <nav
-    class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm shadow-blue-900/5 flex justify-between items-center px-12 py-6">
-    <div class="font-headline italic text-2xl text-blue-900">Academy Editorial</div>
-    <div class="hidden md:flex items-center space-x-12 font-headline text-lg tracking-tight">
-      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">
-        <span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
-      </a>
-      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">Courses</a>
-      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">Students</a>
-      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">About</a>
-    </div>
-    <button
-      class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-body font-semibold tracking-wide scale-95 active:scale-100 transition-transform">
-      Portal Login
-    </button>
-  </nav>
+  {% if show_nav %}
+  {% include 'nav.html' %}
+  {% endif %}
 
   {% block main %} {% endblock main %}
 
-  <footer class="px-6 py-12 bg-surface-container-lowest border-t border-outline-variant/10">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex flex-col gap-2">
-        <span class="text-lg font-black tracking-tighter text-[#FF3E00] uppercase">Academic Atelier</span>
-        <p class="text-[10px] text-on-surface-variant/50 uppercase tracking-[0.3em]">Building Knowledge for
-          the Terminal Era</p>
-      </div>
-      <div class="flex gap-8">
-        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Privacy</a>
-        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Security</a>
-        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Changelog</a>
-      </div>
-      <div class="text-[10px] font-mono text-on-surface-variant/30">
-        © 2024 ACADEMIC_ATELIER.EXE // ALL_RIGHTS_RESERVED
-      </div>
-    </div>
-  </footer>
+  {% if show_footer %}
+  {% include 'footer.html' %}
+  {% endif %}
   <div class="fixed right-0 top-1/2 -translate-y-1/2 z-40">
     <div
       class="bg-secondary-container/80 backdrop-blur-md p-4 rounded-l-lg editorial-shadow flex flex-col items-center gap-6 text-on-secondary-container">

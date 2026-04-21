@@ -3,7 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, 'core/index.html')
+    context = { 'show_nav': True, 'show_footer': True }
+    return render(request, 'core/index.html', context)
 
 def ping(request):
     return render(request, 'core/ping.html')
