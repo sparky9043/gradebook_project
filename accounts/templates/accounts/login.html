@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main class="flex min-h-screen w-full flex-col md:flex-row">
+  <section class="relative hidden w-1/2 flex-col justify-between p-12 md:flex overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="h-full w-full object-cover"
+        data-alt="Interior of a sun-drenched minimalist library with tall white shelves, soft shadows casting on smooth stone floors and warm morning light"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWw3C1G819ats-bWyLr_3sjW3Gffof_5Zg8G9uaTR7alHwJhXcQ4vOzHitt9mRa40FhnRsn3-NPe4TMuY6f-AeVaISB_QKZxIqOu5PyaEEAliKXFvyMFQzBXdqnnd_h2vb8c8j2A81YGAujTX8iLXgnHF5OeM3hosZvTWVOD2WL0V2SX6bS2bz-ZpB2N_YaoAW9WMFqNiEfSQ2FYMymZr7-97FtzbK0tv2inWW6xHtWkE2Vwtm2j1pGzxcup1BV6BQ1C083Sv0IRF5" />
+      <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent">
+      </div>
+    </div>
+    <div class="relative z-10">
+      <span class="font-headline italic text-2xl text-surface-container-lowest tracking-tight">Academy
+        Editorial</span>
+    </div>
+    <div class="relative z-10 max-w-lg">
+      <h1 class="font-headline text-5xl font-medium text-white leading-tight mb-6 tracking-tight">
+        Enter the <span class="serif-italic">Sacred Space</span> of academic rigor.
+      </h1>
+      <p class="text-surface-container-highest/90 text-lg leading-relaxed font-light">
+        Where tradition meets the contemporary editorial lens. Access your personal atelier and continue the
+        journey of curated wisdom.
+      </p>
+    </div>
+    <div class="relative z-10 flex items-center gap-4">
+      <div class="flex -space-x-3">
+        <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+          data-alt="Portrait of a scholarly man with glasses in soft studio lighting"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuALQ-bZmfv0HBoNw8ZNWVhucfSLMtZ4I3KlEbnqaT2kawzVdvR-fI86L9gh1YpgYb0zXKdNe7LNRpazkPFLo7pMyJbSQhMI4ebL3O_j1X_tkzxwGHyW527bIUllBK1C76wnkn3_6jl-7CcPu1UWZomK4_IUy3STQJmFGbMy9P5f2mJs-T_u5YdGqjvHybNGyixhha4MYegQ0dptctRMUnZbE2N03jrFQy-b-R9xu7YuFQJXDs5weXR5_mmBx7c5PC058zB1m4wvEd4D" />
+        <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+          data-alt="Portrait of a professional woman smiling in an academic setting"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3yGstTlqWRIeo62DOKYGQx9KDH44p-z7Cshiq_GnXC5fllkR4baw6AuacnEmwQfJNBNA6EO0m8eFiJCcLsIJHu2hROJWRbi2hRFmkFCBc9Xqp8GuqFm3ME-Gl4j5VWqdgM0h-EkiRTSYhvAP4YS_yg6td_GIlc_qCjsTXdDi5xd2HXtjJMLAzG3u0EkhmLvIfrO8YkIQOBFFFPpV9JahfPdfYVu9fCiOlBeX6h6Wlw2dF6whK0RGwPhuuZtZEmWsRCoDsiXY-vWRL" />
+        <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+          data-alt="Close up portrait of a young researcher in a library"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCV-IYDHrlkSn7mLvChs1L31drowhBC8ub99yx622R9WApWPWEj3VPeP8OjXlK6iwKGjipyT3Wsj9ZkI9zEzs3xDdpXBGh9abHl9xvw6pzJVM3e7X-tTNs2zKNWizWywzSFzS9cwwEl3eDpyxDuLw3ps73XTJJEQsjt7N8UiiL9jZ6T94lqYuqgKbaNFVipdh0F8_IWGUj_-f5yw2DWOV7RZZrz0kVzMgAL4K4qx8FwyKaZupcyXdETdWkumU8CDTvPCsOeNuLqQyw" />
+      </div>
+      <span class="text-sm text-surface-container-lowest font-label tracking-wide uppercase">Joined by 1,200+
+        Fellows</span>
+    </div>
+  </section>
+  <section class="flex flex-1 flex-col justify-center bg-surface px-8 py-12 md:px-24 lg:px-32">
+    <div class="mx-auto w-full max-w-md">
+      <div class="mb-12 md:hidden">
+        <span class="font-headline italic text-2xl text-primary tracking-tight">Academy Editorial</span>
+      </div>
+      <div class="mb-10">
+        <h2 class="font-headline text-3xl text-on-surface font-semibold tracking-tight">Portal Login</h2>
+        <p class="mt-3 text-on-surface-variant leading-relaxed">Please enter your institutional credentials
+          to access the curriculum.</p>
+      </div>
+      <form class="space-y-6">
+        <div>
+          <label class="block text-xs font-label font-bold uppercase tracking-widest text-outline mb-2 ml-1"
+            for="email">Academic Email</label>
+          <div class="relative group">
+            <input
+              class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-5 py-4 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all outline-none"
+              id="email" name="email" placeholder="name@academy.edu" type="email" />
+            <span
+              class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">mail</span>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-center mb-2 ml-1">
+            <label class="block text-xs font-label font-bold uppercase tracking-widest text-outline"
+              for="password">Passcode</label>
+            <a class="text-xs font-label font-semibold text-primary hover:text-primary-container transition-colors"
+              href="#">Forgot Access?</a>
+          </div>
+          <div class="relative group">
+            <input
+              class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-5 py-4 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all outline-none"
+              id="password" name="password" placeholder="••••••••" type="password" />
+            <span
+              class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3 ml-1">
+          <div class="relative flex items-center">
+            <input
+              class="h-5 w-5 rounded-md border-outline-variant/30 bg-surface-container-low text-primary focus:ring-primary-fixed transition-all cursor-pointer"
+              id="remember" type="checkbox" />
+          </div>
+          <label class="text-sm text-on-surface-variant font-medium select-none cursor-pointer" for="remember">Keep me
+            authenticated for 30 days</label>
+        </div>
+        <button
+          class="custom-gradient-btn w-full py-4 px-6 rounded-full text-white font-body font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] transition-all duration-300"
+          type="submit">
+          Enter Atelier
+        </button>
+      </form>
+      <div class="relative my-10">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-outline-variant/20"></div>
+        </div>
+        <div class="relative flex justify-center text-xs uppercase tracking-widest">
+          <span class="bg-surface px-4 text-outline font-label font-bold">Institutional SSO</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <button
+          class="flex items-center justify-center gap-3 py-3.5 px-4 bg-surface-container-lowest border border-outline-variant/20 rounded-full hover:bg-surface-container-low transition-all active:scale-[0.98]">
+          <img alt="Google Logo" class="w-5 h-5"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8i8KtHzdyQOHWuFGQHX51Eg5yqJgc4ynBBrK6GtMwSUIJiB7zExGM7kcH0CssGN4M99bDjwp3x536H5TTYGXb9wdF0NMta0YPmoTIE06dPucdmhKMrIMonNq8AjQ0AFq_vohYaifIFym80VVPMuGZ5Kkmychg6gsg0_X74TBmhhuxUY5AJgCjLvD6ZzBM3HBnq_XNYMCUpW09C0YaTcbE7Hv7_YYKX-c1dKig-vf4TJqkP8OrFKkI9wwhnwT62y1F0nfE9Qsvko_4" />
+          <span class="text-sm font-semibold text-on-surface-variant">Google</span>
+        </button>
+        <button
+          class="flex items-center justify-center gap-3 py-3.5 px-4 bg-surface-container-lowest border border-outline-variant/20 rounded-full hover:bg-surface-container-low transition-all active:scale-[0.98]">
+          <span class="material-symbols-outlined text-lg text-on-surface-variant">school</span>
+          <span class="text-sm font-semibold text-on-surface-variant">EduID</span>
+        </button>
+      </div>
+      <p class="mt-12 text-center text-sm text-on-surface-variant">
+        Seeking admission?
+        <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="#">Inquire for
+          Faculty Access</a>
+      </p>
+    </div>
+    <footer class="mt-auto pt-12">
+      <div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+        <a class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-outline hover:text-primary transition-colors"
+          href="#">Privacy Policy</a>
+        <a class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-outline hover:text-primary transition-colors"
+          href="#">Institutional Terms</a>
+        <a class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-outline hover:text-primary transition-colors"
+          href="#">Support Portal</a>
+      </div>
+      <p class="mt-6 text-center text-[10px] font-label font-medium uppercase tracking-[0.2em] text-outline/60">
+        © 2024 The Serene Academy. Curated Authority.
+      </p>
+    </footer>
+  </section>
+</main>
+<div class="fixed bottom-8 right-8 z-50">
+  <button
+    class="glass-panel group flex items-center gap-3 px-5 py-3 rounded-full border border-primary/10 shadow-xl shadow-primary/5 hover:bg-surface-container-lowest transition-all">
+    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">help</span>
+    <span class="text-sm font-semibold text-secondary">Need Assistance?</span>
+  </button>
+</div>
+{% endblock main %}
