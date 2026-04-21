@@ -132,6 +132,28 @@
     </div>
   </nav>
   {% block main %} {% endblock main %}
+
+  <footer class="w-full border-t border-slate-100 bg-white">
+    <div class="w-full py-8 px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-sm font-bold text-slate-400 font-['Manrope'] uppercase tracking-widest">© 2024 Academic Atelier.
+        The Enlightened Ledger.</div>
+      <div class="flex items-center gap-8 font-['Manrope'] text-xs font-medium uppercase tracking-widest">
+        <a class="text-slate-400 hover:text-blue-500 transition-colors" href="#">Privacy Policy</a>
+        <a class="text-slate-400 hover:text-blue-500 transition-colors" href="#">Terms of Service</a>
+        <a class="text-slate-400 hover:text-blue-500 transition-colors" href="#">Accessibility</a>
+      </div>
+      <div class="flex gap-4">
+        <div
+          class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-700 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-xl">share</span>
+        </div>
+        <div
+          class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-700 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-xl">mail</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

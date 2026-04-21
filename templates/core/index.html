@@ -1,5 +1,148 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h1>Hello World</h1>
+<main class="pt-24">
+  <!-- Hero Section -->
+  <section class="relative px-8 py-20 md:py-32 overflow-hidden bg-white">
+    <!-- Energetic decorative background element -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20 relative z-10">
+      <div class="w-full md:w-1/2 space-y-8">
+        <div
+          class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold tracking-widest uppercase">
+          The New Standard in Grading
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold font-headline leading-[1.1] text-on-surface -tracking-[0.02em]">
+          Elevate the art of <span class="text-gradient">Academic</span> assessment.
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
+          A high-end editorial gradebook designed for the modern educator. Experience professional management of
+          student data with refined aesthetics and powerful automation.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          <button
+            class="px-8 py-4 bg-primary-gradient text-white text-lg font-bold rounded-xl shadow-xl shadow-blue-500/20 hover:scale-[1.02] active:scale-95 transition-all">
+            Start Free Atelier
+          </button>
+          <button
+            class="px-8 py-4 bg-slate-50 text-slate-700 text-lg font-bold rounded-xl hover:bg-slate-100 active:scale-95 transition-all">
+            Book a Demo
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="relative bg-white rounded-3xl p-4 shadow-2xl border border-slate-100">
+          <img alt="Digital Workspace" class="rounded-2xl w-full h-[500px] object-cover"
+            data-alt="Modern desk setup with a high-end tablet displaying a clean minimalist grading interface with graphs and student lists in soft sapphire blue colors"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaknHpiIBO0CUzlYWAXfjWj6PRWCqd8pALwq6lEbz-HT5lGFJh-BZX-8UzsGGVuLVLk191gnZ9ErdzzsXfbAMZOdEMRXQYy37y7EhKoq97RrKNK0_xeti86juZnaldGBEUbW5W2_kGj0lcRGUfimOaIfMqm1luC8x79sPF-eXo5X3NLOh-XOnTK5FUPOmZvEQ0LfhZe_dLp3CrAskOyQ4oBhiPklHArtDg8tCtpk1SPKc_JCicgbaFrWxZQFiRo0BDk54nlZQe7Tib" />
+          <div
+            class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl max-w-[240px] border border-blue-50">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="material-symbols-outlined text-blue-600"
+                style="font-variation-settings: 'FILL' 1;">analytics</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Real-time Insights</span>
+            </div>
+            <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden mb-2">
+              <div class="h-full bg-blue-600 w-[85%] rounded-full"></div>
+            </div>
+            <p class="text-sm font-semibold text-slate-900">Average Class Proficiency: 85%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features Bento Grid -->
+  <section class="px-8 py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-extrabold font-headline tracking-tight text-on-surface">Curated Tools for
+          Excellence</h2>
+        <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Focus on teaching, while our digital atelier
+          manages the complexity of modern assessment systems.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px]">
+        <!-- Feature 1: Automated Grading -->
+        <div
+          class="md:col-span-8 bg-white rounded-3xl p-10 flex flex-col justify-between group border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex justify-between items-start">
+            <div class="space-y-4">
+              <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                <span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+              </div>
+              <h3 class="text-3xl font-bold font-headline text-slate-900">Automated Grading Engine</h3>
+              <p class="text-slate-500 max-w-md">Our intelligent engine syncs with your rubrics to provide instant,
+                consistent feedback for every submission.</p>
+            </div>
+            <div
+              class="hidden lg:block bg-blue-50 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-blue-700">
+              Efficiency</div>
+          </div>
+          <div class="mt-8 flex gap-2">
+            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase">Smart
+              Rubrics</span>
+            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase">LMS Sync</span>
+          </div>
+        </div>
+        <!-- Feature 2: Progress Tracking -->
+        <div
+          class="md:col-span-4 bg-primary-gradient text-white rounded-3xl p-10 flex flex-col justify-between shadow-xl shadow-blue-500/20">
+          <div class="space-y-4">
+            <span class="material-symbols-outlined text-4xl">trending_up</span>
+            <h3 class="text-2xl font-bold font-headline leading-tight">Longitudinal Growth Charts</h3>
+          </div>
+          <p class="text-blue-50">Visualize individual student journeys from the first day to final exams with
+            cinematic clarity.</p>
+        </div>
+        <!-- Feature 3: Quiet Design -->
+        <div
+          class="md:col-span-4 bg-white rounded-3xl p-10 flex flex-col justify-center gap-6 border border-slate-100 shadow-sm">
+          <span class="material-symbols-outlined text-blue-600 text-5xl">spa</span>
+          <div>
+            <h3 class="text-xl font-bold font-headline mb-2 text-slate-900">Soft Minimalism</h3>
+            <p class="text-slate-500 text-sm">Reduced visual noise to help you maintain focus during high-stakes
+              grading periods.</p>
+          </div>
+        </div>
+        <!-- Feature 4: High-End Export -->
+        <div
+          class="md:col-span-8 bg-white rounded-3xl overflow-hidden relative group border border-slate-100 shadow-sm">
+          <div class="absolute inset-0 p-10 flex flex-col justify-end z-10">
+            <h3 class="text-2xl font-bold font-headline mb-2 text-slate-900">Editorial Report Cards</h3>
+            <p class="text-slate-500 max-w-sm">Export gorgeous, magazine-style PDF reports that parents and students
+              actually enjoy reading.</p>
+          </div>
+          <div class="absolute top-0 right-0 w-1/2 h-full">
+            <img alt="Academic Report"
+              class="w-full h-full object-cover opacity-20 grayscale transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0"
+              data-alt="Elegant close up of high quality paper with architectural sketches and clean typography for a refined academic report feel"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7l-EUnzhO8iCvWqa62QiJvpH1TTt45UnEt9cT6T_K4M9BuYPnzIm-01fGoPuNahhlFIxLF2I50ADkZPor5QjnjUkxcrBupAUXVo42Kao8wQbpwUKZf_p6JjfoMtpzfevVZC2As2mL5BZt7qmF2d2WWYbkF8Ls0VnE83ErTUvKetlATNw9cyYepUhNJ3XEM0Ec-FlO_DqMq6uA1C7deujisPGIVPg2Z5aIyTrfJhI8v78G18cKw3-DV3ZRQ-rF_9BV3nfPvnFsZuYz" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA Section -->
+  <section class="px-8 py-32 bg-white">
+    <div class="max-w-5xl mx-auto bg-blue-50 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-12 opacity-5 text-blue-700">
+        <span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+      </div>
+      <div class="relative z-10 space-y-8">
+        <h2 class="text-4xl md:text-6xl font-extrabold font-headline tracking-tighter text-blue-900">Ready to refine
+          your <br /> classroom experience?</h2>
+        <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+          Join 2,000+ modern educators who have transformed their grading from a chore into a creative process.
+        </p>
+        <div class="pt-4">
+          <button
+            class="px-10 py-5 bg-primary-gradient text-white text-xl font-bold rounded-2xl shadow-2xl shadow-blue-500/30 hover:scale-105 active:scale-95 transition-transform">
+            Create Your Free Account
+          </button>
+        </div>
+        <p class="text-sm text-blue-400 font-bold uppercase tracking-widest">No Credit Card Required • 14-Day Pro
+          Trial</p>
+      </div>
+    </div>
+  </section>
+</main>
 {% endblock main %}
