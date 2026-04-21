@@ -3,146 +3,235 @@
 {% block main %}
 <main class="pt-24">
   <!-- Hero Section -->
-  <section class="relative px-8 py-20 md:py-32 overflow-hidden bg-white">
-    <!-- Energetic decorative background element -->
-    <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20 relative z-10">
-      <div class="w-full md:w-1/2 space-y-8">
-        <div
-          class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold tracking-widest uppercase">
-          The New Standard in Grading
-        </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold font-headline leading-[1.1] text-on-surface -tracking-[0.02em]">
-          Elevate the art of <span class="text-gradient">Academic</span> assessment.
-        </h1>
-        <p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
-          A high-end editorial gradebook designed for the modern educator. Experience professional management of
-          student data with refined aesthetics and powerful automation.
-        </p>
-        <div class="flex flex-wrap gap-4 pt-4">
-          <button
-            class="px-8 py-4 bg-primary-gradient text-white text-lg font-bold rounded-xl shadow-xl shadow-blue-500/20 hover:scale-[1.02] active:scale-95 transition-all">
-            Start Free Atelier
-          </button>
-          <button
-            class="px-8 py-4 bg-slate-50 text-slate-700 text-lg font-bold rounded-xl hover:bg-slate-100 active:scale-95 transition-all">
-            Book a Demo
-          </button>
-        </div>
-      </div>
-      <div class="w-full md:w-1/2">
-        <div class="relative bg-white rounded-3xl p-4 shadow-2xl border border-slate-100">
-          <img alt="Digital Workspace" class="rounded-2xl w-full h-[500px] object-cover"
-            data-alt="Modern desk setup with a high-end tablet displaying a clean minimalist grading interface with graphs and student lists in soft sapphire blue colors"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaknHpiIBO0CUzlYWAXfjWj6PRWCqd8pALwq6lEbz-HT5lGFJh-BZX-8UzsGGVuLVLk191gnZ9ErdzzsXfbAMZOdEMRXQYy37y7EhKoq97RrKNK0_xeti86juZnaldGBEUbW5W2_kGj0lcRGUfimOaIfMqm1luC8x79sPF-eXo5X3NLOh-XOnTK5FUPOmZvEQ0LfhZe_dLp3CrAskOyQ4oBhiPklHArtDg8tCtpk1SPKc_JCicgbaFrWxZQFiRo0BDk54nlZQe7Tib" />
-          <div
-            class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl max-w-[240px] border border-blue-50">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="material-symbols-outlined text-blue-600"
-                style="font-variation-settings: 'FILL' 1;">analytics</span>
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Real-time Insights</span>
-            </div>
-            <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden mb-2">
-              <div class="h-full bg-blue-600 w-[85%] rounded-full"></div>
-            </div>
-            <p class="text-sm font-semibold text-slate-900">Average Class Proficiency: 85%</p>
-          </div>
-        </div>
+  <section class="relative px-6 py-20 md:py-32 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container rounded-full blur-[120px]">
       </div>
     </div>
-  </section>
-  <!-- Features Bento Grid -->
-  <section class="px-8 py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20 space-y-4">
-        <h2 class="text-4xl md:text-5xl font-extrabold font-headline tracking-tight text-on-surface">Curated Tools for
-          Excellence</h2>
-        <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Focus on teaching, while our digital atelier
-          manages the complexity of modern assessment systems.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px]">
-        <!-- Feature 1: Automated Grading -->
-        <div
-          class="md:col-span-8 bg-white rounded-3xl p-10 flex flex-col justify-between group border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-          <div class="flex justify-between items-start">
-            <div class="space-y-4">
-              <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
-                <span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <span
+            class="inline-block px-4 py-1 mb-6 rounded-full bg-tertiary-container/20 text-tertiary-fixed-dim text-xs font-bold tracking-[0.2em] uppercase border border-tertiary-container/30">
+            Version 4.0.0 Stable Build
+          </span>
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 leading-none">
+            Forge Your <span
+              class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Academic
+              Identity</span> in Code.
+          </h1>
+          <p class="text-on-surface-variant text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
+            The high-performance environment for researchers, developers, and digital architects.
+            Elevate your documentation, collaboration, and data visualization to terminal-grade
+            precision.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="px-8 py-4 rounded bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold text-sm uppercase tracking-widest active:scale-95 transition-all neon-glow">
+              Initialize Workspace
+            </button>
+            <button
+              class="px-8 py-4 rounded bg-surface-container border border-outline-variant/20 text-secondary font-bold text-sm uppercase tracking-widest hover:bg-surface-container-high active:scale-95 transition-all">
+              View Documentation
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative">
+          <div class="bg-surface-container rounded-xl p-4 neon-glow border border-primary/10 relative overflow-hidden">
+            <div class="flex items-center gap-2 mb-4 px-2">
+              <div class="w-3 h-3 rounded-full bg-error/40"></div>
+              <div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+              <div class="w-3 h-3 rounded-full bg-tertiary/40"></div>
+              <span
+                class="ml-4 text-[10px] font-mono text-on-surface-variant/50 uppercase tracking-widest">academic-atelier
+                --root</span>
+            </div>
+            <div class="font-mono text-sm space-y-2 text-on-surface/80">
+              <p class="text-tertiary"># Initializing core modules...</p>
+              <p><span class="text-primary-container">&gt;</span> loading data_viz.lib <span
+                  class="text-secondary">[OK]</span></p>
+              <p><span class="text-primary-container">&gt;</span> syncing collaboration_engine <span
+                  class="text-secondary">[OK]</span></p>
+              <p><span class="text-primary-container">&gt;</span> mounting terminal_ui <span
+                  class="text-secondary">[OK]</span></p>
+              <div class="h-[200px] w-full mt-6 rounded bg-surface-container-lowest overflow-hidden">
+                <img alt="Terminal UI"
+                  class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700"
+                  data-alt="High-tech server room with glowing green and orange led lights reflecting on dark metallic surfaces, futuristic cinematic lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnlcgM812KPR0GaRpUNp1iG8kCQtPgMcfSva2z9NgGy5daTHs0OYABXrX9geSaJl_g2eIRnHLNhirnTa93TQguvk-WJWmdqMcrdTglmcJEqNtslpsS8tglu3uQNqV51HA0E7D_hdjSaWIqVPryi4KGsFWoJ65C4m5AlhQm6VKJ3btGbgP6Vfyv5APcuvxpAqMU4RwzJeCIJ3v-5o3bNH1tK_ERWco47rvSN0wqgHnCbXjRvmzPIYTmjv-RlsMiOL_dIqszgmuPQxLk" />
               </div>
-              <h3 class="text-3xl font-bold font-headline text-slate-900">Automated Grading Engine</h3>
-              <p class="text-slate-500 max-w-md">Our intelligent engine syncs with your rubrics to provide instant,
-                consistent feedback for every submission.</p>
             </div>
-            <div
-              class="hidden lg:block bg-blue-50 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-blue-700">
-              Efficiency</div>
-          </div>
-          <div class="mt-8 flex gap-2">
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase">Smart
-              Rubrics</span>
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase">LMS Sync</span>
           </div>
         </div>
-        <!-- Feature 2: Progress Tracking -->
+      </div>
+    </div>
+  </section>
+  <!-- Bento Grid Features -->
+  <section class="px-6 py-20 bg-surface-container-lowest">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter uppercase mb-4">Core <span
+            class="text-primary-container">Capabilities</span></h2>
+        <div class="h-1 w-20 bg-primary-container mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <!-- Feature 1 -->
         <div
-          class="md:col-span-4 bg-primary-gradient text-white rounded-3xl p-10 flex flex-col justify-between shadow-xl shadow-blue-500/20">
-          <div class="space-y-4">
-            <span class="material-symbols-outlined text-4xl">trending_up</span>
-            <h3 class="text-2xl font-bold font-headline leading-tight">Longitudinal Growth Charts</h3>
-          </div>
-          <p class="text-blue-50">Visualize individual student journeys from the first day to final exams with
-            cinematic clarity.</p>
+          class="md:col-span-2 lg:col-span-3 bg-surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-container-high transition-all group">
+          <span
+            class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform">terminal</span>
+          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">The Neural Terminal</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Integrated AI assistant trained
+            specifically for academic literature analysis and complex code synthesis.</p>
         </div>
-        <!-- Feature 3: Quiet Design -->
+        <!-- Feature 2 -->
         <div
-          class="md:col-span-4 bg-white rounded-3xl p-10 flex flex-col justify-center gap-6 border border-slate-100 shadow-sm">
-          <span class="material-symbols-outlined text-blue-600 text-5xl">spa</span>
+          class="md:col-span-2 lg:col-span-3 bg-surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-container-high transition-all group">
+          <span
+            class="material-symbols-outlined text-4xl text-secondary mb-6 group-hover:scale-110 transition-transform">monitoring</span>
+          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Real-time Analytics</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Visualize your research impact and
+            repository health with high-fidelity, interactive dashboards.</p>
+        </div>
+        <!-- Feature 3 (Large) -->
+        <div
+          class="md:col-span-4 lg:col-span-4 bg-surface-container p-8 rounded-lg border border-outline-variant/10 relative overflow-hidden hover:bg-surface-container-high transition-all group">
+          <div class="relative z-10">
+            <span
+              class="material-symbols-outlined text-4xl text-tertiary mb-6 group-hover:scale-110 transition-transform">hub</span>
+            <h3 class="text-2xl font-bold mb-3 uppercase tracking-tight">Collaborative Laboratory</h3>
+            <p class="text-on-surface-variant text-base leading-relaxed max-w-md">Seamless
+              pair-programming and real-time document editing for distributed research teams. Built on
+              low-latency synchronization protocols.</p>
+          </div>
+          <div
+            class="absolute bottom-0 right-0 w-1/2 h-full opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity">
+            <img alt="Network" class="w-full h-full object-cover grayscale"
+              data-alt="Complex network of glowing orange data nodes and connections on a dark background, representing digital collaboration"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrYRYVyLhYpjoMG0wi6TYwtAM-63K_bi37twGEL90F-2WfyWxw8M5dGe-2yD7BvJrTK6PfvHoOSTKfFJDfJIHpZmv7OYeKoJ-IwsnZU0LRXyFhorEk2iKNwcJ-iDfMkkUTmiBXgS7iPCL6KsjWEfdvD1QwAlJ-nXPAuX6W9-4xghXZ0vPFCeJ-i-3FzLjLNQa9KWIeQfnP4SgKLaLHfwZKNvRHUqhLZfpf6yWHUCeK87d-8PgYztUo3cVz8Tiggiaq3yg17aG54dQb" />
+          </div>
+        </div>
+        <!-- Feature 4 -->
+        <div
+          class="md:col-span-2 lg:col-span-2 bg-surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-container-high transition-all group flex flex-col justify-between">
           <div>
-            <h3 class="text-xl font-bold font-headline mb-2 text-slate-900">Soft Minimalism</h3>
-            <p class="text-slate-500 text-sm">Reduced visual noise to help you maintain focus during high-stakes
-              grading periods.</p>
+            <span
+              class="material-symbols-outlined text-4xl text-primary-container mb-6 group-hover:scale-110 transition-transform">security</span>
+            <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Encrypted Storage</h3>
+          </div>
+          <p class="text-on-surface-variant text-sm">Post-quantum encryption for all your intellectual
+            property and datasets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Community/Social Section -->
+  <section class="px-6 py-20 bg-surface">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="flex-1 space-y-8">
+          <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
+            The <span class="text-tertiary">Collective</span> Intelligence
+          </h2>
+          <p class="text-on-surface-variant text-lg">Join a network of over 50,000 academics and
+            developers building the next generation of knowledge infrastructure.</p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded border-l-4 border-tertiary">
+              <div class="text-2xl font-black text-tertiary">01</div>
+              <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs">Decentralized Reviews</h4>
+                <p class="text-sm text-on-surface-variant">Peer review powered by blockchain
+                  integrity.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded border-l-4 border-primary">
+              <div class="text-2xl font-black text-primary">02</div>
+              <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs">Open Source Foundation</h4>
+                <p class="text-sm text-on-surface-variant">Contribute to the core protocols and earn
+                  reputation.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- Feature 4: High-End Export -->
-        <div
-          class="md:col-span-8 bg-white rounded-3xl overflow-hidden relative group border border-slate-100 shadow-sm">
-          <div class="absolute inset-0 p-10 flex flex-col justify-end z-10">
-            <h3 class="text-2xl font-bold font-headline mb-2 text-slate-900">Editorial Report Cards</h3>
-            <p class="text-slate-500 max-w-sm">Export gorgeous, magazine-style PDF reports that parents and students
-              actually enjoy reading.</p>
+        <div class="flex-1 grid grid-cols-2 gap-4">
+          <div class="space-y-4 pt-12">
+            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
+              <div class="text-4xl font-black text-on-surface mb-1">50K+</div>
+              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Operators
+              </div>
+            </div>
+            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
+              <div class="text-4xl font-black text-on-surface mb-1">1.2M</div>
+              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Submissions
+              </div>
+            </div>
           </div>
-          <div class="absolute top-0 right-0 w-1/2 h-full">
-            <img alt="Academic Report"
-              class="w-full h-full object-cover opacity-20 grayscale transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0"
-              data-alt="Elegant close up of high quality paper with architectural sketches and clean typography for a refined academic report feel"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7l-EUnzhO8iCvWqa62QiJvpH1TTt45UnEt9cT6T_K4M9BuYPnzIm-01fGoPuNahhlFIxLF2I50ADkZPor5QjnjUkxcrBupAUXVo42Kao8wQbpwUKZf_p6JjfoMtpzfevVZC2As2mL5BZt7qmF2d2WWYbkF8Ls0VnE83ErTUvKetlATNw9cyYepUhNJ3XEM0Ec-FlO_DqMq6uA1C7deujisPGIVPg2Z5aIyTrfJhI8v78G18cKw3-DV3ZRQ-rF_9BV3nfPvnFsZuYz" />
+          <div class="space-y-4">
+            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
+              <div class="text-4xl font-black text-on-surface mb-1">99.9%</div>
+              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Uptime</div>
+            </div>
+            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
+              <div class="text-4xl font-black text-on-surface mb-1">200+</div>
+              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Clusters
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- CTA Section -->
-  <section class="px-8 py-32 bg-white">
-    <div class="max-w-5xl mx-auto bg-blue-50 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
-      <div class="absolute top-0 right-0 p-12 opacity-5 text-blue-700">
-        <span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">edit_note</span>
-      </div>
-      <div class="relative z-10 space-y-8">
-        <h2 class="text-4xl md:text-6xl font-extrabold font-headline tracking-tighter text-blue-900">Ready to refine
-          your <br /> classroom experience?</h2>
-        <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-          Join 2,000+ modern educators who have transformed their grading from a chore into a creative process.
-        </p>
-        <div class="pt-4">
-          <button
-            class="px-10 py-5 bg-primary-gradient text-white text-xl font-bold rounded-2xl shadow-2xl shadow-blue-500/30 hover:scale-105 active:scale-95 transition-transform">
-            Create Your Free Account
-          </button>
-        </div>
-        <p class="text-sm text-blue-400 font-bold uppercase tracking-widest">No Credit Card Required • 14-Day Pro
-          Trial</p>
+  <!-- Final CTA Section -->
+  <section class="px-6 py-24 relative overflow-hidden">
+    <div
+      class="max-w-5xl mx-auto glass-panel p-12 md:p-20 rounded-2xl border border-primary/20 text-center relative z-10 neon-glow">
+      <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6 leading-none">
+        Ready to <span class="text-primary-container underline decoration-4 underline-offset-8">Execute</span>?
+      </h2>
+      <p class="text-on-surface-variant text-xl mb-10 max-w-2xl mx-auto">
+        Start your journey with Academic Atelier today. Zero configuration required. High-performance by
+        default.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <button
+          class="px-10 py-5 rounded bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-black text-base uppercase tracking-widest hover:scale-105 active:scale-95 transition-all neon-glow">
+          Create Your Terminal
+        </button>
+        <button
+          class="px-10 py-5 rounded bg-surface-container-highest border border-outline-variant/30 text-on-surface font-black text-base uppercase tracking-widest hover:bg-surface-bright active:scale-95 transition-all">
+          Talk to an Architect
+        </button>
       </div>
     </div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[150%] pointer-events-none opacity-20">
+      <img alt="Space tech" class="w-full h-full object-cover blur-sm"
+        data-alt="Cinematic satellite view of earth at night with glowing data networks and orange city lights, high contrast cyber aesthetic"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo9791Wy0_uK9gRBmKCyfFSbKMdSvBNDSFSSxooTyVavKFN6W_oIXu3iweBTIYjxZkSGq2zmX-85LUzpCsVnzYYzzLe_mlPHsjjRj7EpA6bhVLLofPFe9-KK8QI6WyPWvwNoGyVhtjlnYYcMspPYersoG-4PzB92ieMBwxBis7K2Pxm43Cv4iajdkL3jO_JnqadyzcwUxfqcFcEPIb3STAuxD2HXWF51wNOIi1oK7nxhg1gaaRGLY4K19B2yHrXwzllKUk7YJ_pnaJ" />
+    </div>
   </section>
+  <!-- Footer -->
+  <footer class="px-6 py-12 bg-surface-container-lowest border-t border-outline-variant/10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col gap-2">
+        <span class="text-lg font-black tracking-tighter text-[#FF3E00] uppercase">Academic Atelier</span>
+        <p class="text-[10px] text-on-surface-variant/50 uppercase tracking-[0.3em]">Building Knowledge for
+          the Terminal Era</p>
+      </div>
+      <div class="flex gap-8">
+        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Privacy</a>
+        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Security</a>
+        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Changelog</a>
+      </div>
+      <div class="text-[10px] font-mono text-on-surface-variant/30">
+        © 2024 ACADEMIC_ATELIER.EXE // ALL_RIGHTS_RESERVED
+      </div>
+    </div>
+  </footer>
 </main>
 {% endblock main %}
