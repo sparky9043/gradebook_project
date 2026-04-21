@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-gb6*mcb+%3wc&9$wc6&%gc4*pss*@4&knz!vxd0j&1$7jkl9#&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gradebook-project.onrender.com']
 
 
 # Application definition
