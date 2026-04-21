@@ -43,6 +43,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 INSTALLED_APPS = [
     # Custom Apps
     'core',
+    'accounts',
     
     # Pre-Installed Django Apps
     'django.contrib.admin',
