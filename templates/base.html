@@ -6,7 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;family=Inter:wght@100..900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -14,62 +17,62 @@
   <script src="{% static 'js/tailwindcss.js' %}"></script>
   <style type="text/tailwindcss">
     @theme {
-      --color-surface-container-low: #1c1b1b;
-      --color-surface-container: #201f1f;
-      --color-on-surface: #e5e2e1;
-      --color-on-secondary-container: #574200;
-      --color-on-primary-fixed-variant: #891d00;
-      --color-secondary: #fcc82c;
-      --color-primary-fixed-dim: #ffb4a2;
-      --color-surface-container-high: #2a2a2a;
-      --color-on-secondary: #3e2e00;
-      --color-secondary-container: #ddad00;
-      --color-outline-variant: #5d3f38;
-      --color-outline: #ae887f;
-      --color-on-tertiary-fixed-variant: #005320;
-      --color-primary-fixed: #ffdad2;
-      --color-primary-container: #ff562b;
-      --color-on-primary-container: #550e00;
-      --color-tertiary-fixed: #72fe8f;
-      --color-on-tertiary-fixed: #002108;
-      --color-tertiary-fixed-dim: #53e076;
-      --color-inverse-surface: #e5e2e1;
-      --color-on-tertiary: #003914;
-      --color-error: #ffb4ab;
-      --color-on-primary-fixed: #3c0700;
-      --color-background: #131313;
-      --color-surface-bright: #3a3939;
-      --color-on-primary: #611200;
-      --color-tertiary: #53e076;
-      --color-on-secondary-fixed: #241a00;
-      --color-on-error: #690005;
-      --color-on-error-container: #ffdad6;
-      --color-error-container: #93000a;
-      --color-surface-tint: #ffb4a2;
-      --color-surface: #131313;
-      --color-inverse-primary: #b42900;
-      --color-secondary-fixed-dim: #f3c021;
-      --color-secondary-fixed: #ffdf93;
-      --color-on-secondary-fixed-variant: #594400;
-      --color-tertiary-container: #00a748;
-      --color-primary: #ffb4a2;
-      --color-surface-dim: #131313;
-      --color-inverse-on-surface: #313030;
-      --color-surface-variant: #353534;
-      --color-on-tertiary-container: #003210;
-      --color-surface-container-lowest: #0e0e0e;
-      --color-surface-container-highest: #353534;
-      --color-on-surface-variant: #e7bdb3;
-      --color-on-background: #e5e2e1;
+      --color-inverse-primary: #a3c9ff;
+      --color-secondary: #006970;
+      --color-surface-container-lowest: #ffffff;
+      --color-tertiary-container: #7f65a7;
+      --color-primary-container: #0073cb;
+      --color-surface-dim: #b8dfff;
+      --color-on-background: #001e30;
+      --color-error-container: #ffdad6;
+      --color-tertiary: #664c8d;
+      --color-surface-tint: #0060ab;
+      --color-primary: #005aa1;
+      --color-on-tertiary-container: #fdf5ff;
+      --color-surface-container-highest: #cae6ff;
+      --color-on-tertiary: #ffffff;
+      --color-on-secondary-container: #006e75;
+      --color-primary-fixed: #d3e3ff;
+      --color-on-surface: #001e30;
+      --color-surface-variant: #cae6ff;
+      --color-on-tertiary-fixed-variant: #533a79;
+      --color-on-secondary-fixed-variant: #004f54;
+      --color-on-secondary-fixed: #002022;
+      --color-inverse-surface: #02344e;
+      --color-on-tertiary-fixed: #260a4b;
+      --color-secondary-fixed-dim: #81d4db;
+      --color-secondary-container: #9bedf5;
+      --color-on-secondary: #ffffff;
+      --color-on-primary-fixed: #001c39;
+      --color-on-error-container: #93000a;
+      --color-background: #f6f9ff;
+      --color-surface-container-low: #ebf5ff;
+      --color-outline: #717783;
+      --color-on-primary-container: #f5f7ff;
+      --color-surface-bright: #f6f9ff;
+      --color-on-surface-variant: #414752;
+      --color-surface-container: #e0f0ff;
+      --color-primary-fixed-dim: #a3c9ff;
+      --color-on-primary: #ffffff;
+      --color-surface: #f6f9ff;
+      --color-tertiary-fixed-dim: #d6baff;
+      --color-surface-container-high: #d5ebff;
+      --color-inverse-on-surface: #e6f2ff;
+      --color-error: #ba1a1a;
+      --color-secondary-fixed: #9ef0f8;
+      --color-outline-variant: #c0c7d4;
+      --color-tertiary-fixed: #eddcff;
+      --color-on-primary-fixed-variant: #004882;
+      --color-on-error: #ffffff;
 
       --radius: 0.25rem;
-      --radius-lg: 0.5rem;
-      --radius-xl: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.25rem;
       --radius-full: 9999px;
 
-      --font-headline: "Plus Jakarta Sans";
+      --font-headline: "Newsreader";
       --font-body: "Plus Jakarta Sans";
-      --font-label: "Plus Jakarta Sans";
+      --font-label: "Inter";
     }
   </style>
   <style>
@@ -77,50 +80,29 @@
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
 
-    .neon-glow {
-      box-shadow: 0 10px 30px -10px rgba(255, 62, 0, 0.15);
-    }
-
-    .glass-panel {
-      background: rgba(58, 57, 57, 0.4);
-      backdrop-filter: blur(20px);
+    .editorial-shadow {
+      box-shadow: 0 20px 50px -12px rgba(0, 30, 48, 0.06);
     }
   </style>
   <title>Document</title>
 </head>
 
-<body
-  class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
   <nav
-    class="bg-[#131313] dark:bg-[#131313] font-['Plus_Jakarta_Sans'] tracking-tight docked full-width top-0 z-50 bg-[#201F1F] shadow-[0_10px_30px_-10px_rgba(255,62,0,0.15)] flex justify-between items-center px-6 py-3 w-full fixed">
-    <div class="flex items-center gap-8">
-      <span class="text-xl font-bold tracking-tighter text-[#FF3E00] uppercase">Academic Atelier</span>
-      <div class="hidden md:flex items-center gap-6">
-        <a class="text-gray-400 hover:bg-[#353534] transition-colors duration-200 px-3 py-1 rounded text-sm font-bold uppercase tracking-widest"
-          href="#">
-          <span class="material-symbols-outlined">home</span>
-        </a>
-        <a class="text-gray-400 hover:bg-[#353534] transition-colors duration-200 px-3 py-1 rounded text-sm font-bold uppercase tracking-widest"
-          href="#">Courses</a>
-        <a class="text-gray-400 hover:bg-[#353534] transition-colors duration-200 px-3 py-1 rounded text-sm font-bold uppercase tracking-widest"
-          href="#">Students</a>
-        <a class="text-gray-400 hover:bg-[#353534] transition-colors duration-200 px-3 py-1 rounded text-sm font-bold uppercase tracking-widest"
-          href="#">Terminal</a>
-      </div>
+    class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm shadow-blue-900/5 flex justify-between items-center px-12 py-6">
+    <div class="font-headline italic text-2xl text-blue-900">Academy Editorial</div>
+    <div class="hidden md:flex items-center space-x-12 font-headline text-lg tracking-tight">
+      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">
+        <span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
+      </a>
+      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">Courses</a>
+      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">Students</a>
+      <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">About</a>
     </div>
-    <div class="flex items-center gap-4">
-      <button class="text-gray-400 hover:bg-[#353534] p-2 rounded transition-colors duration-200">
-        <span class="material-symbols-outlined">notifications</span>
-      </button>
-      <button class="text-gray-400 hover:bg-[#353534] p-2 rounded transition-colors duration-200">
-        <span class="material-symbols-outlined">settings</span>
-      </button>
-      <div class="w-8 h-8 rounded bg-surface-container-highest overflow-hidden border border-outline-variant/20">
-        <img alt="Academic Profile"
-          data-alt="Geometric minimalist avatar representing a professional academic researcher in a dark tech aesthetic"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsuaclZY8fQAwMrUc3F5qqdWkyZn2UxEy-48fr4HKt42OolQoe-qqk0lbBlSzEhWV2P26sXZFtGJefuZ5Oe7AtuLZc8qj2yTCCF1yc4vXlr5cwt-WKy8o1xWr1H5osZ54QvaRcRrk-oXNzFIJlYG3NVbmu-nx2KjPn5QW7YeDtdkY5Khq1m4M7LI0JSBQagI4YUhqqmfSxQqYeDHkQXGCnQRXlnMVgiXWje0l95fs8HkENjod5Kl3JcYP0UcViBpA6Pzl-3N68jWIw" />
-      </div>
-    </div>
+    <button
+      class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-body font-semibold tracking-wide scale-95 active:scale-100 transition-transform">
+      Portal Login
+    </button>
   </nav>
 
   {% block main %} {% endblock main %}
@@ -145,6 +127,20 @@
       </div>
     </div>
   </footer>
+  <div class="fixed right-0 top-1/2 -translate-y-1/2 z-40">
+    <div
+      class="bg-secondary-container/80 backdrop-blur-md p-4 rounded-l-lg editorial-shadow flex flex-col items-center gap-6 text-on-secondary-container">
+      <button class="flex flex-col items-center gap-1 group">
+        <span class="material-symbols-outlined group-hover:scale-110 transition-transform">stylus</span>
+        <span class="text-[10px] font-label font-bold uppercase tracking-tighter">Inquire</span>
+      </button>
+      <div class="w-8 h-px bg-on-secondary-container/20"></div>
+      <button class="flex flex-col items-center gap-1 group">
+        <span class="material-symbols-outlined group-hover:scale-110 transition-transform">map</span>
+        <span class="text-[10px] font-label font-bold uppercase tracking-tighter">Visit</span>
+      </button>
+    </div>
+  </div>
 </body>
 
 </html>

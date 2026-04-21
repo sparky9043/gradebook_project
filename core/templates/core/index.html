@@ -3,235 +3,144 @@
 {% block main %}
 <main class="pt-24">
   <!-- Hero Section -->
-  <section class="relative px-6 py-20 md:py-32 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container rounded-full blur-[120px]">
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <span
-            class="inline-block px-4 py-1 mb-6 rounded-full bg-tertiary-container/20 text-tertiary-fixed-dim text-xs font-bold tracking-[0.2em] uppercase border border-tertiary-container/30">
-            Version 4.0.0 Stable Build
-          </span>
-          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 leading-none">
-            Forge Your <span
-              class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Academic
-              Identity</span> in Code.
-          </h1>
-          <p class="text-on-surface-variant text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
-            The high-performance environment for researchers, developers, and digital architects.
-            Elevate your documentation, collaboration, and data visualization to terminal-grade
-            precision.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <button
-              class="px-8 py-4 rounded bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold text-sm uppercase tracking-widest active:scale-95 transition-all neon-glow">
-              Initialize Workspace
-            </button>
-            <button
-              class="px-8 py-4 rounded bg-surface-container border border-outline-variant/20 text-secondary font-bold text-sm uppercase tracking-widest hover:bg-surface-container-high active:scale-95 transition-all">
-              View Documentation
-            </button>
-          </div>
+  <section class="relative min-h-[921px] flex items-center px-12 overflow-hidden bg-surface">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7 z-10">
+        <span class="font-label text-xs uppercase tracking-[0.3em] text-secondary mb-6 block font-bold">Volume
+          I : The Sacred Editorial</span>
+        <h1
+          class="font-headline text-[3.5rem] md:text-[5.5rem] leading-[0.95] text-on-surface mb-8 -tracking-[0.02em] font-medium">
+          Cultivating <br />
+          <span class="italic text-primary">Scholarly Depth</span> <br />
+          with Grace.
+        </h1>
+        <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+          Where academic rigor meets aesthetic tranquility. We believe that the environment of learning
+          should be as intentional as the curriculum itself.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <button
+            class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-full font-semibold shadow-lg">
+            Begin Your Journey
+          </button>
+          <button
+            class="bg-surface-container-lowest border border-outline-variant/15 text-primary px-10 py-4 rounded-full font-semibold hover:bg-surface-container-low transition-colors">
+            The Philosophy
+          </button>
         </div>
-        <div class="lg:col-span-5 relative">
-          <div class="bg-surface-container rounded-xl p-4 neon-glow border border-primary/10 relative overflow-hidden">
-            <div class="flex items-center gap-2 mb-4 px-2">
-              <div class="w-3 h-3 rounded-full bg-error/40"></div>
-              <div class="w-3 h-3 rounded-full bg-secondary/40"></div>
-              <div class="w-3 h-3 rounded-full bg-tertiary/40"></div>
-              <span
-                class="ml-4 text-[10px] font-mono text-on-surface-variant/50 uppercase tracking-widest">academic-atelier
-                --root</span>
-            </div>
-            <div class="font-mono text-sm space-y-2 text-on-surface/80">
-              <p class="text-tertiary"># Initializing core modules...</p>
-              <p><span class="text-primary-container">&gt;</span> loading data_viz.lib <span
-                  class="text-secondary">[OK]</span></p>
-              <p><span class="text-primary-container">&gt;</span> syncing collaboration_engine <span
-                  class="text-secondary">[OK]</span></p>
-              <p><span class="text-primary-container">&gt;</span> mounting terminal_ui <span
-                  class="text-secondary">[OK]</span></p>
-              <div class="h-[200px] w-full mt-6 rounded bg-surface-container-lowest overflow-hidden">
-                <img alt="Terminal UI"
-                  class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700"
-                  data-alt="High-tech server room with glowing green and orange led lights reflecting on dark metallic surfaces, futuristic cinematic lighting"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnlcgM812KPR0GaRpUNp1iG8kCQtPgMcfSva2z9NgGy5daTHs0OYABXrX9geSaJl_g2eIRnHLNhirnTa93TQguvk-WJWmdqMcrdTglmcJEqNtslpsS8tglu3uQNqV51HA0E7D_hdjSaWIqVPryi4KGsFWoJ65C4m5AlhQm6VKJ3btGbgP6Vfyv5APcuvxpAqMU4RwzJeCIJ3v-5o3bNH1tK_ERWco47rvSN0wqgHnCbXjRvmzPIYTmjv-RlsMiOL_dIqszgmuPQxLk" />
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="md:col-span-5 relative mt-12 md:mt-0">
+        <div class="aspect-[4/5] rounded-lg overflow-hidden editorial-shadow relative group">
+          <img alt="Classical library"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            data-alt="Interior of a classical luxury library with warm wood tones, tall bookshelves, and soft natural light filtering through high windows"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsNNWL1PDEqKzi05VCn4_fi5x2ek7O82GUU7DHJI9kalOxsXZl_EwPo3UT8TZCwMDpr8UNS62vjQgL7gmV9AAzU288HQz_IDkOPIGmwd8wPhCAGk3RHgXYdFvk4PcJpCm5ClLKp5j6m1YE8ITtKtMNO0J4kwEp1PPswoex9RKN4VB0hgaqmuM5NAnbevMUJOlmGXWrWqkRw_8KNj3Tw0ARdZ6EqWHUmN8Fz0CgsOLZ8nti31_SpmW_JjSMgQ6oyzTfWfbZzgQeme1Z" />
+          <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+        </div>
+        <!-- Asymmetric Overlay Card -->
+        <div
+          class="absolute -bottom-10 -left-20 hidden lg:block bg-surface-container-lowest p-8 rounded-lg editorial-shadow max-w-[280px]">
+          <span class="material-symbols-outlined text-secondary text-4xl mb-4"
+            style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+          <h3 class="font-headline text-2xl italic text-on-surface mb-2">Refined Wisdom</h3>
+          <p class="font-body text-sm text-on-surface-variant leading-relaxed">A curriculum designed to
+            transcend the noise of the digital age.</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- Bento Grid Features -->
-  <section class="px-6 py-20 bg-surface-container-lowest">
+  <!-- Bento Core Features -->
+  <section class="py-32 px-12 bg-surface-container-low">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-black tracking-tighter uppercase mb-4">Core <span
-            class="text-primary-container">Capabilities</span></h2>
-        <div class="h-1 w-20 bg-primary-container mx-auto"></div>
+      <div class="text-center mb-20">
+        <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6">Foundations of the Atelier</h2>
+        <p class="font-body text-on-surface-variant max-w-2xl mx-auto">Our four pillars define a sanctuary
+          for the mind, body, and spirit to engage in deep intellectual pursuit.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        <!-- Feature 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto">
+        <!-- Bento Card 1 -->
         <div
-          class="md:col-span-2 lg:col-span-3 bg-surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-container-high transition-all group">
-          <span
-            class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform">terminal</span>
-          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">The Neural Terminal</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Integrated AI assistant trained
-            specifically for academic literature analysis and complex code synthesis.</p>
-        </div>
-        <!-- Feature 2 -->
-        <div
-          class="md:col-span-2 lg:col-span-3 bg-surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-container-high transition-all group">
-          <span
-            class="material-symbols-outlined text-4xl text-secondary mb-6 group-hover:scale-110 transition-transform">monitoring</span>
-          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Real-time Analytics</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Visualize your research impact and
-            repository health with high-fidelity, interactive dashboards.</p>
-        </div>
-        <!-- Feature 3 (Large) -->
-        <div
-          class="md:col-span-4 lg:col-span-4 bg-surface-container p-8 rounded-lg border border-outline-variant/10 relative overflow-hidden hover:bg-surface-container-high transition-all group">
-          <div class="relative z-10">
-            <span
-              class="material-symbols-outlined text-4xl text-tertiary mb-6 group-hover:scale-110 transition-transform">hub</span>
-            <h3 class="text-2xl font-bold mb-3 uppercase tracking-tight">Collaborative Laboratory</h3>
-            <p class="text-on-surface-variant text-base leading-relaxed max-w-md">Seamless
-              pair-programming and real-time document editing for distributed research teams. Built on
-              low-latency synchronization protocols.</p>
-          </div>
-          <div
-            class="absolute bottom-0 right-0 w-1/2 h-full opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity">
-            <img alt="Network" class="w-full h-full object-cover grayscale"
-              data-alt="Complex network of glowing orange data nodes and connections on a dark background, representing digital collaboration"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrYRYVyLhYpjoMG0wi6TYwtAM-63K_bi37twGEL90F-2WfyWxw8M5dGe-2yD7BvJrTK6PfvHoOSTKfFJDfJIHpZmv7OYeKoJ-IwsnZU0LRXyFhorEk2iKNwcJ-iDfMkkUTmiBXgS7iPCL6KsjWEfdvD1QwAlJ-nXPAuX6W9-4xghXZ0vPFCeJ-i-3FzLjLNQa9KWIeQfnP4SgKLaLHfwZKNvRHUqhLZfpf6yWHUCeK87d-8PgYztUo3cVz8Tiggiaq3yg17aG54dQb" />
-          </div>
-        </div>
-        <!-- Feature 4 -->
-        <div
-          class="md:col-span-2 lg:col-span-2 bg-surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-container-high transition-all group flex flex-col justify-between">
+          class="md:col-span-8 bg-surface-container-lowest rounded-lg p-10 flex flex-col justify-between editorial-shadow min-h-[400px]">
           <div>
-            <span
-              class="material-symbols-outlined text-4xl text-primary-container mb-6 group-hover:scale-110 transition-transform">security</span>
-            <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Encrypted Storage</h3>
+            <span class="material-symbols-outlined text-primary mb-6 text-3xl">history_edu</span>
+            <h3 class="font-headline text-3xl mb-4">Timeless Pedagogy</h3>
+            <p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-xl">
+              Reclaiming the art of slow learning through Socratic dialogue and handwritten
+              reflections. We value the process as much as the conclusion.
+            </p>
           </div>
-          <p class="text-on-surface-variant text-sm">Post-quantum encryption for all your intellectual
-            property and datasets.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Community/Social Section -->
-  <section class="px-6 py-20 bg-surface">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row gap-12 items-center">
-        <div class="flex-1 space-y-8">
-          <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
-            The <span class="text-tertiary">Collective</span> Intelligence
-          </h2>
-          <p class="text-on-surface-variant text-lg">Join a network of over 50,000 academics and
-            developers building the next generation of knowledge infrastructure.</p>
-          <div class="space-y-4">
-            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded border-l-4 border-tertiary">
-              <div class="text-2xl font-black text-tertiary">01</div>
-              <div>
-                <h4 class="font-bold uppercase tracking-widest text-xs">Decentralized Reviews</h4>
-                <p class="text-sm text-on-surface-variant">Peer review powered by blockchain
-                  integrity.</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded border-l-4 border-primary">
-              <div class="text-2xl font-black text-primary">02</div>
-              <div>
-                <h4 class="font-bold uppercase tracking-widest text-xs">Open Source Foundation</h4>
-                <p class="text-sm text-on-surface-variant">Contribute to the core protocols and earn
-                  reputation.</p>
-              </div>
-            </div>
+          <div class="mt-8 flex items-center text-primary font-semibold gap-2 cursor-pointer group">
+            Explore Curriculum
+            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
           </div>
         </div>
-        <div class="flex-1 grid grid-cols-2 gap-4">
-          <div class="space-y-4 pt-12">
-            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
-              <div class="text-4xl font-black text-on-surface mb-1">50K+</div>
-              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Operators
-              </div>
-            </div>
-            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
-              <div class="text-4xl font-black text-on-surface mb-1">1.2M</div>
-              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Submissions
-              </div>
-            </div>
+        <!-- Bento Card 2 -->
+        <div
+          class="md:col-span-4 bg-primary text-on-primary rounded-lg p-10 flex flex-col justify-between editorial-shadow">
+          <span class="material-symbols-outlined text-white/50 text-5xl self-end">castle</span>
+          <div>
+            <h3 class="font-headline text-2xl mb-2">Sacred Spaces</h3>
+            <p class="text-on-primary/80 text-sm leading-relaxed">
+              Our campus is designed to be a physical manifestation of quiet contemplation and focused
+              research.
+            </p>
           </div>
-          <div class="space-y-4">
-            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
-              <div class="text-4xl font-black text-on-surface mb-1">99.9%</div>
-              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Uptime</div>
-            </div>
-            <div class="bg-surface-container p-6 rounded-lg border border-outline-variant/10 text-center">
-              <div class="text-4xl font-black text-on-surface mb-1">200+</div>
-              <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Clusters
-              </div>
-            </div>
+        </div>
+        <!-- Bento Card 3 -->
+        <div class="md:col-span-4 bg-surface-container-high rounded-lg p-10 editorial-shadow">
+          <div class="mb-8 overflow-hidden rounded-lg">
+            <img alt="Quiet study area" class="w-full h-48 object-cover grayscale"
+              data-alt="Minimalist study desk with a single candle and an open book in a dimly lit, serene room"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8vn8T-hth2py-dcSyc4viImMPGCds7xN4vL8Dmen-NbGNKvik2tXBjYNExh3NBdQaqWC_YEZ6cOH6gBM9k8FqEdlQ2XwnUPMbugmoQ3aCKcuJity2aPH4K9u-jPut-cUeYOiBRepGMjTnFz5CfTU0wDo-WYq2CBQUsB9JFdlELeAgPe5reRRFXxKcy9yQftX9hthXks_kvV55bV9Uylv4RwonZQ3GE6Yu0c85kAH4_876UqYVJ88GMpOEFs0ihdheus_yCozBN_h9" />
+          </div>
+          <h3 class="font-headline text-xl mb-3">Quiet Influence</h3>
+          <p class="font-body text-sm text-on-surface-variant">Influencing the world through the power of
+            silent concentration and profound output.</p>
+        </div>
+        <!-- Bento Card 4 -->
+        <div
+          class="md:col-span-8 bg-surface-container-lowest rounded-lg p-10 flex items-center gap-10 editorial-shadow">
+          <div
+            class="hidden sm:block w-1/3 aspect-square rounded-full overflow-hidden border-8 border-surface-container-low">
+            <img alt="Faculty Portrait" class="w-full h-full object-cover"
+              data-alt="Portrait of a distinguished scholar with a warm expression in a sunlit academic office"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHTE_Z1r_LAsdhH9fw4q9BJRP0kgkaD5EY8nhuxIm7Qodk_U6DVo-X5XeTgaiCN3JIXiSn2P3JTFKhWbF8EyGPSzHF0avWUdPYRfOyza7mIA5yOlWFoJ8kg5OG8_3ssNzZmNjIdq5HrXSf1ihzofUos54QMaJfmVxWitNaiNauhw8ksSGnuwaKoUaFUxSfRIt-Pof87VPL2V9pt5M4FEvKJqOo9fKWb6x-YCbrkoC000RDQYgsRXUF6rtMoGy_L_NjwouQZS48NkXG" />
+          </div>
+          <div class="flex-1">
+            <h3 class="font-headline text-2xl mb-4 italic">Guided by Mastery</h3>
+            <p class="font-body text-on-surface-variant leading-relaxed">
+              Our faculty are practitioners first—authors, philosophers, and artists dedicated to the
+              apprenticeship of the next generation.
+            </p>
+            <div class="mt-6 font-label text-xs uppercase tracking-widest text-secondary font-bold">
+              Faculty Directory — 2024</div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Final CTA Section -->
-  <section class="px-6 py-24 relative overflow-hidden">
-    <div
-      class="max-w-5xl mx-auto glass-panel p-12 md:p-20 rounded-2xl border border-primary/20 text-center relative z-10 neon-glow">
-      <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6 leading-none">
-        Ready to <span class="text-primary-container underline decoration-4 underline-offset-8">Execute</span>?
-      </h2>
-      <p class="text-on-surface-variant text-xl mb-10 max-w-2xl mx-auto">
-        Start your journey with Academic Atelier today. Zero configuration required. High-performance by
-        default.
-      </p>
-      <div class="flex flex-col md:flex-row justify-center gap-6">
-        <button
-          class="px-10 py-5 rounded bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-black text-base uppercase tracking-widest hover:scale-105 active:scale-95 transition-all neon-glow">
-          Create Your Terminal
-        </button>
-        <button
-          class="px-10 py-5 rounded bg-surface-container-highest border border-outline-variant/30 text-on-surface font-black text-base uppercase tracking-widest hover:bg-surface-bright active:scale-95 transition-all">
-          Talk to an Architect
-        </button>
+  <!-- Newsletter / CTA -->
+  <section class="py-24 px-12 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-block p-4 rounded-full bg-surface-container-low mb-8">
+        <span class="material-symbols-outlined text-secondary">local_library</span>
       </div>
-    </div>
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[150%] pointer-events-none opacity-20">
-      <img alt="Space tech" class="w-full h-full object-cover blur-sm"
-        data-alt="Cinematic satellite view of earth at night with glowing data networks and orange city lights, high contrast cyber aesthetic"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo9791Wy0_uK9gRBmKCyfFSbKMdSvBNDSFSSxooTyVavKFN6W_oIXu3iweBTIYjxZkSGq2zmX-85LUzpCsVnzYYzzLe_mlPHsjjRj7EpA6bhVLLofPFe9-KK8QI6WyPWvwNoGyVhtjlnYYcMspPYersoG-4PzB92ieMBwxBis7K2Pxm43Cv4iajdkL3jO_JnqadyzcwUxfqcFcEPIb3STAuxD2HXWF51wNOIi1oK7nxhg1gaaRGLY4K19B2yHrXwzllKUk7YJ_pnaJ" />
+      <h2 class="font-headline text-4xl md:text-6xl mb-8 -tracking-[0.01em]">Join the <span class="italic">Select
+          Few.</span></h2>
+      <p class="font-body text-xl text-on-surface-variant mb-12">Applications for the Autumn intake are now
+        being reviewed on a rolling basis. Seek the stillness that yields greatness.</p>
+      <div class="max-w-md mx-auto">
+        <div class="flex p-1 bg-surface-container-low rounded-full border border-outline-variant/15">
+          <input class="bg-transparent border-none focus:ring-0 px-6 py-3 flex-1 font-body text-on-surface"
+            placeholder="Your academic email" type="email" />
+          <button class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold shadow-md">
+            Apply
+          </button>
+        </div>
+        <p class="mt-6 text-xs text-on-surface-variant font-label uppercase tracking-widest opacity-60">
+          Strict Confidentiality Maintained</p>
+      </div>
     </div>
   </section>
-  <!-- Footer -->
-  <footer class="px-6 py-12 bg-surface-container-lowest border-t border-outline-variant/10">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex flex-col gap-2">
-        <span class="text-lg font-black tracking-tighter text-[#FF3E00] uppercase">Academic Atelier</span>
-        <p class="text-[10px] text-on-surface-variant/50 uppercase tracking-[0.3em]">Building Knowledge for
-          the Terminal Era</p>
-      </div>
-      <div class="flex gap-8">
-        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Privacy</a>
-        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Security</a>
-        <a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Changelog</a>
-      </div>
-      <div class="text-[10px] font-mono text-on-surface-variant/30">
-        © 2024 ACADEMIC_ATELIER.EXE // ALL_RIGHTS_RESERVED
-      </div>
-    </div>
-  </footer>
 </main>
 {% endblock main %}
