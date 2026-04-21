@@ -30,7 +30,12 @@ SECRET_KEY = 'django-insecure-gb6*mcb+%3wc&9$wc6&%gc4*pss*@4&knz!vxd0j&1$7jkl9#&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gradebook-project.onrender.com']
+# https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -125,6 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
