@@ -5,5 +5,5 @@ def login_view(request):
     return render(request, 'accounts/login.html')
 
 def register_view(request):
-    context = { 'show_nav': True, 'show_footer': True }
+    context = { 'show_nav': True, 'show_footer': True, 'show_sticky': True }
     return render(request, 'accounts/register.html', context)
