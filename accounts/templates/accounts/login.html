@@ -114,9 +114,11 @@
         </button>
       </div>
       <p class="mt-12 text-center text-sm text-on-surface-variant">
-        Seeking admission?
-        <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="#">Inquire for
-          Faculty Access</a>
+        Don't have an account?
+        <a class="text-primary font-bold hover:underline underline-offset-4 ml-1"
+          href="{% url 'accounts:register_view' %}">
+          Click here to make one
+        </a>
       </p>
     </div>
     <footer class="mt-auto pt-12">

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<main class="min-h-screen pt-32 pb-20 px-6 flex items-center justify-center relative overflow-hidden">
+  <!-- Abstract Background Elements -->
+  <div class="absolute top-20 left-10 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl -z-10"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl -z-10"></div>
+  <!-- The Sign Up Card -->
+  <div
+    class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-lg editorial-shadow overflow-hidden">
+    <!-- Left Side: Visual/Editorial -->
+    <div class="relative hidden md:block min-h-[600px] overflow-hidden">
+      <img alt="Library Interior" class="absolute inset-0 w-full h-full object-cover"
+        data-alt="Stunning architectural view of a classical library with warm soft sunlight filtering through tall arched windows and bookshelves"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn2Sa9xmecM22uzb0Y88CMz3kQ1BnDM5AdV6D30Q2MCGi5VMLFVr4sRCkdyAtE-7HWI4rdIqWzcLw12W9CNNP4mV8BLf3gyM9kWJILF8-bRZQqI-Sz08TDUYY6I18NuB3mC9k3klASn1y00MvOkYnLvK2K2UCEQ1sDyPNUTshChrykgM1e63SmPiCtXI-rE0B4A0hDe4oQNfTw1WuGWJ37l_aAP5tBNXGYyEyOlnetC5iA6hIWyyPlsAMsxbdtmNIpaXgZNlD5vy08" />
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+      <div class="absolute bottom-12 left-12 right-12">
+        <h2 class="font-headline text-4xl text-white mb-4 -tracking-[0.02em] leading-tight">Begin Your
+          Academic Journey</h2>
+        <p class="text-white/90 text-lg font-light leading-relaxed">Join a community of scholars dedicated
+          to the pursuit of wisdom through rigorous inquiry and thoughtful reflection.</p>
+      </div>
+    </div>
+    <!-- Right Side: Form -->
+    <div class="p-10 md:p-16 flex flex-col justify-center">
+      <header class="mb-10">
+        <span class="font-label text-xs uppercase tracking-widest text-secondary font-semibold mb-3 block">Application
+          for Enrollment</span>
+        <h1 class="font-headline text-4xl text-on-surface mb-2 leading-tight">Create Account</h1>
+        <p class="text-on-surface-variant text-sm">Fill in the details below to start your journey.</p>
+      </header>
+      <form class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-1.5">
+            <label class="font-label text-xs text-on-surface-variant ml-1" for="first_name">First
+              Name</label>
+            <input
+              class="w-full px-5 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface placeholder:text-outline-variant"
+              id="first_name" placeholder="Julian" type="text" />
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-label text-xs text-on-surface-variant ml-1" for="last_name">Last
+              Name</label>
+            <input
+              class="w-full px-5 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface placeholder:text-outline-variant"
+              id="last_name" placeholder="Somerset" type="text" />
+          </div>
+        </div>
+        <div class="space-y-1.5">
+          <label class="font-label text-xs text-on-surface-variant ml-1" for="email">Email Address</label>
+          <div class="relative">
+            <input
+              class="w-full pl-12 pr-5 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface placeholder:text-outline-variant"
+              id="email" placeholder="j.somerset@academic.edu" type="email" />
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">mail</span>
+          </div>
+        </div>
+        <div class="space-y-1.5">
+          <label class="font-label text-xs text-on-surface-variant ml-1" for="password">Password</label>
+          <div class="relative">
+            <input
+              class="w-full pl-12 pr-5 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface"
+              id="password" placeholder="••••••••" type="password" />
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 py-2">
+          <input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-fixed" id="terms"
+            type="checkbox" />
+          <label class="text-xs text-on-surface-variant leading-relaxed" for="terms">
+            I agree to the <a class="text-primary hover:underline underline-offset-4" href="#">Terms of
+              Service</a> and <a class="text-primary hover:underline underline-offset-4" href="#">Privacy Policy</a> of
+            Academic Atelier.
+          </label>
+        </div>
+        <button
+          class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-body font-semibold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-100 transition-all duration-300"
+          type="submit">
+          Complete Registration
+        </button>
+        <div class="relative py-4">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-outline-variant/15"></div>
+          </div>
+          <div class="relative flex justify-center text-xs uppercase tracking-widest">
+            <span class="bg-surface-container-lowest px-4 text-outline font-semibold">Or continue
+              with</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <button
+            class="flex items-center justify-center gap-2 py-3 px-4 bg-surface-container-low border border-outline-variant/15 rounded-lg hover:bg-surface-container-high transition-colors text-sm font-medium"
+            type="button">
+            <img alt="Google Logo" class="w-4 h-4" data-alt="Official Google icon logo"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQm6-aDrthQbo_q1L27P3mxLusIvCrSDZASMo07CIBFypsTZuZ1yM_nRFvVaoDPZ4-MU2WytPnWQsqowat2Xu8gx5XC5d8thwWbbdCUAOu7-vfVczMbTwhFD0doiruwIhlKgKzQigx9-uhNd2IRZ5U_gUV1gZM0mgxG9LWOvCHv1Y3zZtn3xmKhIAa8kdE-Rrcc-Vu5qY66xNi4bI4T-D-rT5GV4K1dvMfp-oF2UOOypZ9J3Bp6Bv8Ow8UKRIvNsS1duh8o1FRhgsv" />
+            Google
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 py-3 px-4 bg-surface-container-low border border-outline-variant/15 rounded-lg hover:bg-surface-container-high transition-colors text-sm font-medium"
+            type="button">
+            <span class="material-symbols-outlined text-base">person</span>
+            SSO
+          </button>
+        </div>
+        <p class="text-center text-sm text-on-surface-variant mt-8">
+          Already have an account? <a class="text-primary font-semibold hover:underline underline-offset-4"
+            href="{% url 'accounts:login_view' %}">Portal
+            Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock main %}
