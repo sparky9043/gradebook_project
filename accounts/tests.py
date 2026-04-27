@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 # Create your tests here.
 
 
+# DON'T FORGET TO USE LOCAL DB BEFORE TESTING
 class TeacherManagerTests(TestCase):
     def test_create_teacher(self):
         User = get_user_model()
