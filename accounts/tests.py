@@ -6,7 +6,10 @@ from django.contrib.auth import get_user_model
 
 # DON'T FORGET TO USE LOCAL DB BEFORE TESTING
 class TeacherManagerTests(TestCase):
+    """Tests for managing Teacher Admin"""
+
     def test_create_teacher(self):
+        """Test for creating teacher"""
         User = get_user_model()
         new_user = User.objects.create_user(
             username="testuser",
@@ -21,6 +24,7 @@ class TeacherManagerTests(TestCase):
         self.assertFalse(new_user.is_superuser)
 
     def test_create_superuser(self):
+        """Test for creating super user"""
         User = get_user_model()
         superuser = User.objects.create_superuser(
             username="testuser",

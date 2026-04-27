@@ -7,6 +7,8 @@ from django.contrib.auth.admin import UserAdmin
 
 
 class TeacherAdmin(UserAdmin):
+    """Extend Admin website for custom Teacher model"""
+
     model = Teacher
     form = TeacherChangeForm
     add_form = TeacherCreationForm
