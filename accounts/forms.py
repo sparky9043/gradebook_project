@@ -24,24 +24,35 @@ class TeacherChangeForm(UserChangeForm):
 
 
 class TeacherLoginForm(AuthenticationForm):
-    class Meta:
-        model = Teacher
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         input_style = "w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-5 py-4 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all outline-none"
 
-        self.fields["username"].widget = forms.TextInput(
-            attrs={
+        self.fields["username"].widget.attrs.update(
+            {
                 "class": input_style,
                 "autocomplete": "username",
                 "placeholder": "Enter Username",
             },
         )
-        self.fields["password"].widget = forms.PasswordInput(
-            attrs={
+        self.fields["password"].widget.attrs.update(
+            {
                 "class": input_style,
                 "placeholder": "••••••••",
             },
         )
+        # self.fields["username"].widget = forms.TextInput(
+        # attrs={
+        #     "class": input_style,
+        #     "autocomplete": "username",
+        #     "placeholder": "Enter Username",
+        # },
+        # )
+        # self.fields["password"].widget = forms.PasswordInput(
+        # attrs={
+        #     "class": input_style,
+        #     "placeholder": "••••••••",
+        # },
+        # )
