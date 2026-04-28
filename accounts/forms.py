@@ -30,14 +30,18 @@ class TeacherLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        input_style = "w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-5 py-4 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all outline-none"
+
         self.fields["username"].widget = forms.TextInput(
             attrs={
-                "class": "w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-5 py-4 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all outline-none",
+                "class": input_style,
                 "autocomplete": "username",
+                "placeholder": "Enter Username",
             },
         )
         self.fields["password"].widget = forms.PasswordInput(
             attrs={
-                "class": "w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-5 py-4 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all outline-none",
+                "class": input_style,
+                "placeholder": "••••••••",
             },
         )
