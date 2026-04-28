@@ -8,8 +8,18 @@
     <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">Admissions</a>
     <a class="text-slate-600 font-medium hover:text-blue-600 transition-colors duration-300" href="#">Faculty</a>
   </div>
+  {% if not user.is_authenticated %}
   <a class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-body font-semibold tracking-wide scale-95 active:scale-100 transition-transform"
     href="{% url 'accounts:login_view' %}">
     Portal Login
   </a>
+  {% else %}
+  <form method="post" action="{% url 'accounts:logout_view' %}">{% csrf_token %}
+    <button
+      class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-body font-semibold tracking-wide scale-95 active:scale-100 transition-transform"
+      type="submit">
+      Logout
+    </button>
+  </form>
+  {% endif %}
 </nav>
