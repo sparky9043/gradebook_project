@@ -14,6 +14,31 @@ class TeacherCreationForm(UserCreationForm):
         model = Teacher
         fields = UserCreationForm.Meta.fields + ("department",)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].widget.attrs.update(
+            {
+                "class": "w-full pl-12 pr-5 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface placeholder:text-outline-variant",
+            },
+        )
+        self.fields["password1"].widget.attrs.update(
+            {
+                "class": "w-full pl-12 pr-5 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface",
+                "placeholder": "••••••••",
+            },
+        )
+        self.fields["password2"].widget.attrs.update(
+            {
+                "class": "w-full pl-12 pr-5 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface",
+                "placeholder": "••••••••",
+            },
+        )
+        self.fields["department"].widget.attrs.update(
+            {
+                "class": "w-full pl-12 pr-10 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface appearance-none",
+            }
+        )
+
 
 class TeacherChangeForm(UserChangeForm):
     """Form used to edit Teacher Admin"""
