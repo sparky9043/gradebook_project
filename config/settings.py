@@ -150,6 +150,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LOGIN_URL = "accounts:login_view"
 
-LOGIN_REDIRECT_URL = "core:index"
+LOGIN_REDIRECT_URL = "core:dashboard"
 
 AUTH_USER_MODEL = "accounts.Teacher"
