@@ -30,7 +30,7 @@
         <h1 class="font-headline text-4xl text-on-surface mb-2 leading-tight">Create Account</h1>
         <p class="text-on-surface-variant text-sm">Fill in the details below to start your journey.</p>
       </header>
-      <form class="space-y-6">{% csrf_token %}
+      <form class="space-y-6" method="post">{% csrf_token %}
         <div class="space-y-1.5">
           <label class="font-label text-xs text-on-surface-variant ml-1" for="id_username">Username</label>
           <div class="relative">

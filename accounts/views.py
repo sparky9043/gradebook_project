@@ -21,3 +21,4 @@ class TeacherLogoutView(LogoutView):
 class TeacherRegisterView(CreateView):
     form_class = TeacherCreationForm
     template_name = "accounts/register.html"
+    success_url = reverse_lazy("accounts:login_view")
