@@ -17,3 +17,9 @@ def index(request):
 class DashboardView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy("accounts:login_view")
     template_name = "core/dashboard.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["show_nav"] = True
+        context["show_footer"] = True
+        return context

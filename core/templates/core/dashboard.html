@@ -1,13 +1,87 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h1>This is the dashboard</h1>
+<!-- <h1>This is the dashboard</h1>
 <p>
   Welcome {{ user.username }}
 </p>
 <form method="post" action="{% url 'accounts:logout_view' %}">{% csrf_token %}
 
   <button type="submit">logout</button>
-</form>
+</form> -->
+<main class="min-h-screen pt-32 pb-24 flex flex-col items-center justify-center px-6">
+  <!-- Hero Header -->
+  <div class="text-center mb-16 max-w-2xl mx-auto">
+    <h1 class="font-display text-5xl md:text-6xl text-on-surface mb-4 tracking-tight">Welcome, {{ user.username }}</h1>
+    <p class="font-body text-lg text-on-surface-variant/80 italic">Select a pathway to continue your
+      stewardship.</p>
+  </div>
+  <!-- Dashboard Menu (Bento-style layout / Asymmetric Menu) -->
+  <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Choice: Courses -->
+    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-[4/5] hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
+      href="#">
+      <div class="relative z-10">
+        <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="school">school</span>
+        <h2 class="font-display text-4xl text-on-surface group-hover:text-primary transition-colors">Courses
+        </h2>
+        <p class="mt-4 font-body text-on-surface-variant opacity-60 text-sm leading-relaxed">Manage
+          curricula and sacred teachings designed for the growing spirit.</p>
+      </div>
+      <div class="flex items-center justify-between relative z-10 pt-8">
+        <span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Open Portal</span>
+        <span
+          class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
+      </div>
+      <div class="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-[12rem]" data-icon="school">school</span>
+      </div>
+    </a>
+    <!-- Choice: Students (Asymmetric offset) -->
+    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-[4/5] hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
+      href="#">
 
+      <!-- group relative overflow-hidden rounded-lg bg-surface-container-low ghost-border p-10 flex flex-col justify-between aspect-[4/5] md:-translate-y-8 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 -->
+      <div class="relative z-10">
+        <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="group">group</span>
+        <h2 class="font-display text-4xl text-on-surface group-hover:text-primary transition-colors">
+          Students</h2>
+        <p class="mt-4 font-body text-on-surface-variant opacity-60 text-sm leading-relaxed">View and guide
+          the individuals currently enrolled in the grace journey.</p>
+      </div>
+      <div class="flex items-center justify-between relative z-10 pt-8">
+        <span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Open
+          Directory</span>
+        <span
+          class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
+      </div>
+      <div class="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-[12rem]" data-icon="group">group</span>
+      </div>
+    </a>
+    <!-- Choice: Grades -->
+    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-[4/5] hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
+      href="#">
+      <div class="relative z-10">
+        <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="grade">grade</span>
+        <h2 class="font-display text-4xl text-on-surface group-hover:text-primary transition-colors">Grades
+        </h2>
+        <p class="mt-4 font-body text-on-surface-variant opacity-60 text-sm leading-relaxed">Assess progress
+          and document the growth of each participating member.</p>
+      </div>
+      <div class="flex items-center justify-between relative z-10 pt-8">
+        <span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Assessments</span>
+        <span
+          class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
+      </div>
+      <div class="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+        <span class="material-symbols-outlined text-[12rem]" data-icon="grade">grade</span>
+      </div>
+    </a>
+  </div>
+  <!-- Decorative Background Element -->
+  <div
+    class="fixed bottom-0 left-0 w-full h-1/2 pointer-events-none -z-10 bg-gradient-to-t from-surface-container-low to-transparent opacity-40">
+  </div>
+</main>
 {% endblock main %}
