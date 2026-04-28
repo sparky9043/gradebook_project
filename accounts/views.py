@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView
-from .forms import TeacherCreationForm
+from .forms import TeacherLoginForm
 
 
 # Create your views here.
 # def login_view(request):
 #     return render(request, 'accounts/login.html')
 class TeacherLoginView(LoginView):
-    # form_class = TeacherCreationForm
+    form_class = TeacherLoginForm
     template_name = "accounts/login.html"
 
 
