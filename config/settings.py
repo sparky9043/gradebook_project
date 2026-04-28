@@ -152,4 +152,6 @@ LOGIN_URL = "accounts:login_view"
 
 LOGIN_REDIRECT_URL = "core:dashboard"
 
+LOGOUT_REDIRECT_URL = "core:index"
+
 AUTH_USER_MODEL = "accounts.Teacher"

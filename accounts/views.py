@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from .forms import TeacherLoginForm
 from django.urls import reverse_lazy
 
@@ -8,6 +8,10 @@ from django.urls import reverse_lazy
 class TeacherLoginView(LoginView):
     form_class = TeacherLoginForm
     template_name = "accounts/login.html"
+
+
+class TeacherLogoutView(LogoutView):
+    pass
 
 
 def register_view(request):
