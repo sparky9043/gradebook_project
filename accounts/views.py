@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView, LogoutView
-from .forms import TeacherLoginForm
+from django.views.generic import CreateView
+from .forms import TeacherLoginForm, TeacherCreationForm
 from django.urls import reverse_lazy
 
 
@@ -14,6 +15,9 @@ class TeacherLogoutView(LogoutView):
     pass
 
 
-def register_view(request):
-    context = {"show_nav": True, "show_footer": True, "show_sticky": True}
-    return render(request, "accounts/register.html", context)
+# def register_view(request):
+#     context = {"show_nav": True, "show_footer": True, "show_sticky": True}
+#     return render(request, "accounts/register.html", context)
+class TeacherRegisterView(CreateView):
+    form_class = TeacherCreationForm
+    template_name = "accounts/register.html"
