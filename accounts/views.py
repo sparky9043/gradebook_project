@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView
 from .forms import TeacherLoginForm
+from django.urls import reverse_lazy
 
 
-# Create your views here.
-# def login_view(request):
-#     return render(request, 'accounts/login.html')
+# Create your views here
 class TeacherLoginView(LoginView):
     form_class = TeacherLoginForm
     template_name = "accounts/login.html"
