@@ -1,14 +1,6 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<!-- <h1>This is the dashboard</h1>
-<p>
-  Welcome {{ user.username }}
-</p>
-<form method="post" action="{% url 'accounts:logout_view' %}">{% csrf_token %}
-
-  <button type="submit">logout</button>
-</form> -->
 <main class="min-h-screen pt-32 pb-24 flex flex-col items-center justify-center px-6">
   <!-- Hero Header -->
   <div class="text-center mb-16 max-w-2xl mx-auto">
@@ -19,7 +11,7 @@
   <!-- Dashboard Menu (Bento-style layout / Asymmetric Menu) -->
   <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
     <!-- Choice: Courses -->
-    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-[4/5] hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
+    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-4/5 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
       href="#">
       <div class="relative z-10">
         <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="school">school</span>
@@ -38,7 +30,7 @@
       </div>
     </a>
     <!-- Choice: Students (Asymmetric offset) -->
-    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-[4/5] hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
+    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-4/5 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
       href="#">
 
       <!-- group relative overflow-hidden rounded-lg bg-surface-container-low ghost-border p-10 flex flex-col justify-between aspect-[4/5] md:-translate-y-8 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 -->
@@ -60,7 +52,7 @@
       </div>
     </a>
     <!-- Choice: Grades -->
-    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-[4/5] hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
+    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-4/5 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
       href="#">
       <div class="relative z-10">
         <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="grade">grade</span>
@@ -81,7 +73,7 @@
   </div>
   <!-- Decorative Background Element -->
   <div
-    class="fixed bottom-0 left-0 w-full h-1/2 pointer-events-none -z-10 bg-gradient-to-t from-surface-container-low to-transparent opacity-40">
+    class="fixed bottom-0 left-0 w-full h-1/2 pointer-events-none -z-10 bg-linear-to-t from-surface-container-low to-transparent opacity-40">
   </div>
 </main>
 {% endblock main %}
