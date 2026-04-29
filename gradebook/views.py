@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 # Create your views here.
 
 
-class GradeLogMainView(LoginRequiredMixin, TemplateView):
+class GradebookHomeView(LoginRequiredMixin, TemplateView):
     template_name = "gradebook/home.html"
     login_url = reverse_lazy("accounts:login_view")
 
