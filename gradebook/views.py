@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import (
+    TemplateView,
+    ListView,
+    CreateView,
+    DetailView,
+)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .models import Course
@@ -24,3 +29,12 @@ class CreateCourseView(LoginRequiredMixin, CreateView):
     form_class = CourseCreationForm
     template_name = "gradebook/create_course.html"
     success_url = reverse_lazy("gradebook:courses")
+
+
+class CourseDetailView(LoginRequiredMixin, DetailView):
+    model = Course
+    template_name = "gradebook/course_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
