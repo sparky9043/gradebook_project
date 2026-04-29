@@ -88,13 +88,13 @@
 </head>
 
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
-  {% if show_nav %}
+  {% if not hide_nav %}
   {% include 'nav.html' %}
   {% endif %}
 
   {% block main %} {% endblock main %}
 
-  {% if show_footer %}
+  {% if not hide_footer %}
   {% include 'footer.html' %}
   {% endif %}
 

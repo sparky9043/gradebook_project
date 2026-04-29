@@ -9,8 +9,7 @@ from django.urls import reverse_lazy
 # Create your views here.
 def index(request):
     """Display index at main url"""
-    context = {"show_nav": True, "show_footer": True}
-    return render(request, "core/index.html", context)
+    return render(request, "core/index.html")
 
 
 # Dashboard view
