@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 
 # Create your views here.
-def index(request):
-    """Display index at main url"""
-    return render(request, "core/index.html")
+class IndexView(TemplateView):
+    """View of index at home url"""
+
+    template_name = "core/index.html"
