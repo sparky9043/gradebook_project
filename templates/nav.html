@@ -5,7 +5,7 @@
     {% if user.is_authenticated %}
     <!-- Hover Style: text-blue-800 border-b-2 border-blue-600 font-semibold transition-colors duration-300 -->
     <a class="text-slate-600 font-medium transition-colors duration-300 hover:text-blue-800 hover:border-b-2"
-      href="#">Courses</a>
+      href="{% url 'gradebook:courses' %}">Courses</a>
     <a class="text-slate-600 font-medium transition-colors duration-300 hover:text-blue-800 hover:border-b-2"
       href="#">Students</a>
     <a class="text-slate-600 font-medium transition-colors duration-300 hover:text-blue-800 hover:border-b-2"
