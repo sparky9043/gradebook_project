@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from .models import Course
 
 # Create your views here.
 
@@ -9,6 +10,18 @@ from django.urls import reverse_lazy
 class GradebookHomeView(LoginRequiredMixin, TemplateView):
     template_name = "gradebook/home.html"
     login_url = reverse_lazy("accounts:login_view")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["show_nav"] = True
+        context["show_footer"] = True
+        return context
+
+
+class GradbookCoursesView(LoginRequiredMixin, ListView):
+    model = Course
+    template_name = "gradebook/courses.html"
+    context_object_name = "courses"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
