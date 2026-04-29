@@ -18,7 +18,7 @@ class GradebookHomeView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy("accounts:login_view")
 
 
-class GradbookCoursesView(LoginRequiredMixin, ListView):
+class CoursesListView(LoginRequiredMixin, ListView):
     model = Course
     template_name = "gradebook/courses.html"
     context_object_name = "courses"
