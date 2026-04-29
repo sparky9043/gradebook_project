@@ -21,9 +21,6 @@ class TeacherLogoutView(LogoutView):
     pass
 
 
-# def register_view(request):
-#     context = {"show_nav": True, "show_footer": True, "show_sticky": True}
-#     return render(request, "accounts/register.html", context)
 class TeacherRegisterView(CreateView):
     form_class = TeacherCreationForm
     template_name = "accounts/register.html"
