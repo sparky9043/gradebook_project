@@ -6,5 +6,5 @@ app_name = "gradebook"
 urlpatterns = [
     path("", GradebookHomeView.as_view(), name="home"),
     path("courses/", GradbookCoursesView.as_view(), name="courses"),
-    path("courses/create/", CreateCourseView.as_view(), name="courses_create"),
+    path("courses/create/", CreateCourseView.as_view(), name="create_course"),
 ]
