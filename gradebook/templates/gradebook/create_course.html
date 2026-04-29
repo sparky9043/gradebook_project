@@ -1,5 +1,70 @@
-<h1>Create Course</h1>
+{% extends 'base.html' %}
+
+{% block main %}
+<!-- <h1>Create Course</h1>
 <form method="post">{% csrf_token %}
   {{ form.as_div }}
   <button type="submit">Create</button>
-</form>
+</form> -->
+<main class="grow pt-32 pb-24 px-6 relative overflow-hidden">
+  <!-- Abstract Decorative Elements -->
+  <div class="absolute top-0 right-0 -z-10 opacity-40">
+    <div class="w-[500px] h-[500px] bg-secondary-container rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2">
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 -z-10 opacity-30">
+    <div class="w-[400px] h-[400px] bg-tertiary-fixed-dim rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2">
+    </div>
+  </div>
+  <div class="max-w-2xl mx-auto text-center space-y-12">
+    <!-- Hero Content -->
+    <header class="space-y-4">
+      <h1 class="font-headline text-5xl md:text-6xl text-on-surface tracking-tighter leading-tight italic">
+        Curate a New Wisdom
+      </h1>
+      <p class="text-on-surface-variant font-body text-lg max-w-md mx-auto leading-relaxed">
+        Begin the journey of crafting a new editorial experience for your students. Simple, serene, and
+        intentional.
+      </p>
+    </header>
+    <!-- Form Section -->
+    <div
+      class="bg-surface-container-lowest editorial-shadow rounded-lg p-10 md:p-16 text-left relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-linear-to-b from-primary to-primary-container"></div>
+      <form class="space-y-10">{% csrf_token %}
+        <div class="space-y-2">
+          <label class="font-label text-xs uppercase tracking-widest text-outline font-semibold" for="id_title">Course
+            Title</label>
+          {{ form.title }}
+        </div>
+        <div class="space-y-2">
+          <label class="font-label text-xs uppercase tracking-widest text-outline font-semibold" for="id_teacher">Course
+            Instructor</label>
+          <div class="relative group">
+            {{ form.teacher }}
+            <span
+              class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+          </div>
+        </div>
+        <div class="pt-6">
+          <button
+            class="w-full bg-linear-to-br from-primary to-primary-container text-on-primary font-headline text-xl py-5 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group"
+            type="submit">
+            <span class="flex items-center justify-center gap-2">
+              Create Course
+              <span
+                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Footer Decorative -->
+    <div class="flex items-center justify-center gap-4 opacity-50">
+      <div class="h-px w-12 bg-outline-variant"></div>
+      <span class="font-headline italic text-on-surface-variant">The Sacred Editorial</span>
+      <div class="h-px w-12 bg-outline-variant"></div>
+    </div>
+  </div>
+</main>
+{% endblock main %}
