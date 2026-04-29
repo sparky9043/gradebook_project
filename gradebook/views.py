@@ -23,6 +23,9 @@ class GradbookCoursesView(LoginRequiredMixin, ListView):
     template_name = "gradebook/courses.html"
     context_object_name = "courses"
 
+    def get_queryset(self):
+        return self.model.objects.filter(teacher=self.request.user)
+
 
 class CreateCourseView(LoginRequiredMixin, CreateView):
     model = Course
