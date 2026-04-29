@@ -49,7 +49,10 @@
           </span>
           <div>
             <h3 class="font-display text-3xl text-on-surface group-hover:text-primary-container transition-colors mb-1">
-              {{ course.title }}</h3>
+              <a href="{% url 'gradebook:course_detail' course.pk %}">
+                {{ course.title }}
+              </a>
+            </h3>
           </div>
         </div>
         <div class="col-span-4 flex flex-col justify-center">
