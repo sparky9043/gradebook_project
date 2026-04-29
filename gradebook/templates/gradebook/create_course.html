@@ -31,7 +31,7 @@
     <div
       class="bg-surface-container-lowest editorial-shadow rounded-lg p-10 md:p-16 text-left relative overflow-hidden">
       <div class="absolute top-0 left-0 w-1 h-full bg-linear-to-b from-primary to-primary-container"></div>
-      <form class="space-y-10">{% csrf_token %}
+      <form method="post" class="space-y-10">{% csrf_token %}
         <div class="space-y-2">
           <label class="font-label text-xs uppercase tracking-widest text-outline font-semibold" for="id_title">Course
             Title</label>
