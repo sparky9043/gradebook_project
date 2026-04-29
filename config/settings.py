@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     # Custom Apps
     "core",
     "accounts",
-    "grade_log",
+    "gradebook",
     # Pre-Installed Django Apps
     "django.contrib.admin",
     "django.contrib.auth",
