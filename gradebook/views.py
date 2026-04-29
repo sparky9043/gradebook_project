@@ -36,3 +36,9 @@ class CreateCourseView(LoginRequiredMixin, CreateView):
     form_class = CourseCreationForm
     template_name = "gradebook/create_course.html"
     success_url = reverse_lazy("gradebook:courses")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["show_nav"] = True
+        context["show_footer"] = True
+        return context
