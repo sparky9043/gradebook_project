@@ -151,7 +151,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LOGIN_URL = "accounts:login_view"
 
-LOGIN_REDIRECT_URL = "core:dashboard"
+LOGIN_REDIRECT_URL = "gradebook:home"
 
 LOGOUT_REDIRECT_URL = "core:index"
 
