@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .models import Course
+from .forms import CourseCreationForm
 
 # Create your views here.
 
@@ -28,3 +29,10 @@ class GradbookCoursesView(LoginRequiredMixin, ListView):
         context["show_nav"] = True
         context["show_footer"] = True
         return context
+
+
+class CreateCourseView(LoginRequiredMixin, CreateView):
+    model = Course
+    form_class = CourseCreationForm
+    template_name = "gradebook/create_course.html"
+    success_url = reverse_lazy("gradebook:courses")
