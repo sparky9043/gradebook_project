@@ -72,3 +72,6 @@ class Enrollment(models.Model):
     class Meta:
         unique_together = ("course", "student")
         ordering = ["course__title"]
+
+    def __str__(self):
+        return f"[{self.course}] {self.student} Final Grade: {self.final_grade}"
