@@ -93,6 +93,7 @@ This is my final project that I completed for ComIT course.
 
 ## To-Do List
 
-[  ] Create `Student` and `Enrollment` models \
+[ x ] Create `Student` and `Enrollment` models \
+[ x ] Add a few students and make enroll them into courses and assign grades \
 [  ] Create `Student` views \
-[  ] Add a few students and make enroll them into courses and assign grades
+[  ] Create `Enrollment` form and views
