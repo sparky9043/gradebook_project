@@ -7,7 +7,7 @@ from django.views.generic import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from .models import Course, Student
+from .models import Course, Student, Enrollment
 from .forms import CourseCreationForm
 
 # Create your views here.
@@ -55,3 +55,9 @@ class StudentsListView(LoginRequiredMixin, ListView):
     model = Student
     template_name = "gradebook/students.html"
     context_object_name = "students"
+
+
+class StudentDetailView(LoginRequiredMixin, DetailView):
+    model = Student
+    template_name = "gradebook/student_detail.html"
+    context_object_name = "student"

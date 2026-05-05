@@ -7,6 +7,7 @@ from .views import (
     CourseDetailView,
     # Students
     StudentsListView,
+    StudentDetailView,
 )
 
 app_name = "gradebook"
@@ -19,4 +20,5 @@ urlpatterns = [
     path("courses/create/", CreateCourseView.as_view(), name="create_course"),
     # Student Views
     path("students/", StudentsListView.as_view(), name="students"),
+    path("students/<int:pk>/", StudentDetailView.as_view(), name="student_detail"),
 ]

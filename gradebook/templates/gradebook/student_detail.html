@@ -1,0 +1,9 @@
+<h2>{{ student }}</h2>
+<h3>Enrolled Courses</h3>
+<div>
+  <ul>
+    {% for course in student.courses.all %}
+    <li>{{ course }}</li>
+    {% endfor %}
+  </ul>
+</div>
