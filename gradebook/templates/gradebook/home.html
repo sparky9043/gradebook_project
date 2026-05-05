@@ -1,79 +1,43 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<main class="min-h-screen pt-32 pb-24 flex flex-col items-center justify-center px-6">
-  <!-- Hero Header -->
-  <div class="text-center mb-16 max-w-2xl mx-auto">
-    <h1 class="font-display text-5xl md:text-6xl text-on-surface mb-4 tracking-tight">Welcome, {{ user.username }}</h1>
-    <p class="font-body text-lg text-on-surface-variant/80 italic">Select a pathway to continue your
-      stewardship.</p>
-  </div>
-  <!-- Dashboard Menu (Bento-style layout / Asymmetric Menu) -->
-  <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- Choice: Courses -->
-    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-4/5 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
-      href="{% url 'gradebook:courses' %}">
-      <div class="relative z-10">
-        <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="school">school</span>
-        <h2 class="font-display text-4xl text-on-surface group-hover:text-primary transition-colors">Courses
-        </h2>
-        <p class="mt-4 font-body text-on-surface-variant opacity-60 text-sm leading-relaxed">Manage
-          curricula and sacred teachings designed for the growing spirit.</p>
-      </div>
-      <div class="flex items-center justify-between relative z-10 pt-8">
-        <span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Open Portal</span>
-        <span
-          class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
-      </div>
-      <div class="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
-        <span class="material-symbols-outlined text-[12rem]" data-icon="school">school</span>
-      </div>
-    </a>
-    <!-- Choice: Students (Asymmetric offset) -->
-    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-4/5 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
-      href="#">
-
-      <!-- group relative overflow-hidden rounded-lg bg-surface-container-low ghost-border p-10 flex flex-col justify-between aspect-[4/5] md:-translate-y-8 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 -->
-      <div class="relative z-10">
-        <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="group">group</span>
-        <h2 class="font-display text-4xl text-on-surface group-hover:text-primary transition-colors">
-          Students</h2>
-        <p class="mt-4 font-body text-on-surface-variant opacity-60 text-sm leading-relaxed">View and guide
-          the individuals currently enrolled in the grace journey.</p>
-      </div>
-      <div class="flex items-center justify-between relative z-10 pt-8">
-        <span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Open
-          Directory</span>
-        <span
-          class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
-      </div>
-      <div class="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
-        <span class="material-symbols-outlined text-[12rem]" data-icon="group">group</span>
-      </div>
-    </a>
-    <!-- Choice: Grades -->
-    <a class="group relative overflow-hidden rounded-lg bg-surface-container-lowest ghost-border p-10 flex flex-col justify-between aspect-4/5 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:bg-surface-container-low hover:md:-translate-y-4"
-      href="#">
-      <div class="relative z-10">
-        <span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="grade">grade</span>
-        <h2 class="font-display text-4xl text-on-surface group-hover:text-primary transition-colors">Grades
-        </h2>
-        <p class="mt-4 font-body text-on-surface-variant opacity-60 text-sm leading-relaxed">Assess progress
-          and document the growth of each participating member.</p>
-      </div>
-      <div class="flex items-center justify-between relative z-10 pt-8">
-        <span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Assessments</span>
-        <span
-          class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
-      </div>
-      <div class="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
-        <span class="material-symbols-outlined text-[12rem]" data-icon="grade">grade</span>
-      </div>
-    </a>
-  </div>
-  <!-- Decorative Background Element -->
-  <div
-    class="fixed bottom-0 left-0 w-full h-1/2 pointer-events-none -z-10 bg-linear-to-t from-surface-container-low to-transparent opacity-40">
-  </div>
+<main class="max-w-7xl mx-auto px-6 py-xl min-h-[calc(100vh-160px)]">
+<!-- Hero Section Header -->
+<!-- Bento Grid / Cards Section -->
+<div class="mb-lg">
+<h1 class="font-h1 text-h2 text-on-background">Welcome, Instructor. What would you like to do?</h1>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-md">
+<!-- Courses Card -->
+<div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+<div class="mt-4">
+<h2 class="font-h1 text-h2 text-on-background mb-sm">Courses</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Curriculum management and scheduling.</p>
+</div>
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+</div>
+</div>
+<!-- Students Card -->
+<div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+<div class="mt-4">
+<h2 class="font-h1 text-h2 text-on-background mb-sm">Students</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Enrollment records and profiles.</p>
+</div>
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+</div>
+</div>
+<!-- Grades Card -->
+<div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+<div class="mt-4">
+<h2 class="font-h1 text-h2 text-on-background mb-sm">Grades</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Academic performance tracking.</p>
+</div>
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Optional Subtle Image Placeholder to ground the minimalism -->
 </main>
 {% endblock main %}
