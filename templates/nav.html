@@ -3,17 +3,39 @@
         <div class="flex-1 flex justify-start">
             <span class="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">Academia</span>
         </div>
+        {% if user.is_authenticated %}
         <nav class="hidden md:flex gap-6 flex-1 justify-center">
-            <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+                href="#">Courses</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+                href="#">Students</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+                href="#">Grades</a>
+        </nav>
+        {% else %}
+        <nav class="hidden md:flex gap-6 flex-1 justify-center">
+            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
                 href="#">Features</a>
-            <a class="text-blue-600 dark:text-blue-400 border-l-4 border-blue-600 pl-2 font-body-md text-body-md duration-200 ease-in-out"
+            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
                 href="#">About</a>
         </nav>
+        {% endif %}
         <div class="flex-1 flex justify-end">
-            <button
-                class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out">
+          {% if user.is_authenticated %}
+            <a
+                class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out"
+                href="{% url 'gradebook:home' %}"
+            >
+                Dashboard
+            </a>
+          {% else %}
+            <a
+                class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out"
+                href="{% url 'accounts:login_view' %}"
+            >
                 Login
-            </button>
+            </a>
+          {% endif %}
         </div>
     </div>
 </header>
