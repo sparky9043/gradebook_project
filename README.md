@@ -91,9 +91,14 @@ This is my final project that I completed for ComIT course.
   2. Create `gradebook/management/commands/seed.py` for populating data with base data
   3. Tested the app locally before deploying on `[Render](https://gradebook-project.onrender.com/)`
 
+### 5/5/2026
+  1. Make `students/` path display list of students
+  2. Use `DetailView` to show `students/<int:pk>/` details for each student
+  3. Major style upgrade
+
 ## To-Do List
 
 [ x ] Create `Student` and `Enrollment` models \
 [ x ] Add a few students and make enroll them into courses and assign grades \
-[  ] Create `Student` views \
+[ x ] Create `Student` views \
 [  ] Create `Enrollment` form and views
