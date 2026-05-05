@@ -8,10 +8,8 @@
   <div
     class="max-w-5xl w-1/2 flex flex-col items-center bg-surface-container-lowest overflow-hidden shadow-md shadow-accent rounded-xl">
     <!-- Right Side: Form -->
-    <div class="p-10 md:p-16 flex flex-col justify-center">
+    <div class="p-4 md:p-16 flex flex-col justify-center">
       <header class="mb-10">
-        <span class="font-label text-xs uppercase tracking-widest text-secondary font-semibold mb-3 block">Application
-          for Enrollment</span>
         <h1 class="font-headline text-4xl text-on-surface mb-2 leading-tight">Create Account</h1>
         <p class="text-on-surface-variant text-sm">Fill in the details below to start your journey.</p>
       </header>
@@ -89,8 +87,7 @@
         </div>
         <p class="text-center text-sm text-on-surface-variant mt-8">
           Already have an account? <a class="text-primary font-semibold hover:underline underline-offset-4"
-            href="#">Portal
-            Login</a>
+            href="{% url 'accounts:login_view' %}">Login</a>
         </p>
       </form>
     </div>
