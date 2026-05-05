@@ -24,7 +24,8 @@
         <tr
           class="bg-white transition-colors border-b border-outline-variant last:border-b-0 hover:bg-surface-container-low">
           <td class="px-md py-sm font-body-md text-body-md">
-            <a href="{% url 'gradebook:student_detail' student.pk %}">
+            <a class="text-primary-container font-semibold hover:underline"
+              href="{% url 'gradebook:student_detail' student.pk %}">
               {{ student }}
             </a>
           </td>
