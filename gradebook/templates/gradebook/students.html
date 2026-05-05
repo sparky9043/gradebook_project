@@ -1,9 +1,39 @@
-<ul>
-{% for student in students %}
-  <li>
-    <a href="{% url 'gradebook:student_detail' student.pk %}">
-      {{ student }}
-    </a>
-  </li>
-{% endfor %}
-</ul>
+{% extends 'base.html' %}
+
+{% block main %}
+<main class="max-w-7xl mx-auto px-6 py-xl">
+  <div class="mb-lg">
+    <h1 class="font-h1 text-h1 text-on-background mb-base">Student Roster</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant">Click on Student Name for Details</p>
+  </div>
+  <!-- Student Data Table -->
+  <div class="bg-white border border-outline-variant overflow-hidden">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-surface-container border-b border-outline-variant">
+          <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Name
+          </th>
+          <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Grade
+            Level</th>
+          <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Date of
+            Birth</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-outline-variant">
+        {% for student in students %}
+        <tr
+          class="bg-white transition-colors border-b border-outline-variant last:border-b-0 hover:bg-surface-container-low">
+          <td class="px-md py-sm font-body-md text-body-md">
+            <a href="{% url 'gradebook:student_detail' student.pk %}">
+              {{ student }}
+            </a>
+          </td>
+          <td class="px-md py-sm font-body-md text-body-md">{{ student.grade_level }}th</td>
+          <td class="px-md py-sm font-body-md text-body-md">{{ student.dob }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock main %}
