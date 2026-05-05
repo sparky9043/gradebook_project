@@ -4,8 +4,14 @@
 <main class="max-w-[960px] mx-auto px-gutter py-xl">
   <header class="mb-lg">
     <h1 class="font-h1 text-h1 text-on-surface mb-xs">Available Courses</h1>
-    <p class="font-body-md text-body-md text-on-surface-variant">Browse our curriculum of technical and academic
+    <p class="font-body-md text-body-md text-on-surface-variant mb-6">Browse our curriculum of technical and academic
       subjects curated for precision and depth.</p>
+    <a
+      class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out"
+      href="{% url 'gradebook:create_course' %}"
+    >
+      Create Course
+    </a>
   </header>
   <section class="overflow-x-auto">
     <table class="w-full border-collapse bg-white">
