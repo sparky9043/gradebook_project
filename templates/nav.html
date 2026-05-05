@@ -22,12 +22,14 @@
         {% endif %}
         <div class="flex-1 flex justify-end">
           {% if user.is_authenticated %}
-            <a
+            <form method="post" action="{% url 'accounts:logout_view' %}">{% csrf_token %}
+              <button
                 class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out"
-                href="{% url 'gradebook:home' %}"
-            >
-                Dashboard
-            </a>
+                type="submit"
+              >
+                  Logout
+              </button>
+            </form>
           {% else %}
             <a
                 class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out"
