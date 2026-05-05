@@ -57,7 +57,7 @@ class StudentsListView(LoginRequiredMixin, ListView):
     context_object_name = "students"
 
     def get_queryset(self):
-        students = Student.objects.all().order_by("last_name")
+        students = Student.objects.all().order_by("grade_level")
         return students
 
 
