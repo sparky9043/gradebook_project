@@ -1,7 +1,35 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<main class="grow pt-32 pb-20 px-8 max-w-7xl mx-auto w-full">
+<main class="max-w-[960px] mx-auto px-gutter py-xl">
+  <header class="mb-lg">
+    <h1 class="font-h1 text-h1 text-on-surface mb-xs">Available Courses</h1>
+    <p class="font-body-md text-body-md text-on-surface-variant">Browse our curriculum of technical and academic
+      subjects curated for precision and depth.</p>
+  </header>
+  <section class="overflow-x-auto">
+    <table class="w-full border-collapse bg-white">
+      <thead>
+        <tr class="bg-surface-container text-left border-b border-outline-variant">
+          <th class="font-label-sm text-label-sm p-sm text-on-surface uppercase tracking-widest">Course Name</th>
+          <th class="font-label-sm text-label-sm p-sm text-on-surface uppercase tracking-widest">Teacher</th>
+          <th class="font-label-sm text-label-sm p-sm text-on-surface uppercase tracking-widest">Department</th>
+        </tr>
+      </thead>
+      <tbody class="font-body-md text-body-md">
+        {% for course in courses %}
+        <tr class="border-b border-outline-variant transition-colors hover:bg-surface-container-low">
+          <td class="p-sm"><a class="text-primary-container font-semibold hover:underline" href="{% url 'gradebook:course_detail' course.pk %}">
+            {{ course.title }}</a></td>
+          <td class="p-sm text-on-surface-variant">{{ user.username }}</td>
+          <td class="p-sm text-on-surface-variant">{{ user.department }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</main>
+{% comment %} <main class="grow pt-32 pb-20 px-8 max-w-7xl mx-auto w-full">
   <!-- Editorial Header Section -->
   <header class="mb-16">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -97,5 +125,5 @@
     <p class="text-[10px] font-label uppercase vertical-text tracking-widest text-primary/60"
       style="writing-mode: vertical-rl;">Support</p>
   </div>
-</main>
+</main> {% endcomment %}
 {% endblock main %}
