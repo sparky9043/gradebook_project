@@ -56,6 +56,10 @@ class StudentsListView(LoginRequiredMixin, ListView):
     template_name = "gradebook/students.html"
     context_object_name = "students"
 
+    def get_queryset(self):
+        students = Student.objects.all().order_by("last_name")
+        return students
+
 
 class StudentDetailView(LoginRequiredMixin, DetailView):
     model = Student

@@ -6,7 +6,11 @@
     <li>
       <div>
         {{ record.course }}
-        {{ record.final_grade }}
+        {% if record.final_grade %}
+          {{ record.final_grade }}
+        {% else %}
+          <span>N/A</span>
+        {% endif %}
       </div>
     </li>
     {% endfor %}
