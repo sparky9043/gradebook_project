@@ -61,3 +61,9 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
     model = Student
     template_name = "gradebook/student_detail.html"
     context_object_name = "student"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        student = self.get_object()
+        context["records"] = student.enrollments.filter(student=student).distinct()
+        return context

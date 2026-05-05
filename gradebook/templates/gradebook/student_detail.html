@@ -2,8 +2,13 @@
 <h3>Enrolled Courses</h3>
 <div>
   <ul>
-    {% for course in student.courses.all %}
-    <li>{{ course }}</li>
+    {% for record in records %}
+    <li>
+      <div>
+        {{ record.course }}
+        {{ record.final_grade }}
+      </div>
+    </li>
     {% endfor %}
   </ul>
 </div>
