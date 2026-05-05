@@ -14,11 +14,15 @@ from .forms import CourseCreationForm
 
 
 class GradebookHomeView(LoginRequiredMixin, TemplateView):
+    """Display Landing Page After Login"""
+
     template_name = "gradebook/home.html"
     login_url = reverse_lazy("accounts:login_view")
 
 
 class CoursesListView(LoginRequiredMixin, ListView):
+    """Display List of courses"""
+
     model = Course
     template_name = "gradebook/courses.html"
     context_object_name = "courses"
@@ -28,6 +32,8 @@ class CoursesListView(LoginRequiredMixin, ListView):
 
 
 class CreateCourseView(LoginRequiredMixin, CreateView):
+    """Display Create Course Form"""
+
     model = Course
     form_class = CourseCreationForm
     template_name = "gradebook/create_course.html"
@@ -35,6 +41,8 @@ class CreateCourseView(LoginRequiredMixin, CreateView):
 
 
 class CourseDetailView(LoginRequiredMixin, DetailView):
+    """Display Course Detail"""
+
     model = Course
     template_name = "gradebook/course_detail.html"
 
