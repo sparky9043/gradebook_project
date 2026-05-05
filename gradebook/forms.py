@@ -19,8 +19,8 @@ class CourseCreationForm(forms.ModelForm):
                 "placeholder": "e.g. The Ethics of Ancient Philosophy",
             }
         )
-        self.fields["teacher"].widget.attrs.update(
-            {
-                "class": "w-full appearance-none bg-surface-container-low border-outline-variant border-opacity-15 rounded-lg px-5 py-4 focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all duration-300 font-body text-lg outline-none cursor-pointer",
-            }
-        )
+        # self.fields["teacher"].widget.attrs.update(
+        #     {
+        #         "class": "w-full appearance-none bg-surface-container-low border-outline-variant border-opacity-15 rounded-lg px-5 py-4 focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all duration-300 font-body text-lg outline-none cursor-pointer",
+        #     }
+        # )

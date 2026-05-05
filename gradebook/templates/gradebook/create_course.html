@@ -41,7 +41,15 @@
           <label class="font-label text-xs uppercase tracking-widest text-outline font-semibold" for="id_teacher">Course
             Instructor</label>
           <div class="relative group">
-            {{ form.teacher }}
+            <select name="teacher" id="id_teacher" class="w-full appearance-none bg-surface-container-low border-outline-variant border-opacity-15 rounded-lg px-5 py-4 focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all duration-300 font-body text-lg outline-none cursor-pointer">
+            {% for pk, choice in form.teacher.field.choices %}
+              {% if user.username == choice %}
+              <option value="{{ pk }}" selected>
+                {{ choice }}
+              </option>
+            {% endif %}
+              {% endfor %}
+            </select>
             <span
               class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
           </div>
