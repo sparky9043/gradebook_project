@@ -1,5 +1,125 @@
-<h1>Course Details!!</h1>
+{% extends 'base.html' %}
 
-<p>Title: {{ course.title }}</p>
-<p>Instructor Username: {{ course.teacher.username }}</p>
-<p>Teacher Department: {{ course.teacher.department }}</p>
+{% block main %}
+<main class="w-full flex-1 p-md bg-white">
+  <div class="max-w-[960px] mx-auto py-lg">
+    <!-- Header -->
+    <div class="mb-xl border-b border-outline-variant pb-md">
+      <h1 class="font-h1 text-h1 text-on-surface">Course Details</h1>
+    </div>
+    <!-- Course Info Section -->
+    <section class="mb-xl">
+      <div class="bg-surface-container-low p-md border border-outline-variant rounded-lg">
+        <h2 class="font-h3 text-h3 mb-md text-primary">Metadata</h2>
+        <dl class="grid grid-cols-1 md:grid-cols-3 gap-md">
+          <div>
+            <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">
+              Title</dt>
+            <span class="font-body-lg text-body-lg text-on-surface">
+              {{ course.title }}</span>
+          </div>
+          <div>
+            <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">
+              Instructor Username</dt>
+            <dd class="font-body-lg text-body-lg text-on-surface">{{course.teacher.username }}</dd>
+          </div>
+          <div>
+            <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">
+              Teacher Department</dt>
+            <dd class="font-body-lg text-body-lg text-on-surface">{{ course.teacher.department }}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <!-- Enrolled Students Section -->
+    <section>
+      <div class="flex justify-between items-end mb-md">
+        <h2 class="font-h2 text-h2">Enrolled Students</h2>
+        <button
+          class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+          <span class="font-label-sm">Add Student</span>
+        </button>
+      </div>
+      <div class="overflow-x-auto border border-outline-variant">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface-container-high border-b border-outline-variant">
+              <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+                NAME</th>
+              <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+                GRADE LEVEL</th>
+              <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+                DATE OF BIRTH</th>
+              <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant text-right">
+                ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant">
+            <!-- Row 1 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+              <td class="px-md py-sm font-body-md">Aris Thorne</td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant">
+                Sophomore</td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+                1998-05-14</td>
+              <td class="px-md py-sm text-right">
+                <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
+                  title="Remove Student">
+                  <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                </button>
+              </td>
+            </tr>
+            <!-- Row 2 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+              <td class="px-md py-sm font-body-md">Elena Vance</td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant">
+                Senior</td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+                1996-11-22</td>
+              <td class="px-md py-sm text-right">
+                <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
+                  title="Remove Student">
+                  <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                </button>
+              </td>
+            </tr>
+            <!-- Row 3 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+              <td class="px-md py-sm font-body-md">Marcus Holloway
+              </td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant">
+                Freshman</td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+                2000-01-08</td>
+              <td class="px-md py-sm text-right">
+                <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
+                  title="Remove Student">
+                  <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                </button>
+              </td>
+            </tr>
+            <!-- Row 4 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+              <td class="px-md py-sm font-body-md">Saffron Kim</td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant">
+                Junior</td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+                1997-08-30</td>
+              <td class="px-md py-sm text-right">
+                <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
+                  title="Remove Student">
+                  <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-md flex justify-end">
+        <p class="font-label-sm text-outline">Total Students: 4</p>
+      </div>
+    </section>
+  </div>
+</main>
+{% endblock main %}
