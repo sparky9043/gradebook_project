@@ -5,18 +5,24 @@
         </div>
         {% if user.is_authenticated %}
         <nav class="hidden md:flex gap-6 flex-1 justify-center">
-            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+            <a class="text-slate-600 dark:text-slate-400 hover:border-b-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out "
+              href="{% url 'gradebook:home' %}"
+            >
+              <span
+                class="material-symbols-outlined">home</span>
+            </a>
+            <a class="text-slate-600 dark:text-slate-400 hover:border-b-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
                 href="{% url 'gradebook:courses' %}">Courses</a>
-            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+            <a class="text-slate-600 dark:text-slate-400 hover:border-b-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
                 href="{% url 'gradebook:students' %}">Students</a>
-            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+            <a class="text-slate-600 dark:text-slate-400 hover:border-b-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
                 href="#">Grades</a>
         </nav>
         {% else %}
         <nav class="hidden md:flex gap-6 flex-1 justify-center">
-            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+            <a class="text-slate-600 dark:text-slate-400 hover:border-b-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
                 href="#">Features</a>
-            <a class="text-slate-600 dark:text-slate-400 hover:border-l-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+            <a class="text-slate-600 dark:text-slate-400 hover:border-b-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
                 href="#">About</a>
         </nav>
         {% endif %}
