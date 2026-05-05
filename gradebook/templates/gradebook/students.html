@@ -1,5 +1,9 @@
 <ul>
 {% for student in students %}
-  <li>{{ student }}</li>
+  <li>
+    <a href="{% url 'gradebook:student_detail' student.pk %}">
+      {{ student }}
+    </a>
+  </li>
 {% endfor %}
 </ul>
