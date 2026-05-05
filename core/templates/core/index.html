@@ -1,146 +1,48 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<main class="pt-24">
-  <!-- Hero Section -->
-  <section class="relative min-h-[921px] flex items-center px-12 overflow-hidden bg-surface">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-      <div class="md:col-span-7 z-10">
-        <span class="font-label text-xs uppercase tracking-[0.3em] text-secondary mb-6 block font-bold">Volume
-          I : The Sacred Editorial</span>
-        <h1
-          class="font-headline text-[3.5rem] md:text-[5.5rem] leading-[0.95] text-on-surface mb-8 -tracking-[0.02em] font-medium">
-          Cultivating <br />
-          <span class="italic text-primary">Scholarly Depth</span> <br />
-          with Grace.
-        </h1>
-        <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
-          Where academic rigor meets aesthetic tranquility. We believe that the environment of learning
-          should be as intentional as the curriculum itself.
+<main class="max-w-4xl mx-auto px-6 pt-24 pb-32">
+    <!-- Hero Title -->
+    <section class="mb-24">
+        <h1 class="font-h1 text-h1 text-on-surface mb-6">The Academic Atelier</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            A disciplined environment for scholarly work. We provide the structural framework for deep cognitive
+            focus, removing digital noise to facilitate the unhindered consumption and creation of knowledge.
         </p>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <button
-            class="bg-linear-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-full font-semibold shadow-lg">
-            Begin Your Journey
-          </button>
-          <button
-            class="bg-surface-container-lowest border border-outline-variant/15 text-primary px-10 py-4 rounded-full font-semibold hover:bg-surface-container-low transition-colors">
-            The Philosophy
-          </button>
-        </div>
-      </div>
-      <div class="md:col-span-5 relative mt-12 md:mt-0">
-        <div class="aspect-4/5 rounded-lg overflow-hidden editorial-shadow relative group">
-          <img alt="Classical library"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            data-alt="Interior of a classical luxury library with warm wood tones, tall bookshelves, and soft natural light filtering through high windows"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsNNWL1PDEqKzi05VCn4_fi5x2ek7O82GUU7DHJI9kalOxsXZl_EwPo3UT8TZCwMDpr8UNS62vjQgL7gmV9AAzU288HQz_IDkOPIGmwd8wPhCAGk3RHgXYdFvk4PcJpCm5ClLKp5j6m1YE8ITtKtMNO0J4kwEp1PPswoex9RKN4VB0hgaqmuM5NAnbevMUJOlmGXWrWqkRw_8KNj3Tw0ARdZ6EqWHUmN8Fz0CgsOLZ8nti31_SpmW_JjSMgQ6oyzTfWfbZzgQeme1Z" />
-          <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-        </div>
-        <!-- Asymmetric Overlay Card -->
-        <div
-          class="absolute -bottom-10 -left-20 hidden lg:block bg-surface-container-lowest p-8 rounded-lg editorial-shadow max-w-[280px]">
-          <span class="material-symbols-outlined text-secondary text-4xl mb-4"
-            style="font-variation-settings: 'FILL' 1;">auto_stories</span>
-          <h3 class="font-headline text-2xl italic text-on-surface mb-2">Refined Wisdom</h3>
-          <p class="font-body text-sm text-on-surface-variant leading-relaxed">A curriculum designed to
-            transcend the noise of the digital age.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Bento Core Features -->
-  <section class="py-32 px-12 bg-surface-container-low">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6">Foundations of the Atelier</h2>
-        <p class="font-body text-on-surface-variant max-w-2xl mx-auto">Our four pillars define a sanctuary
-          for the mind, body, and spirit to engage in deep intellectual pursuit.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto">
-        <!-- Bento Card 1 -->
-        <div
-          class="md:col-span-8 bg-surface-container-lowest rounded-lg p-10 flex flex-col justify-between editorial-shadow min-h-[400px]">
-          <div>
-            <span class="material-symbols-outlined text-primary mb-6 text-3xl">history_edu</span>
-            <h3 class="font-headline text-3xl mb-4">Timeless Pedagogy</h3>
-            <p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-xl">
-              Reclaiming the art of slow learning through Socratic dialogue and handwritten
-              reflections. We value the process as much as the conclusion.
-            </p>
-          </div>
-          <div class="mt-8 flex items-center text-primary font-semibold gap-2 cursor-pointer group">
-            Explore Curriculum
-            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
-          </div>
-        </div>
-        <!-- Bento Card 2 -->
-        <div
-          class="md:col-span-4 bg-primary text-on-primary rounded-lg p-10 flex flex-col justify-between editorial-shadow">
-          <span class="material-symbols-outlined text-white/50 text-5xl self-end">castle</span>
-          <div>
-            <h3 class="font-headline text-2xl mb-2">Sacred Spaces</h3>
-            <p class="text-on-primary/80 text-sm leading-relaxed">
-              Our campus is designed to be a physical manifestation of quiet contemplation and focused
-              research.
-            </p>
-          </div>
-        </div>
-        <!-- Bento Card 3 -->
-        <div class="md:col-span-4 bg-surface-container-high rounded-lg p-10 editorial-shadow">
-          <div class="mb-8 overflow-hidden rounded-lg">
-            <img alt="Quiet study area" class="w-full h-48 object-cover grayscale"
-              data-alt="Minimalist study desk with a single candle and an open book in a dimly lit, serene room"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8vn8T-hth2py-dcSyc4viImMPGCds7xN4vL8Dmen-NbGNKvik2tXBjYNExh3NBdQaqWC_YEZ6cOH6gBM9k8FqEdlQ2XwnUPMbugmoQ3aCKcuJity2aPH4K9u-jPut-cUeYOiBRepGMjTnFz5CfTU0wDo-WYq2CBQUsB9JFdlELeAgPe5reRRFXxKcy9yQftX9hthXks_kvV55bV9Uylv4RwonZQ3GE6Yu0c85kAH4_876UqYVJ88GMpOEFs0ihdheus_yCozBN_h9" />
-          </div>
-          <h3 class="font-headline text-xl mb-3">Quiet Influence</h3>
-          <p class="font-body text-sm text-on-surface-variant">Influencing the world through the power of
-            silent concentration and profound output.</p>
-        </div>
-        <!-- Bento Card 4 -->
-        <div
-          class="md:col-span-8 bg-surface-container-lowest rounded-lg p-10 flex items-center gap-10 editorial-shadow">
-          <div
-            class="hidden sm:block w-1/3 aspect-square rounded-full overflow-hidden border-8 border-surface-container-low">
-            <img alt="Faculty Portrait" class="w-full h-full object-cover"
-              data-alt="Portrait of a distinguished scholar with a warm expression in a sunlit academic office"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHTE_Z1r_LAsdhH9fw4q9BJRP0kgkaD5EY8nhuxIm7Qodk_U6DVo-X5XeTgaiCN3JIXiSn2P3JTFKhWbF8EyGPSzHF0avWUdPYRfOyza7mIA5yOlWFoJ8kg5OG8_3ssNzZmNjIdq5HrXSf1ihzofUos54QMaJfmVxWitNaiNauhw8ksSGnuwaKoUaFUxSfRIt-Pof87VPL2V9pt5M4FEvKJqOo9fKWb6x-YCbrkoC000RDQYgsRXUF6rtMoGy_L_NjwouQZS48NkXG" />
-          </div>
-          <div class="flex-1">
-            <h3 class="font-headline text-2xl mb-4 italic">Guided by Mastery</h3>
-            <p class="font-body text-on-surface-variant leading-relaxed">
-              Our faculty are practitioners first—authors, philosophers, and artists dedicated to the
-              apprenticeship of the next generation.
-            </p>
-            <div class="mt-6 font-label text-xs uppercase tracking-widest text-secondary font-bold">
-              Faculty Directory — 2024</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Newsletter / CTA -->
-  <section class="py-24 px-12 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-block p-4 rounded-full bg-surface-container-low mb-8">
-        <span class="material-symbols-outlined text-secondary">local_library</span>
-      </div>
-      <h2 class="font-headline text-4xl md:text-6xl mb-8 -tracking-[0.01em]">Join the <span class="italic">Select
-          Few.</span></h2>
-      <p class="font-body text-xl text-on-surface-variant mb-12">Applications for the Autumn intake are now
-        being reviewed on a rolling basis. Seek the stillness that yields greatness.</p>
-      <div class="max-w-md mx-auto">
-        <div class="flex p-1 bg-surface-container-low rounded-full border border-outline-variant/15">
-          <input class="bg-transparent border-none focus:ring-0 px-6 py-3 flex-1 font-body text-on-surface"
-            placeholder="Your academic email" type="email" />
-          <button class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold shadow-md">
-            Apply
-          </button>
-        </div>
-        <p class="mt-6 text-xs text-on-surface-variant font-label uppercase tracking-widest opacity-60">
-          Strict Confidentiality Maintained</p>
-      </div>
-    </div>
-  </section>
+    </section>
+    <!-- Editorial Content: About Section -->
+    <article class="space-y-16">
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+            <div class="md:col-span-4">
+                <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Courses</span>
+            </div>
+            <div class="md:col-span-8">
+                <h2 class="font-h2 text-h2 mb-6">Course Management</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">Teachers can easily create,
+                    organize, and manage their full curriculum and course list within a unified interface.</p>
+            </div>
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+            <div class="md:col-span-4">
+                <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Students</span>
+            </div>
+            <div class="md:col-span-8">
+                <h2 class="font-h2 text-h2 mb-6">Student Enrollment</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Add students to specific courses,
+                    manage class rosters, and maintain direct communication with every learner.</p>
+            </div>
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start border-t border-slate-200 pt-16">
+            <div class="md:col-span-4">
+                <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Grades</span>
+            </div>
+            <div class="md:col-span-8">
+                <h2 class="font-h2 text-h2 mb-6">Academic Tracking</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-8">Efficiently track student
+                    progress, record assessment results, and assign final grades through an intuitive grading
+                    system.</p>
+            </div>
+        </section>
+    </article>
 </main>
 {% endblock main %}

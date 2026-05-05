@@ -1,4 +1,23 @@
-<nav
+<header class="w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
+        <div class="flex-1 flex justify-start">
+            <span class="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">Academia</span>
+        </div>
+        <nav class="hidden md:flex gap-6 flex-1 justify-center">
+            <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
+                href="#">Features</a>
+            <a class="text-blue-600 dark:text-blue-400 border-l-4 border-blue-600 pl-2 font-body-md text-body-md duration-200 ease-in-out"
+                href="#">About</a>
+        </nav>
+        <div class="flex-1 flex justify-end">
+            <button
+                class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out">
+                Login
+            </button>
+        </div>
+    </div>
+</header>
+{% comment %} <nav
   class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm shadow-blue-900/5 flex justify-between items-center px-12 py-6">
   <div class="font-headline italic text-2xl text-blue-900">Academy Editorial</div>
   <div class="hidden md:flex items-center space-x-12 font-headline text-lg tracking-tight">
@@ -29,4 +48,4 @@
     </button>
   </form>
   {% endif %}
-</nav>
+</nav> {% endcomment %}
