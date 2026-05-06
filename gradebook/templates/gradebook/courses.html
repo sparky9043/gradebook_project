@@ -20,6 +20,7 @@
           <th class="font-label-sm text-label-sm p-sm text-on-surface uppercase tracking-widest">Course Name</th>
           <th class="font-label-sm text-label-sm p-sm text-on-surface uppercase tracking-widest">Teacher</th>
           <th class="font-label-sm text-label-sm p-sm text-on-surface uppercase tracking-widest">Department</th>
+          <th class="font-label-sm text-label-sm p-sm text-on-surface uppercase tracking-widest">Students</th>
         </tr>
       </thead>
       <tbody class="font-body-md text-body-md">
@@ -29,6 +30,7 @@
             {{ course.title }}</a></td>
           <td class="p-sm text-on-surface-variant">{{ user.username }}</td>
           <td class="p-sm text-on-surface-variant">{{ user.department }}</td>
+          <td class="p-sm text-on-surface-variant">{{ course.enrollments.count }}</td>
         </tr>
         {% endfor %}
       </tbody>
