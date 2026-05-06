@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Student, Course
+from .models import Student, Course, Enrollment
 from datetime import date
 from django.contrib.auth import get_user_model
 
@@ -35,3 +35,31 @@ class GradebookTests(TestCase):
         self.assertEqual(student.first_name, "Jimmy")
         self.assertEqual(student.last_name, "Hendrix")
         self.assertEqual(student.dob.year, 2011)
+
+    def test_create_enrollment(self):
+        Teacher = get_user_model()
+        teacher = Teacher.objects.create_user(
+            username="testuser",
+            password="testuser1234",
+            email="testuser@example.com",
+        )
+
+        course = Course.objects.create(
+            title="Introduction to Philosophy",
+            teacher=teacher,
+        )
+
+        student = Student.objects.create(
+            first_name="Jimmy",
+            last_name="Hendrix",
+            dob=date(2011, 10, 13),
+            grade_level=10,
+        )
+
+        enrollment = Enrollment.objects.create(
+            course=course, student=student, final_grade="A"
+        )
+
+        self.assertEqual(enrollment.course.title, "Introduction to Philosophy")
+        self.assertEqual(enrollment.student.last_name, "Hendrix")
+        self.assertEqual(enrollment.final_grade, "A")
