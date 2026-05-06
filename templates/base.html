@@ -144,13 +144,14 @@
 
 <body class="font-body-md antialiased">
   {% if not hide_nav %}
-  {% include 'nav.html' %}
+    {% include 'nav.html' %}
   {% endif %}
 
   {% block main %} {% endblock main %}
+  {% include 'message_container.html' %}
 
   {% if not hide_footer %}
-  {% include 'footer.html' %}
+    {% include 'footer.html' %}
   {% endif %}
 
   <!-- {% if show_sticky %}
