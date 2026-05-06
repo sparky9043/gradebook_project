@@ -1,4 +1,117 @@
-<h2>{{ student }}</h2>
+{% extends 'base.html' %}
+{% block main %}
+<main class="max-w-container-max mx-auto px-gutter py-xl bg-white">
+  <!-- Page Header Section -->
+  <header class="mb-xl">
+    <div class="flex items-center gap-base text-primary mb-xs">
+      <span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+      <a class="font-label-sm text-label-sm hover:underline" href="#">Back to Student Roster</a>
+    </div>
+    <h2 class="font-h2 text-h2 text-on-background">{{ student }}</h2>
+    <div class="flex items-center gap-sm mt-sm text-on-surface-variant">
+      <span class="material-symbols-outlined" data-icon="badge">badge</span>
+      <span class="font-body-md text-body-md">Student ID: #2024-0081</span>
+    </div>
+  </header>
+  <!-- Academic Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-start">
+    <!-- Left Column: Bio & Contact -->
+    <aside class="md:col-span-4 space-y-lg">
+      <div class="p-md border border-surface-variant">
+        <h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-md">Bio</h4>
+        <div class="space-y-sm">
+          <div class="flex justify-between items-center py-xs border-b border-surface-variant">
+            <span class="font-body-md text-body-md text-on-surface-variant">Name</span>
+            <span class="font-body-md text-body-md">{{ student }}</span>
+          </div>
+          <div class="flex justify-between items-center py-xs border-b border-surface-variant">
+            <span class="font-body-md text-body-md text-on-surface-variant">Grade Level</span>
+            <span class="font-body-md text-body-md">{{ student.grade_level }}th Grade </span>
+          </div>
+          <div class="flex justify-between items-center py-xs">
+            <span class="font-body-md text-body-md text-on-surface-variant">Date of Birth</span>
+            <span class="font-body-md text-body-md">May 15, 2002</span>
+          </div>
+        </div>
+      </div>
+      {% comment %} <div class="p-md border border-surface-variant">
+        <h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-md">Contact
+          Information</h4>
+        <ul class="space-y-sm font-body-md text-body-md">
+          <li class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+            <span>{{ student|lower|replace:" ","." }}@atelier.edu</span>
+          </li>
+          <li class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-[20px]" data-icon="phone">phone</span>
+            <span>+1 (555) 012-3456</span>
+          </li>
+        </ul>
+      </div> {% endcomment %}
+    </aside>
+    <!-- Right Column: Enrollment Records -->
+    <section class="md:col-span-8">
+      <div class="flex items-center justify-between mb-md">
+        <h3 class="font-h3 text-h3 text-on-background">Enrolled Courses</h3>
+        <div class="flex gap-sm">
+          <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+            data-icon="filter_list">filter_list</span>
+          <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+            data-icon="download">download</span>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse bg-white border border-surface-variant">
+          <thead class="bg-surface-container text-on-surface-variant">
+            <tr>
+              <th class="px-md py-sm font-label-sm text-label-sm text-left font-medium">Course Name</th>
+              <th class="px-md py-sm font-label-sm text-label-sm text-right font-medium">Final Grade</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-variant">
+            <!-- Row 1 -->
+            {% for record in records %}
+            <tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+              <td class="px-md py-md">
+                <div class="flex items-center gap-md">
+                  <div class="w-10 h-10 bg-primary-fixed flex items-center justify-center shrink-0">
+                    {% if record.course.teacher.department == 'English' %}
+                    <span class="material-symbols-outlined text-on-primary-fixed" data-icon="menu_book">menu_book</span>
+                    {% elif record.course.teacher.department == 'Math' %}
+                    <span class="material-symbols-outlined text-on-primary-fixed" data-icon="menu_book">function</span>
+                    {% endif %}
+                  </div>
+                  <div>
+                    <p class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">
+                      {{ record.course }}</p>
+                    <p class="font-label-sm text-label-sm text-on-surface-variant">Teacher: {{ record.course.teacher }} • Subject: {{ record.course.teacher.department }}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-md py-md text-right">
+                <span class="font-h3 text-h3 text-primary">{{ record.final_grade }}</span>
+              </td>
+            </tr>
+            {% empty %}
+            <div>
+              The student is not enrolled in any courses
+            </div>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-lg pt-lg border-t border-surface-variant flex justify-end">
+        <button
+          class="flex items-center gap-xs font-label-sm text-label-sm text-primary hover:bg-primary-fixed px-sm py-xs transition-colors">
+          <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+          Enroll in New Course
+        </button>
+      </div>
+    </section>
+  </div>
+</main>
+{% endblock main %}
+{% comment %} <h2>{{ student }}</h2>
 <h3>Enrolled Courses</h3>
 <div>
   <ul>
@@ -7,12 +120,12 @@
       <div>
         {{ record.course }}
         {% if record.final_grade %}
-          {{ record.final_grade }}
+        {{ record.final_grade }}
         {% else %}
-          <span>N/A</span>
+        <span>N/A</span>
         {% endif %}
       </div>
     </li>
     {% endfor %}
   </ul>
-</div>
+</div> {% endcomment %}
