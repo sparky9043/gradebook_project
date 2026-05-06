@@ -75,11 +75,7 @@
               <td class="px-md py-md">
                 <div class="flex items-center gap-md">
                   <div class="w-10 h-10 bg-primary-fixed flex items-center justify-center shrink-0">
-                    {% if record.course.teacher.department == 'English' %}
-                    <span class="material-symbols-outlined text-on-primary-fixed" data-icon="menu_book">menu_book</span>
-                    {% elif record.course.teacher.department == 'Math' %}
-                    <span class="material-symbols-outlined text-on-primary-fixed" data-icon="menu_book">function</span>
-                    {% endif %}
+                    {% include 'gradebook/partials/subject_materials_icon.html' %}
                   </div>
                   <div>
                     <p class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">

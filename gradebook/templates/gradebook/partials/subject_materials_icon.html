@@ -1,0 +1,9 @@
+{% if record.course.teacher.department == 'English' %}
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="menu_book">menu_book</span>
+{% elif record.course.teacher.department == 'Math' %}
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="function">function</span>
+{% elif record.course.teacher.department == 'Science' %}
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="menu_book">science</span>
+{% elif record.course.teacher.department == 'History' %}
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="menu_book">history_edu</span>
+{% endif %}
