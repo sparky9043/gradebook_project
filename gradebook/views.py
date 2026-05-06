@@ -60,7 +60,7 @@ class StudentsListView(LoginRequiredMixin, ListView):
     context_object_name = "students"
 
     def get_queryset(self):
-        students = Student.objects.all().order_by("grade_level")
+        students = Student.objects.all().order_by("grade_level", "last_name")
         return students
 
 
@@ -97,7 +97,7 @@ def create_student_view(request: HttpRequest) -> HttpResponse:
                 dob=dob,
                 grade_level=grade_level,
             )
-            messages.success(request, "Student Created!")
+            messages.success(request, f"Student: {first_name} {last_name} Created!")
             return redirect("gradebook:students")
         except ValueError as e:
             messages.error(request, e)
