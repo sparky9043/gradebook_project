@@ -112,4 +112,5 @@ This is my final project that I completed for ComIT course.
 [ x ] Create toast message \
 [ x ] Use `<dialog>` for creating student \
 [ x ] Show each student detail when clicking student name \
-[  ] Create `Enrollment` form and views
+[  ] Consider adding pagination in List View \
+[  ] Create `Enrollment` form and views \
