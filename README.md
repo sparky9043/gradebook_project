@@ -96,9 +96,20 @@ This is my final project that I completed for ComIT course.
   2. Use `DetailView` to show `students/<int:pk>/` details for each student
   3. Major style upgrade
 
+### 5/6/2026
+  1. Make `students/<int:pk>/` path display student details
+  2. Show student bio (i.e. dob) and enrolled courses
+  3. Make each enrolled course show different materials icon by department
+  4. Use `<dialog>` element for creating new students
+  5. Add `static/js/addStudentDialog.js` and `static/js/toastMessage.js` files for adding event listeners and timeouts for toast and show dialog buttons
+  6. Make each toast message show either red or green icons for success or error messages, respectively
+
 ## To-Do List
 
 [ x ] Create `Student` and `Enrollment` models \
 [ x ] Add a few students and make enroll them into courses and assign grades \
 [ x ] Create `Student` views \
+[ x ] Create toast message
+[ x ] Use `<dialog>` for creating student
+[ x ] Show each student detail when clicking student name
 [  ] Create `Enrollment` form and views
