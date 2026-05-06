@@ -1,0 +1,59 @@
+<dialog
+  id="add-student"
+  class="fixed inset-0 m-auto w-full max-w-[400px] p-0 bg-surface-container-lowest border border-surface-variant shadow-none outline-none"
+>
+  <div class="p-lg">
+    <!-- Header -->
+    <div class="flex justify-between items-start mb-lg">
+      <h2 class="font-h3 text-h3 text-on-background">Add New Student</h2>
+      <button class="text-on-surface-variant hover:text-on-background transition-colors">
+        <span class="material-symbols-outlined" data-icon="close">close</span>
+      </button>
+    </div>
+    <!-- Form -->
+    <form class="flex flex-col gap-md">
+      <div class="flex flex-col gap-xs">
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="first-name">First Name</label>
+        <input
+          class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest"
+          id="first-name" placeholder="e.g. Julian" type="text" />
+      </div>
+      <div class="flex flex-col gap-xs">
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="last-name">Last Name</label>
+        <input
+          class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest"
+          id="last-name" placeholder="e.g. Huxley" type="text" />
+      </div>
+      <div class="flex flex-col gap-xs">
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="dob">Date of Birth</label>
+        <input
+          class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest"
+          id="dob" type="date" />
+      </div>
+      <div class="flex flex-col gap-xs">
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="grade">Grade Level</label>
+        <select
+          class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest appearance-none"
+          id="grade">
+          <option>Grade 9</option>
+          <option>Grade 10</option>
+          <option>Grade 11</option>
+          <option>Grade 12</option>
+        </select>
+      </div>
+      <!-- Actions -->
+      <div class="flex flex-col gap-base mt-md">
+        <button
+          class="w-full bg-primary text-on-primary font-label-sm text-label-sm py-sm hover:brightness-95 transition-all"
+          type="submit">
+          Add Student
+        </button>
+        <button
+          class="w-full border border-primary text-primary font-label-sm text-label-sm py-sm hover:bg-surface-container-low transition-all"
+          type="button">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</dialog>
