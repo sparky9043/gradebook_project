@@ -14,34 +14,46 @@
       </button>
     </div>
     <!-- Form -->
-    <form class="flex flex-col gap-md">
+    <form
+      class="flex flex-col gap-md"
+      method="post"
+      action="{% url 'gradebook:create_student' %}"
+    >{% csrf_token %}
       <div class="flex flex-col gap-xs">
-        <label class="font-label-sm text-label-sm text-on-surface-variant" for="first-name">First Name</label>
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="id_first_name">First Name</label>
         <input
           class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest"
-          id="first-name" placeholder="e.g. Julian" type="text" />
+          id="id_first_name" placeholder="e.g. Julian" type="text"
+          name="first_name"
+        />
       </div>
       <div class="flex flex-col gap-xs">
-        <label class="font-label-sm text-label-sm text-on-surface-variant" for="last-name">Last Name</label>
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="id_last_name">Last Name</label>
         <input
           class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest"
-          id="last-name" placeholder="e.g. Huxley" type="text" />
+          id="last-name" placeholder="e.g. Huxley" type="text"
+          name="last_name"
+        />
       </div>
       <div class="flex flex-col gap-xs">
-        <label class="font-label-sm text-label-sm text-on-surface-variant" for="dob">Date of Birth</label>
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="id_dob">Date of Birth</label>
         <input
           class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest"
-          id="dob" type="date" />
+          id="id_dob" type="date"
+          name="dob"
+        />
       </div>
       <div class="flex flex-col gap-xs">
-        <label class="font-label-sm text-label-sm text-on-surface-variant" for="grade">Grade Level</label>
+        <label class="font-label-sm text-label-sm text-on-surface-variant" for="id_grade_level">Grade Level</label>
         <select
           class="w-full border border-outline px-sm py-xs font-body-md text-body-md focus:border-primary focus:ring-0 outline-none bg-surface-container-lowest appearance-none"
-          id="grade">
-          <option>Grade 9</option>
-          <option>Grade 10</option>
-          <option>Grade 11</option>
-          <option>Grade 12</option>
+          id="id_grade_level"
+          name="grade_level"
+        >
+          <option value="9">Grade 9</option>
+          <option value="10">Grade 10</option>
+          <option value="11">Grade 11</option>
+          <option value="12">Grade 12</option>
         </select>
       </div>
       <!-- Actions -->

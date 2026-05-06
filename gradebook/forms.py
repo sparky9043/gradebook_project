@@ -1,5 +1,5 @@
 from django import forms
-from .models import Course
+from .models import Course, Student
 
 
 class CourseCreationForm(forms.ModelForm):
@@ -19,3 +19,14 @@ class CourseCreationForm(forms.ModelForm):
                 "placeholder": "e.g. The Ethics of Ancient Philosophy",
             }
         )
+
+
+class StudentCreationForm(forms.ModelForm):
+    class Meta:
+        model = Student
+        fields = [
+            "first_name",
+            "last_name",
+            "dob",
+            "grade_level",
+        ]
