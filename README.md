@@ -109,7 +109,7 @@ This is my final project that I completed for ComIT course.
 [ x ] Create `Student` and `Enrollment` models \
 [ x ] Add a few students and make enroll them into courses and assign grades \
 [ x ] Create `Student` views \
-[ x ] Create toast message
-[ x ] Use `<dialog>` for creating student
-[ x ] Show each student detail when clicking student name
+[ x ] Create toast message \
+[ x ] Use `<dialog>` for creating student \
+[ x ] Show each student detail when clicking student name \
 [  ] Create `Enrollment` form and views
