@@ -1,12 +1,15 @@
 <dialog
-  id="add-student"
+  id="add-student-dialog"
   class="fixed inset-0 m-auto w-full max-w-[400px] p-0 bg-surface-container-lowest border border-surface-variant shadow-none outline-none"
 >
   <div class="p-lg">
     <!-- Header -->
     <div class="flex justify-between items-start mb-lg">
       <h2 class="font-h3 text-h3 text-on-background">Add New Student</h2>
-      <button class="text-on-surface-variant hover:text-on-background transition-colors">
+      <button
+        id="close-student-dialog-btn"
+        class="text-on-surface-variant hover:text-on-background transition-colors"
+      >
         <span class="material-symbols-outlined" data-icon="close">close</span>
       </button>
     </div>
@@ -49,8 +52,10 @@
           Add Student
         </button>
         <button
+          id="cancel-add-student-btn"
           class="w-full border border-primary text-primary font-label-sm text-label-sm py-sm hover:bg-surface-container-low transition-all"
-          type="button">
+          type="button"
+        >
           Cancel
         </button>
       </div>
