@@ -9,29 +9,35 @@
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-md">
     <!-- Courses Card -->
-    <div
-      class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-      <div class="mt-4">
-        <h2 class="font-h1 text-h2 text-on-background mb-sm">Courses</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant">Curriculum management and scheduling.</p>
+    <a href="{% url 'gradebook:courses' %}">
+      <div
+        class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+        <div class="mt-4">
+          <h2 class="font-h1 text-h2 text-on-background mb-sm">Courses</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">Curriculum management and scheduling.</p>
+        </div>
+        <div class="flex justify-end">
+
+
+          <span
+            class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+        </div>
       </div>
-      <div class="flex justify-end">
-        <span
-          class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
-      </div>
-    </div>
+    </a>
     <!-- Students Card -->
-    <div
-      class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-      <div class="mt-4">
-        <h2 class="font-h1 text-h2 text-on-background mb-sm">Students</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant">Enrollment records and profiles.</p>
+    <a href="{% url 'gradebook:students' %}">
+      <div
+        class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+        <div class="mt-4">
+          <h2 class="font-h1 text-h2 text-on-background mb-sm">Students</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">Enrollment records and profiles.</p>
+        </div>
+        <div class="flex justify-end">
+          <span
+            class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+        </div>
       </div>
-      <div class="flex justify-end">
-        <span
-          class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
-      </div>
-    </div>
+    </a>
     <!-- Grades Card -->
     <div
       class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
