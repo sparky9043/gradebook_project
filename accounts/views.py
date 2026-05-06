@@ -11,6 +11,15 @@ class TeacherLoginView(LoginView):
     form_class = TeacherLoginForm
     template_name = "accounts/login.html"
 
+    def form_valid(self, form):
+        messages.success(self.request, "Login Successful")
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        messages.error(self.request, "Invalid Username or Password")
+        return response
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["hide_nav"] = True
