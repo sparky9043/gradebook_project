@@ -11,6 +11,7 @@ from .models import Course, Student, Enrollment
 from .forms import CourseCreationForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse, HttpResponseBadRequest
+from django.contrib import messages
 
 # Create your views here.
 
@@ -94,6 +95,7 @@ def create_student_view(request: HttpRequest) -> HttpResponse:
                 dob=dob,
                 grade_level=grade_level,
             )
+            messages.success(request, "Student Created!")
             return redirect("gradebook:students")
         except ValueError:
             print("invalid error")
