@@ -2,42 +2,49 @@
 
 {% block main %}
 <main class="max-w-7xl mx-auto px-6 py-xl min-h-[calc(100vh-160px)]">
-<!-- Hero Section Header -->
-<!-- Bento Grid / Cards Section -->
-<div class="mb-lg">
-<h1 class="font-h1 text-h2 text-on-background">Welcome, {{ user.username }}. What would you like to do?</h1>
-</div><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-md">
-<!-- Courses Card -->
-<div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-<div class="mt-4">
-<h2 class="font-h1 text-h2 text-on-background mb-sm">Courses</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Curriculum management and scheduling.</p>
-</div>
-<div class="flex justify-end">
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
-</div>
-</div>
-<!-- Students Card -->
-<div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-<div class="mt-4">
-<h2 class="font-h1 text-h2 text-on-background mb-sm">Students</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Enrollment records and profiles.</p>
-</div>
-<div class="flex justify-end">
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
-</div>
-</div>
-<!-- Grades Card -->
-<div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-<div class="mt-4">
-<h2 class="font-h1 text-h2 text-on-background mb-sm">Grades</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Academic performance tracking.</p>
-</div>
-<div class="flex justify-end">
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
-</div>
-</div>
-</div>
-<!-- Optional Subtle Image Placeholder to ground the minimalism -->
+  <!-- Hero Section Header -->
+  <!-- Bento Grid / Cards Section -->
+  <div class="mb-lg">
+    <h1 class="font-h1 text-h2 text-on-background">Welcome, {{ user.username }}. What would you like to do?</h1>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-md">
+    <!-- Courses Card -->
+    <div
+      class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+      <div class="mt-4">
+        <h2 class="font-h1 text-h2 text-on-background mb-sm">Courses</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Curriculum management and scheduling.</p>
+      </div>
+      <div class="flex justify-end">
+        <span
+          class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+      </div>
+    </div>
+    <!-- Students Card -->
+    <div
+      class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+      <div class="mt-4">
+        <h2 class="font-h1 text-h2 text-on-background mb-sm">Students</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Enrollment records and profiles.</p>
+      </div>
+      <div class="flex justify-end">
+        <span
+          class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+      </div>
+    </div>
+    <!-- Grades Card -->
+    <div
+      class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+      <div class="mt-4">
+        <h2 class="font-h1 text-h2 text-on-background mb-sm">Grades</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Academic performance tracking.</p>
+      </div>
+      <div class="flex justify-end">
+        <span
+          class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+      </div>
+    </div>
+  </div>
+  <!-- Optional Subtle Image Placeholder to ground the minimalism -->
 </main>
 {% endblock main %}
