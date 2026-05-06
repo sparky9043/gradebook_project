@@ -3,6 +3,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import CreateView
 from .forms import TeacherLoginForm, TeacherCreationForm
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 
 # Create your views here
@@ -18,7 +19,10 @@ class TeacherLoginView(LoginView):
 
 
 class TeacherLogoutView(LogoutView):
-    pass
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        messages.success(self.request, "Logout Successful")
+        return response
 
 
 class TeacherRegisterView(CreateView):
