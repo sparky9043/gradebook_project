@@ -76,10 +76,6 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
-# class CreateStudentView(LoginRequiredMixin, CreateView):
-#     model = Student
-#     context_object_name = "student"
-#     success_url = reverse_lazy("gradebook:students")
 @login_required
 def create_student_view(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
