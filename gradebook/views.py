@@ -83,12 +83,14 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
 @login_required
 def create_student_view(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
-        first_name = request.POST.get("first_name")
-        last_name = request.POST.get("last_name")
-        dob = request.POST.get("dob")
-        grade_level = request.POST.get("grade_level")
-
         try:
+            first_name = request.POST.get("first_name")
+            last_name = request.POST.get("last_name")
+            dob = request.POST.get("dob")
+            if not first_name or not last_name or not dob:
+                raise ValueError("Please fill out all the fields")
+
+            grade_level = request.POST.get("grade_level")
             new_student = Student.objects.create(
                 first_name=first_name,
                 last_name=last_name,
@@ -97,8 +99,8 @@ def create_student_view(request: HttpRequest) -> HttpResponse:
             )
             messages.success(request, "Student Created!")
             return redirect("gradebook:students")
-        except ValueError:
-            print("invalid error")
+        except ValueError as e:
+            messages.error(request, e)
             return redirect("gradebook:students")
     else:
         return HttpResponseBadRequest("400 Bad Request")
