@@ -5,7 +5,7 @@
   <header class="mb-xl">
     <div class="flex items-center gap-base text-primary mb-xs">
       <span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
-      <a class="font-label-sm text-label-sm hover:underline" href="#">Back to Student Roster</a>
+      <a class="font-label-sm text-label-sm hover:underline" href="{% url 'gradebook:students' %}">Back to Student Roster</a>
     </div>
     <h2 class="font-h2 text-h2 text-on-background">{{ student }}</h2>
     <div class="flex items-center gap-sm mt-sm text-on-surface-variant">
