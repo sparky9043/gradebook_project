@@ -100,3 +100,9 @@ def create_student_view(request: HttpRequest) -> HttpResponse:
             return redirect("gradebook:students")
     else:
         return HttpResponseBadRequest("400 Bad Request")
+
+
+@login_required
+def enroll_student_view(request: HttpResponse) -> HttpRequest:
+    if request.method == "GET":
+        return render(request, "gradebook/enrollment.html")
