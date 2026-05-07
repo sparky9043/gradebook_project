@@ -104,6 +104,13 @@ This is my final project that I completed for ComIT course.
   5. Add `static/js/addStudentDialog.js` and `static/js/toastMessage.js` files for adding event listeners and timeouts for toast and show dialog buttons
   6. Make each toast message show either red or green icons for success or error messages, respectively
 
+### 5/7/2026
+  1. Add `students/<int:pk>/enroll` path and show forms for enrolling student to course
+  2. Used FBV to `create enroll_student_view`
+  3. Used custom template `gradebook/enrollment.html` for enrolling student
+  4. Refactored JS code into a single `static/js/script.js` file
+  5. Fix error displayed in the console when the js file tried to attach an event listener to a null element
+
 ## To-Do List
 
 [ x ] Create `Student` and `Enrollment` models \
