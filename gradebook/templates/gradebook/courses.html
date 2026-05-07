@@ -28,7 +28,7 @@
         <tr class="border-b border-outline-variant transition-colors hover:bg-surface-container-low">
           <td class="p-sm"><a class="text-primary-container font-semibold hover:underline" href="{% url 'gradebook:course_detail' course.pk %}">
             {{ course.title }}</a></td>
-          <td class="p-sm text-on-surface-variant">{{ user.username }}</td>
+          <td class="p-sm text-on-surface-variant">{{ user.first_name }} {{ user.last_name }}</td>
           <td class="p-sm text-on-surface-variant">{{ user.department }}</td>
           <td class="p-sm text-on-surface-variant">{{ course.enrollments.count }}</td>
         </tr>
