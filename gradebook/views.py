@@ -122,6 +122,10 @@ def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
             messages.error(request, "there are no courses by that name")
             return HttpResponseBadRequest("")
 
+        if course.teacher.username != request.user.username:
+            messages.error(request, "Teacher does not have access to this course")
+            return HttpResponseBadRequest("")
+
         try:
             enrollment = Enrollment.objects.create(
                 student=student,
