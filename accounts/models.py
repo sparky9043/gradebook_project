@@ -12,6 +12,8 @@ class Teacher(AbstractUser):
         department (str): Department that teacher belongs to using choices
     """
 
+    first_name = models.CharField(max_length=100, default="", blank=True)
+    last_name = models.CharField(max_length=100, default="", blank=True)
     is_staff = models.BooleanField(default=True)
     department = models.CharField(
         max_length=50,

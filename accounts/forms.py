@@ -12,7 +12,11 @@ class TeacherCreationForm(UserCreationForm):
 
     class Meta:
         model = Teacher
-        fields = UserCreationForm.Meta.fields + ("department",)
+        fields = UserCreationForm.Meta.fields + (
+            "first_name",
+            "last_name",
+            "department",
+        )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
