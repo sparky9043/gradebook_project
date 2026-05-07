@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block main %}
+{% include 'gradebook/partials/enroll_student_dialog.html' %}
 <main class="max-w-container-max mx-auto px-gutter py-xl bg-white">
   <!-- Page Header Section -->
   <header class="mb-xl">
@@ -98,7 +99,9 @@
       </div>
       <div class="mt-lg pt-lg border-t border-surface-variant flex justify-end">
         <button
-          class="flex items-center gap-xs font-label-sm text-label-sm text-primary hover:bg-primary-fixed px-sm py-xs transition-colors">
+          id="show-enroll-student-modal-btn"
+          class="flex items-center gap-xs font-label-sm text-label-sm text-primary hover:bg-primary-fixed px-sm py-xs transition-colors"
+        >
           <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
           Enroll in New Course
         </button>

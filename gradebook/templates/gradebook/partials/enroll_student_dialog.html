@@ -1,11 +1,14 @@
 <dialog
-  class="p-0 border border-surface-variant bg-white w-full max-w-md shadow-2xl overflow-hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0"
-  id="enrollmentDialog" open="open">
+  id="enrollment-dialog"
+  class="fixed inset-0 m-auto w-full max-w-[400px] p-0 bg-surface-container-lowest border border-surface-variant shadow-none outline-none"
+>
   <div class="flex flex-col">
     <div class="flex items-center justify-between px-md py-sm border-b border-surface-variant bg-surface-container-low">
       <h3 class="font-h3 text-body-lg font-semibold text-on-background">Enroll Student in Course</h3>
-      <button class="p-xs text-on-surface-variant hover:text-primary transition-colors"
-        onclick="enrollmentDialog.close()">
+      <button
+        class="p-xs text-on-surface-variant hover:text-primary transition-colors"
+        id="close-enroll-student-modal-btn"
+      >
         <span class="material-symbols-outlined" data-icon="close">close</span>
       </button>
     </div>
@@ -28,8 +31,10 @@
           class="w-full sm:w-auto bg-primary text-on-primary px-lg py-xs font-label-sm text-label-sm hover:opacity-90 transition-all"
           type="submit">Enroll Student</button>
         <button
+          id="cancel-enroll-student-modal-btn"
           class="w-full sm:w-auto border border-outline-variant px-lg py-xs font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-low transition-all"
-          onclick="enrollmentDialog.close()" type="button">Cancel</button>
+          type="button"
+        >Cancel</button>
       </div>
     </form>
   </div>

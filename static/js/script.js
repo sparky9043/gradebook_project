@@ -35,6 +35,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000); 
   }
 
+  const enrollStudentDialog = () => {
+    const showEnrollStudentModalBtn = document.querySelector('#show-enroll-student-modal-btn');
+
+    const enrollmentDialog = document.querySelector('#enrollment-dialog');
+    console.log(enrollmentDialog);
+
+    if (showEnrollStudentModalBtn) {
+      showEnrollStudentModalBtn.addEventListener('click', () => {
+        enrollmentDialog.showModal();
+      });
+    }
+
+    if (enrollmentDialog) {
+      const cancelEnrollStudentModalBtn = enrollmentDialog.querySelector('#cancel-enroll-student-modal-btn');
+
+      const closeEnrollStudentModalBtn = enrollmentDialog.querySelector('#close-enroll-student-modal-btn');
+
+      const closeModalButtons = [cancelEnrollStudentModalBtn, closeEnrollStudentModalBtn];
+
+      closeModalButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          enrollmentDialog.close();
+        });
+      });
+    }
+  }
+
   addStudentDialog();
   addToastMessage();
+  enrollStudentDialog();
 });
