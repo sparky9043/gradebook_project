@@ -6,11 +6,16 @@ from django.views.generic import (
     DetailView,
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .models import Course, Student, Enrollment
 from .forms import CourseCreationForm
 from django.contrib.auth.decorators import login_required
-from django.http import HttpRequest, HttpResponse, HttpResponseBadRequest
+from django.http import (
+    HttpRequest,
+    HttpResponse,
+    HttpResponseBadRequest,
+    HttpResponseRedirect,
+)
 from django.contrib import messages
 
 # Create your views here.
@@ -73,6 +78,10 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         student = self.get_object()
         context["records"] = student.enrollments.filter(student=student).distinct()
+        # Courses by the current teacher
+        courses_queryset = self.request.user.courses.all()
+        courses = [course.title for course in courses_queryset]
+        context["courses"] = courses
         return context
 
 
@@ -105,11 +114,6 @@ def create_student_view(request: HttpRequest) -> HttpResponse:
 @login_required
 def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
     student = get_object_or_404(Student, pk=pk)
-    course_query_set = request.user.courses.all()
-    courses = [course.title for course in list(course_query_set)]
-    context = {"courses": courses}
-    if request.method == "GET":
-        return render(request, "gradebook/enrollment.html", context)
 
     if request.method == "POST":
         course_name = request.POST.get("course")
@@ -126,6 +130,11 @@ def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
             print(enrollment)
         except:
             messages.error(request, "The student is already enrolled in the course")
-            return render(request, "gradebook/enrollment.html", context)
+            return redirect("gradebook:student_detail", pk=pk)
 
+        messages.success(
+            request, f"{enrollment.student} enrolled to {enrollment.course.title}"
+        )
         return redirect("gradebook:student_detail", pk=pk)
+    else:
+        return HttpResponseRedirect(reverse(""))

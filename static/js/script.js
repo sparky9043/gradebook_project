@@ -39,8 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const showEnrollStudentModalBtn = document.querySelector('#show-enroll-student-modal-btn');
 
     const enrollmentDialog = document.querySelector('#enrollment-dialog');
-    console.log(enrollmentDialog);
-
+    
     if (showEnrollStudentModalBtn) {
       showEnrollStudentModalBtn.addEventListener('click', () => {
         enrollmentDialog.showModal();

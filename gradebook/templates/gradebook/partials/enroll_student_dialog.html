@@ -12,18 +12,17 @@
         <span class="material-symbols-outlined" data-icon="close">close</span>
       </button>
     </div>
-    <form class="p-md space-y-md" method="dialog">
+    <form class="p-md space-y-md" method="post" action="{% url 'gradebook:enroll' student.pk %}">{% csrf_token %}
       <div class="space-y-xs">
         <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
-          for="course-select">Select Course</label>
+          for="course">Select Course</label>
         <select
           class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-0 px-sm py-xs font-body-md text-body-md transition-colors outline-none"
-          id="course-select">
-          <option value="">Choose a course...</option>
-          <option value="cs405">Cloud Computing Architecture (CS-405)</option>
-          <option value="cs410">Machine Learning (CS-410)</option>
-          <option value="ph210">History of Logic (PH-210)</option>
-          <option value="ma301">Complex Analysis (MA-301)</option>
+          name="course"
+          id="course">
+          {% for course_title in courses %}
+          <option value="{{ course_title }}">{{ course_title }}</option>
+          {% endfor %}
         </select>
       </div>
       <div class="flex flex-col sm:flex-row-reverse gap-sm pt-sm">
