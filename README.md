@@ -112,5 +112,8 @@ This is my final project that I completed for ComIT course.
 [ x ] Create toast message \
 [ x ] Use `<dialog>` for creating student \
 [ x ] Show each student detail when clicking student name \
+[ x ] Create `Enrollment` form and views \
+[  ] Maybe consider using modals for enrolling a student as well \
+[  ] Consider using 'context' to include dialog in the base.html when entering certain views \
+     (i.e. dialog should only appear when in Students list page and Student details page)
 [  ] Consider adding pagination in List View \
-[  ] Create `Enrollment` form and views \
