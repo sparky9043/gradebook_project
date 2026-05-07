@@ -129,4 +129,3 @@ def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
             return render(request, "gradebook/enrollment.html", context)
 
         return redirect("gradebook:student_detail", pk=pk)
-        # return redirect("gradebook:student_detail", pk=pk)
