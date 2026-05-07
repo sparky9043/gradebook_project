@@ -3,6 +3,12 @@
 {% block main %}
 <h2>Record Student Grade</h2>
 <form method="post">{% csrf_token %}
+  <label for="course"></label>
+  <select name="course" id="course">
+    {% for course in courses %}
+    <option value="{{ course.title }}">{{ course.title }}</option>
+    {% endfor %}
+  </select>
   <button type='submit'>Enroll</button>
 </form>
 {% endblock main %}

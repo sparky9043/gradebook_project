@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import (
     TemplateView,
     ListView,
@@ -103,6 +103,30 @@ def create_student_view(request: HttpRequest) -> HttpResponse:
 
 
 @login_required
-def enroll_student_view(request: HttpResponse) -> HttpRequest:
+def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
+    student = get_object_or_404(Student, pk=pk)
+    course_query_set = request.user.courses.all()
+    courses = [course.title for course in list(course_query_set)]
+    context = {"courses": courses}
     if request.method == "GET":
-        return render(request, "gradebook/enrollment.html")
+        return render(request, "gradebook/enrollment.html", context)
+
+    if request.method == "POST":
+        course_name = request.POST.get("course")
+        course = Course.objects.get(title=course_name)
+        if not course:
+            messages.error(request, "there are no courses by that name")
+            return HttpResponseBadRequest("")
+
+        try:
+            enrollment = Enrollment.objects.create(
+                student=student,
+                course=course,
+            )
+            print(enrollment)
+        except:
+            messages.error(request, "The student is already enrolled in the course")
+            return render(request, "gradebook/enrollment.html", context)
+
+        return redirect("gradebook:student_detail", pk=pk)
+        # return redirect("gradebook:student_detail", pk=pk)
