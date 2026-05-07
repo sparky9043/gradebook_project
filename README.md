@@ -123,4 +123,6 @@ This is my final project that I completed for ComIT course.
 [  ] Maybe consider using modals for enrolling a student as well \
 [  ] Consider using 'context' to include dialog in the base.html when entering certain views \
      (i.e. dialog should only appear when in Students list page and Student details page)
+[  ] Add an `Enroll Student` button inside `StudentDetailView` \
+[  ] Apply styles from `design` folder for the `enroll_student_view` and make it into modal? \
 [  ] Consider adding pagination in List View \
