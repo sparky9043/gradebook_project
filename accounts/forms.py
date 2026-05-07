@@ -42,6 +42,16 @@ class TeacherCreationForm(UserCreationForm):
                 "class": "w-full pl-12 pr-10 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface appearance-none",
             }
         )
+        self.fields["first_name"].widget.attrs.update(
+            {
+                "class": "w-full pl-12 pr-10 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface appearance-none",
+            }
+        )
+        self.fields["last_name"].widget.attrs.update(
+            {
+                "class": "w-full pl-12 pr-10 py-3.5 bg-surface-container-low border border-outline-variant/15 rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all font-body text-sm text-on-surface appearance-none",
+            }
+        )
 
 
 class TeacherChangeForm(UserChangeForm):

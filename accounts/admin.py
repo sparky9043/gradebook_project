@@ -17,13 +17,19 @@ class TeacherAdmin(UserAdmin):
         "email",
         "department",
         "is_staff",
+        "first_name",
+        "last_name",
     ]
 
     fieldsets = (
         (
             None,
             {
-                "fields": ("department",),
+                "fields": (
+                    "department",
+                    "first_name",
+                    "last_name",
+                ),
             },
         ),
     )
@@ -32,7 +38,11 @@ class TeacherAdmin(UserAdmin):
         (
             None,
             {
-                "fields": ("department",),
+                "fields": (
+                    "department",
+                    "first_name",
+                    "last_name",
+                ),
             },
         ),
     )
