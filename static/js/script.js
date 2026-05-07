@@ -1,6 +1,6 @@
-const addStudentDialog = () => {
 document.addEventListener('DOMContentLoaded', () => {
-  // Show Dialog Button
+  const addStudentDialog = () => {
+    // Show Dialog Button
     const showStudentDialogBtn = document.querySelector('#show-student-dialog-btn');
 
     // Close Dialog Buttons
@@ -23,22 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
         addStudentDialog.close();
       }));
     }
-    
-
-  });  
-}
+  }
 
 
-const addToastMessage = () => {
-  document.addEventListener('DOMContentLoaded', () => {
+  const addToastMessage = () => {
     setTimeout(() => {
       const messageContainer = document.querySelector('#message-container');
       while(messageContainer.firstChild) {
         messageContainer.removeChild(messageContainer.firstChild);
       }
-    }, 5000);
-  });  
-}
+    }, 5000); 
+  }
 
-addStudentDialog();
-addToastMessage();
+  addStudentDialog();
+  addToastMessage();
+});
