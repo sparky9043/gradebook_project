@@ -11,15 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   // Event Listener on Show Dialog Button
-  showStudentDialogBtn.addEventListener('click', () => {
-    addStudentDialog.showModal();
-  });
+  if (addStudentDialog) {
+    showStudentDialogBtn.addEventListener('click', () => {
+      addStudentDialog.showModal();
+    });
+    // Event Listener on both Close Dialog Buttons
+    const cancelButtons = [closeStudentDialogBtn, cancelAddStudentBtn];
+  
+    cancelButtons.forEach((button) => button.addEventListener('click', () => {
+      addStudentDialog.close();
+    }));
+  }
   
 
-  // Event Listener on both Close Dialog Buttons
-  const cancelButtons = [closeStudentDialogBtn, cancelAddStudentBtn];
-
-  cancelButtons.forEach((button) => button.addEventListener('click', () => {
-    addStudentDialog.close();
-  }));
 });
