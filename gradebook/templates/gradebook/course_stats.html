@@ -21,7 +21,12 @@
     <p class="text-on-surface-variant font-body-md">Comprehensive analysis of student performance across academic
       disciplines.</p>
   </div>
-  <!-- Chart Container: Bokeh Style -->
-  {{ div| safe }}
+  {% if enrollments.count != 0 %}
+    {{ div| safe }}
+  {% else %}
+    <div>
+      <p class="text-on-surface-variant font-body-md">There are no students enrolled in this course</p>
+    </div>
+  {% endif %}
 </main>
 {% endblock main %}
