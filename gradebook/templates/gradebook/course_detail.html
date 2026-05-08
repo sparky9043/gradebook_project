@@ -37,8 +37,8 @@
         <h2 class="font-h2 text-h2">Enrolled Students</h2>
         <button
           class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors">
-          <span class="material-symbols-outlined" data-icon="person_add">person_add</span>
-          <span class="font-label-sm">Add Student</span>
+          <span class="material-symbols-outlined" data-icon="person_add">query_stats</span>
+          <span class="font-label-sm">View Stats</span>
         </button>
       </div>
       <div class="overflow-x-auto border border-outline-variant">
@@ -51,56 +51,34 @@
                 GRADE LEVEL</th>
               <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
                 DATE OF BIRTH</th>
-              <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant text-right">
-                ACTIONS</th>
+              <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+                Final Grade</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-outline-variant">
             <!-- Row 1 -->
+            {% for enrollment in enrollments %}
             <tr class="hover:bg-surface-container-low transition-colors group">
-              <td class="px-md py-sm font-body-md">Aris Thorne</td>
-              <td class="px-md py-sm font-body-md text-on-surface-variant">
-                Sophomore</td>
-              <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
-                1998-05-14</td>
-              <td class="px-md py-sm text-right">
-                <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
-                  title="Remove Student">
-                  <span class="material-symbols-outlined" data-icon="delete">delete</span>
-                </button>
-              </td>
-            </tr>
-            <!-- Row 2 -->
-            <tr class="hover:bg-surface-container-low transition-colors group">
-              <td class="px-md py-sm font-body-md">Elena Vance</td>
-              <td class="px-md py-sm font-body-md text-on-surface-variant">
-                Senior</td>
-              <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
-                1996-11-22</td>
-              <td class="px-md py-sm text-right">
-                <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
-                  title="Remove Student">
-                  <span class="material-symbols-outlined" data-icon="delete">delete</span>
-                </button>
-              </td>
-            </tr>
-            <!-- Row 3 -->
-            <tr class="hover:bg-surface-container-low transition-colors group">
-              <td class="px-md py-sm font-body-md">Marcus Holloway
+              <td class="px-md py-sm font-body-md">
+                {{ enrollment.student.first_name }}
+                {{ enrollment.student.last_name }}
               </td>
               <td class="px-md py-sm font-body-md text-on-surface-variant">
-                Freshman</td>
+                {{ enrollment.student.grade_level }}th
+              </td>
               <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
-                2000-01-08</td>
-              <td class="px-md py-sm text-right">
-                <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
+                {{ enrollment.student.dob|date }}
+              </td>
+              <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+                {{ enrollment.final_grade }}
+                {% comment %} <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
                   title="Remove Student">
                   <span class="material-symbols-outlined" data-icon="delete">delete</span>
-                </button>
+                </button> {% endcomment %}
               </td>
             </tr>
-            <!-- Row 4 -->
-            <tr class="hover:bg-surface-container-low transition-colors group">
+            {% endfor %}
+            {% comment %} <tr class="hover:bg-surface-container-low transition-colors group">
               <td class="px-md py-sm font-body-md">Saffron Kim</td>
               <td class="px-md py-sm font-body-md text-on-surface-variant">
                 Junior</td>
@@ -112,12 +90,12 @@
                   <span class="material-symbols-outlined" data-icon="delete">delete</span>
                 </button>
               </td>
-            </tr>
+            </tr> {% endcomment %}
           </tbody>
         </table>
       </div>
       <div class="mt-md flex justify-end">
-        <p class="font-label-sm text-outline">Total Students: 4</p>
+        <p class="font-label-sm text-outline">Total Students: {{ enrollments.count }}</p>
       </div>
     </section>
   </div>
