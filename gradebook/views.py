@@ -22,6 +22,7 @@ from bokeh.palettes import Bright6
 from bokeh.plotting import figure
 from bokeh.transform import factor_cmap
 from bokeh.embed import components
+from bokeh.models import HoverTool
 
 # Create your views here.
 
@@ -99,11 +100,16 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         #  Graph logic starts here
         source = ColumnDataSource(data=dict(grades=grades, counts=counts))
 
+        hover = HoverTool(
+            tooltips=[(grade, str(count)) for grade, count in grades_count.items()]
+        )
+
         p = figure(
             x_range=grades,
             height=350,
             toolbar_location=None,
-            title="Grade Distribution",
+            title=f"Grade Distribution",
+            tools=[hover],
         )
 
         p.vbar(
