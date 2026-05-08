@@ -17,6 +17,11 @@ from django.http import (
     HttpResponseRedirect,
 )
 from django.contrib import messages
+from bokeh.models import ColumnDataSource
+from bokeh.palettes import Bright6
+from bokeh.plotting import figure
+from bokeh.transform import factor_cmap
+from bokeh.embed import components
 
 # Create your views here.
 
@@ -69,6 +74,45 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         enrollments = Enrollment.objects.filter(course=self.get_object())
         context["enrollments"] = enrollments
+        grades_only = [enrollment.final_grade for enrollment in enrollments]
+        grades_count = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
+        for grade in grades_only:
+            if grade:
+                grades_count[grade] += 1
+
+        grades = [*grades_count]
+        counts = [*grades_count.values()]
+
+        source = ColumnDataSource(data=dict(grades=grades, counts=counts))
+
+        p = figure(
+            x_range=grades,
+            height=350,
+            toolbar_location=None,
+            title="Grade Distribution",
+        )
+
+        p.vbar(
+            x="grades",
+            top="counts",
+            width=0.9,
+            source=source,
+            legend_field="grades",
+            line_color="white",
+            fill_color=factor_cmap("grades", palette=Bright6, factors=grades),
+        )
+
+        p.xgrid.grid_line_color = None
+        p.y_range.start = 0
+        p.y_range.end = 9
+        p.legend.orientation = "horizontal"
+        p.legend.location = "center"
+
+        script, div = components(p)
+
+        context["script"] = script
+        context["div"] = div
+
         return context
 
 
