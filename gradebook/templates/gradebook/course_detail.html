@@ -62,8 +62,10 @@
             {% for enrollment in enrollments %}
             <tr class="hover:bg-surface-container-low transition-colors group">
               <td class="px-md py-sm font-body-md">
-                {{ enrollment.student.first_name }}
-                {{ enrollment.student.last_name }}
+                <a class="text-primary-container font-semibold hover:underline" href="{% url 'gradebook:student_detail' enrollment.student.pk %}">
+                  {{ enrollment.student.first_name }}
+                  {{ enrollment.student.last_name }}
+                </a>
               </td>
               <td class="px-md py-sm font-body-md text-on-surface-variant">
                 {{ enrollment.student.grade_level }}th
@@ -72,7 +74,11 @@
                 {{ enrollment.student.dob|date }}
               </td>
               <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
-                {{ enrollment.final_grade }}
+                {% if enrollment.final_grade %}
+                  {{ enrollment.final_grade }}
+                {% else %}
+                  N/A
+                {% endif %}
                 {% comment %} <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
                   title="Remove Student">
                   <span class="material-symbols-outlined" data-icon="delete">delete</span>
