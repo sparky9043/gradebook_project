@@ -106,7 +106,7 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         p.y_range.start = 0
         p.y_range.end = 9
         p.legend.orientation = "horizontal"
-        p.legend.location = "center"
+        p.legend.location = "top_center"
 
         script, div = components(p)
 
