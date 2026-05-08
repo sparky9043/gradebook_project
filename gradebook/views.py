@@ -61,6 +61,17 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
+class CourseStatsView(LoginRequiredMixin, DetailView):
+    model = Course
+    template_name = "gradebook/course_stats.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        enrollments = Enrollment.objects.filter(course=self.get_object())
+        context["enrollments"] = enrollments
+        return context
+
+
 class StudentsListView(LoginRequiredMixin, ListView):
     model = Student
     template_name = "gradebook/students.html"
