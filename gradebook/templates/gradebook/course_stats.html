@@ -5,15 +5,15 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-md border-b border-surface-variant pb-lg mb-lg">
     <div>
       <h4 class="font-label-sm text-label-sm text-outline mb-xs">Course Title</h4>
-      <p class="font-h3 text-h3 text-on-surface">Advanced Macroeconomics</p>
+      <p class="font-h3 text-h3 text-on-surface">{{ course.title }}</p>
     </div>
     <div>
       <h4 class="font-label-sm text-label-sm text-outline mb-xs">Course Instructor</h4>
-      <p class="font-h3 text-h3 text-on-surface">Dr. Elena Rodriguez</p>
+      <p class="font-h3 text-h3 text-on-surface">{{ course.teacher.first_name }} {{ course.teacher.last_name }}</p>
     </div>
     <div>
       <h4 class="font-label-sm text-label-sm text-outline mb-xs">Course Department</h4>
-      <p class="font-h3 text-h3 text-on-surface">Department of Economics</p>
+      <p class="font-h3 text-h3 text-on-surface">{{ course.teacher.department }}</p>
     </div>
   </div>
   <div class="mb-lg">
@@ -83,7 +83,7 @@
   <section class="mt-xl grid grid-cols-1 md:grid-cols-3 gap-lg">
     <div class="border border-surface-variant p-md">
       <h4 class="font-label-sm text-label-sm text-outline mb-xs">Sample Size</h4>
-      <p class="font-h3 text-h3 text-on-surface">1,248 Students</p>
+      <p class="font-h3 text-h3 text-on-surface">{{ enrollments.count }} Students</p>
     </div>
     <div class="border border-surface-variant p-md">
       <h4 class="font-label-sm text-label-sm text-outline mb-xs">Mean Grade</h4>
