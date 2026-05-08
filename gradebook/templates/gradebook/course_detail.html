@@ -35,11 +35,13 @@
     <section>
       <div class="flex justify-between items-end mb-md">
         <h2 class="font-h2 text-h2">Enrolled Students</h2>
-        <button
-          class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors">
+        <a
+          class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors"
+          href="{% url 'gradebook:course_stats' course.pk %}"
+        >
           <span class="material-symbols-outlined" data-icon="person_add">query_stats</span>
           <span class="font-label-sm">View Stats</span>
-        </button>
+        </a>
       </div>
       <div class="overflow-x-auto border border-outline-variant">
         <table class="w-full text-left border-collapse">
