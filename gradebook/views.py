@@ -83,6 +83,21 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         grades = [*grades_count]
         counts = [*grades_count.values()]
 
+        def convert_letter_to_number(letter_grade: str):
+            if letter_grade == "A":
+                return 4
+            if letter_grade == "B":
+                return 3
+            if letter_grade == "C":
+                return 2
+            if letter_grade == "D":
+                return 1
+            return 0
+
+        # for letter, count in grades_count:
+        #     number_grade = convert_letter_to_number(letter)
+        #     total = number_grade * count
+
         source = ColumnDataSource(data=dict(grades=grades, counts=counts))
 
         p = figure(

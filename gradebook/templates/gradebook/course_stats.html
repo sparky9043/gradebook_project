@@ -22,11 +22,21 @@
       disciplines.</p>
   </div>
   {% if enrollments.count != 0 %}
-    {{ div| safe }}
+  {{ div| safe }}
   {% else %}
-    <div>
-      <p class="text-on-surface-variant font-body-md">There are no students enrolled in this course</p>
-    </div>
+  <div>
+    <p class="text-on-surface-variant font-body-md">There are no students enrolled in this course</p>
+  </div>
   {% endif %}
+  <section class="mt-xl grid grid-cols-1 md:grid-cols-3 gap-lg">
+    <div class="border border-surface-variant p-md">
+      <h4 class="font-label-sm text-label-sm text-outline mb-xs">Sample Size</h4>
+      <p class="font-h3 text-h3 text-on-surface">{{ enrollments.count }} Students</p>
+    </div>
+    <div class="border border-surface-variant p-md">
+      <h4 class="font-label-sm text-label-sm text-outline mb-xs">Mean Grade</h4>
+      <p class="font-h3 text-h3 text-on-surface">B+ (3.42)</p>
+    </div>
+  </section>
 </main>
 {% endblock main %}
