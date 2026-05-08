@@ -111,6 +111,11 @@ This is my final project that I completed for ComIT course.
   4. Refactored JS code into a single `static/js/script.js` file
   5. Fix error displayed in the console when the js file tried to attach an event listener to a null element
 
+### 5/8/2026
+  1. Create a `gradebook/courses/<int:pk>/stats` url and show basic stats per course
+  2. Install `bokeh` package to convert grade distribution to bar graph
+  3. Add material icons to `Login`, `Logout`, and `Add Student` buttons for cleaner UI 
+
 ## To-Do List
 
 [ x ] Create `Student` and `Enrollment` models \
