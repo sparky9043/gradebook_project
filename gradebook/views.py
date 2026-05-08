@@ -18,7 +18,7 @@ from django.http import (
 )
 from django.contrib import messages
 from bokeh.models import ColumnDataSource
-from bokeh.palettes import Bright6
+import bokeh.palettes as palettes
 from bokeh.plotting import figure
 from bokeh.transform import factor_cmap
 from bokeh.embed import components
@@ -86,16 +86,45 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         grades = [*grades_count]
         counts = [*grades_count.values()]
 
-        # def convert_letter_to_number(letter_grade: str):
-        #     if letter_grade == "A":
-        #         return 4
-        #     if letter_grade == "B":
-        #         return 3
-        #     if letter_grade == "C":
-        #         return 2
-        #     if letter_grade == "D":
-        #         return 1
-        #     return 0
+        def convert_letter_to_number(letter: str) -> int:
+            if letter == "A":
+                return 4
+            elif letter == "B":
+                return 3
+            elif letter == "C":
+                return 2
+            elif letter == "D":
+                return 1
+            elif letter == "F":
+                return 0
+            else:
+                raise ValueError("Grades should only be A,B,C,D or F")
+
+        def convert_number_to_letter(number: int) -> str:
+            if 0 <= number < 1:
+                return "F"
+            elif number < 2:
+                return "D"
+            elif number < 3:
+                return "C"
+            elif number < 4:
+                return "B"
+            elif number == 4:
+                return "A"
+            else:
+                raise ValueError("Grade points must be between 0 to 4")
+
+        def calculate_gpa(grades: dict[str, int]):
+            if not len(grades):
+                return 0
+
+            total_points = 0
+            total_count = 0
+            for letter_grade, count in grades.items():
+                number_grade = convert_letter_to_number(letter_grade)
+                total_points += number_grade * count
+                total_count += count
+            return total_points / total_count
 
         #  Graph logic starts here
         source = ColumnDataSource(data=dict(grades=grades, counts=counts))
@@ -115,16 +144,16 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         p.vbar(
             x="grades",
             top="counts",
-            width=0.9,
+            width=1,
             source=source,
             legend_field="grades",
             line_color="white",
-            fill_color=factor_cmap("grades", palette=Bright6, factors=grades),
+            fill_color=factor_cmap("grades", palette=palettes.Bright5, factors=grades),
         )
 
         p.xgrid.grid_line_color = None
         p.y_range.start = 0
-        p.y_range.end = 9
+        p.y_range.end = max(counts) + 1
         p.legend.orientation = "horizontal"
         p.legend.location = "top_center"
 
@@ -133,6 +162,12 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         context["script"] = script
         context["div"] = div
         context["show_bokeh"] = True
+        context["gpa"] = {
+            "points": f"{calculate_gpa(grades_count):.2f}",
+            "letter_grade": convert_number_to_letter(
+                calculate_gpa(grades_count),
+            ),
+        }
 
         return context
 
