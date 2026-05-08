@@ -5,8 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.pydata.org/bokeh/release/bokeh-3.9.0.min.css" rel="stylesheet" type="text/css">
-  <link href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-3.9.0.min.css" rel="stylesheet" type="text/css">
+  {% if show_bokeh %}
+    {% include 'partials/bokeh_cdn.html' %}
+  {% endif %}
   <link
     href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;display=swap"
     rel="stylesheet" />
@@ -38,10 +39,9 @@
   {% endif %} -->
   <script src="{% static 'js/script.js' %}"></script>
   {{ script| safe }}
-  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.9.0.min.js"></script>
-  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js"></script>
-  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js"></script>
-  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-api-3.9.0.min.js"></script>
+  {% if show_bokeh %}
+    {% include 'partials/bokeh_script.html' %}
+  {% endif %}
 </body>
 
 </html>

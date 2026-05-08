@@ -72,8 +72,10 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        # get all enrollments to  the course
         enrollments = Enrollment.objects.filter(course=self.get_object())
         context["enrollments"] = enrollments
+        # filter grades and grade count only
         grades_only = [enrollment.final_grade for enrollment in enrollments]
         grades_count = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
         for grade in grades_only:
@@ -83,21 +85,18 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         grades = [*grades_count]
         counts = [*grades_count.values()]
 
-        def convert_letter_to_number(letter_grade: str):
-            if letter_grade == "A":
-                return 4
-            if letter_grade == "B":
-                return 3
-            if letter_grade == "C":
-                return 2
-            if letter_grade == "D":
-                return 1
-            return 0
+        # def convert_letter_to_number(letter_grade: str):
+        #     if letter_grade == "A":
+        #         return 4
+        #     if letter_grade == "B":
+        #         return 3
+        #     if letter_grade == "C":
+        #         return 2
+        #     if letter_grade == "D":
+        #         return 1
+        #     return 0
 
-        # for letter, count in grades_count:
-        #     number_grade = convert_letter_to_number(letter)
-        #     total = number_grade * count
-
+        #  Graph logic starts here
         source = ColumnDataSource(data=dict(grades=grades, counts=counts))
 
         p = figure(
@@ -127,6 +126,7 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
 
         context["script"] = script
         context["div"] = div
+        context["show_bokeh"] = True
 
         return context
 
