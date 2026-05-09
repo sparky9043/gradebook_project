@@ -63,7 +63,10 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         enrollments = Enrollment.objects.filter(course=self.get_object())
-        context["enrollments"] = enrollments
+        context["enrollments"] = sorted(
+            enrollments,
+            key=lambda e: e.student.last_name,
+        )
         return context
 
 
@@ -194,7 +197,11 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
         # Courses by the current teacher
         courses_queryset = self.request.user.courses.all()
         courses = [course.title for course in courses_queryset]
-        context["courses"] = courses
+        already_enrolled = list(course.title for course in student.courses.all())
+        # Filter courses that student is already enrolled in
+        context["courses"] = [
+            course for course in courses if course not in already_enrolled
+        ]
         return context
 
 
