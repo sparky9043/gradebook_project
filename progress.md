@@ -9,12 +9,12 @@
 [ x ] Use `<dialog>` for creating student \
 [ x ] Show each student detail when clicking student name \
 [ x ] Create `Enrollment` form and views \
-[  ] Maybe consider using modals for enrolling a student as well \
-[  ] Consider using 'context' to include dialog in the base.html when entering certain views \
+[ x ] Create `gradebook/enrollments/<int:pk>/add-grade/` route \
+[ x ] Consider using 'context' to include dialog in the base.html when entering certain views \
      (i.e. dialog should only appear when in Students list page and Student details page)
-[  ] Add an `Enroll Student` button inside `StudentDetailView` \
-[  ] Apply styles from `design` folder for the `enroll_student_view` and make it into modal? \
-[  ] Consider adding pagination in List View \
+[ x ] Add an `Enroll Class` button inside `StudentDetailView` \
+[ x ] Add `SearchView` using `HTMX` in the `StudentsListView` \
+[  ] Consider adding pagination in List View ? \
 
 ### 4/29/2026
   1. Start `gradebook` app
@@ -126,3 +126,12 @@
   1. Create a `gradebook/courses/<int:pk>/stats` url and show basic stats per course
   2. Install `bokeh` package to convert grade distribution to bar graph
   3. Add material icons to `Login`, `Logout`, and `Add Student` buttons for cleaner UI 
+
+### 5/11/2026
+  1. Create `SearchView` for students list powered by `HTMX`
+    a. Use `HTMX` to send request to `students/search` view and return `templates/gradebook/partials/students_table.html` in `StudentsListView`
+  2. Change `bokeh` bar graph to circle graph
+  3. Install `pandas` among other packages to change bar graph to circle graph
+  4. Add `gradebook/enrollments/<int:pk>/add-grade` page to add or edit student final grade -> redirect to `gradebook:student_detail` upon success
+  5. Allow teacher to edit student final grade only for students in their own course
+  6. Prevent other teachers from entering grades for students not in their course
