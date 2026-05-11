@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block title %}
+{{ student.first_name }} {{ student.last_name }} | Academic Atelier
+{% endblock title %}
+
 {% block main %}
 {% include 'gradebook/partials/enroll_student_dialog.html' %}
 <main class="max-w-container-max mx-auto px-gutter py-xl bg-white">
