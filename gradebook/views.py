@@ -4,6 +4,7 @@ from django.views.generic import (
     ListView,
     CreateView,
     DetailView,
+    UpdateView,
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
@@ -219,6 +220,22 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
             course for course in courses if course not in already_enrolled
         ]
         return context
+
+
+# @login_required
+# def enroll_student_final_grade(request: HttpRequest, pk) -> HttpResponse:
+#     if request.method == "GET":
+#         return render(request, "gradebook/enroll_student_final_grade.html")
+
+
+class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
+    model = Enrollment
+    fields = ["final_grade"]
+    template_name = "gradebook/enroll_student_final_grade.html"
+
+    def get_success_url(self):
+        student_pk = self.get_object().student.pk
+        return reverse_lazy("gradebook:student_detail", kwargs={"pk": student_pk})
 
 
 @login_required
