@@ -238,7 +238,10 @@ def create_student_view(request: HttpRequest) -> HttpResponse:
                 dob=dob,
                 grade_level=grade_level,
             )
-            messages.success(request, f"Student: {first_name} {last_name} Created!")
+            messages.success(
+                request,
+                f"Student: {new_student.first_name} {new_student.last_name} Created!",
+            )
             return redirect("gradebook:students")
         except ValueError as e:
             messages.error(request, e)
