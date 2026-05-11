@@ -20,11 +20,15 @@ from django.http import (
 from django.contrib import messages
 from bokeh.models import ColumnDataSource
 import bokeh.palettes as palettes
-from bokeh.plotting import figure
+from bokeh.plotting import figure, show
 from bokeh.transform import factor_cmap
 from bokeh.embed import components
 from bokeh.models import HoverTool
 from django.db.models import Q
+from math import pi
+import pandas as pd
+from bokeh.palettes import Category20c, Category10
+from bokeh.transform import cumsum
 
 # Create your views here.
 
@@ -132,35 +136,68 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
             return total_points / total_count
 
         #  Graph logic starts here
-        source = ColumnDataSource(data=dict(grades=grades, counts=counts))
+        # source = ColumnDataSource(data=dict(grades=grades, counts=counts))
 
-        hover = HoverTool(
-            tooltips=[(grade, str(count)) for grade, count in grades_count.items()]
+        # hover = HoverTool(
+        #     tooltips=[(grade, str(count)) for grade, count in grades_count.items()]
+        # )
+
+        # p = figure(
+        #     x_range=grades,
+        #     height=350,
+        #     toolbar_location=None,
+        #     title=f"Grade Distribution",
+        #     tools=[hover],
+        # )
+
+        # p.vbar(
+        #     x="grades",
+        #     top="counts",
+        #     width=1,
+        #     source=source,
+        #     legend_field="grades",
+        #     line_color="white",
+        #     fill_color=factor_cmap("grades", palette=palettes.Bright5, factors=grades),
+        # )
+
+        # p.xgrid.grid_line_color = None
+        # p.y_range.start = 0
+        # p.y_range.end = max(counts) + 1
+        # p.legend.orientation = "horizontal"
+        # p.legend.location = "top_center"
+
+        data = (
+            pd.Series(grades_count)
+            .reset_index(name="value")
+            .rename(columns={"index": "grades"})
         )
+        data["angle"] = data["value"] / data["value"].sum() * 2 * pi
+        data["color"] = Category10[len(grades_count)]
 
         p = figure(
-            x_range=grades,
-            height=350,
+            height=400,
+            title="Student Grades",
             toolbar_location=None,
-            title=f"Grade Distribution",
-            tools=[hover],
+            tools="hover",
+            tooltips="@grades: @value students",
+            x_range=(-0.5, 1.0),
         )
 
-        p.vbar(
-            x="grades",
-            top="counts",
-            width=1,
-            source=source,
-            legend_field="grades",
+        p.wedge(
+            x=0,
+            y=1,
+            radius=0.4,
+            start_angle=cumsum("angle", include_zero=True),
+            end_angle=cumsum("angle"),
             line_color="white",
-            fill_color=factor_cmap("grades", palette=palettes.Bright5, factors=grades),
+            fill_color="color",
+            legend_field="grades",
+            source=data,
         )
 
-        p.xgrid.grid_line_color = None
-        p.y_range.start = 0
-        p.y_range.end = max(counts) + 1
-        p.legend.orientation = "horizontal"
-        p.legend.location = "top_center"
+        p.axis.axis_label = None
+        p.axis.visible = False
+        p.grid.grid_line_color = None
 
         script, div = components(p)
 
@@ -287,7 +324,6 @@ def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
                 student=student,
                 course=course,
             )
-            print(enrollment)
         except:
             messages.error(request, "The student is already enrolled in the course")
             return redirect("gradebook:student_detail", pk=pk)
