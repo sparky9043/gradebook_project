@@ -29,7 +29,7 @@
       type="search"
       name="q"
       placeholder="Search student by name..."
-      hx-get=""
+      hx-get="{% url 'gradebook:student_search' %}"
       hx-trigger="keyup changed delay:300ms"
       hx-target="#student-search-results"
       hx-swap="innerHTML"

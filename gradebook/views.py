@@ -23,6 +23,7 @@ from bokeh.plotting import figure
 from bokeh.transform import factor_cmap
 from bokeh.embed import components
 from bokeh.models import HoverTool
+from django.db.models import Q
 
 # Create your views here.
 
@@ -183,6 +184,21 @@ class StudentsListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         students = Student.objects.all().order_by("grade_level", "last_name")
         return students
+
+
+class StudentSearchView(LoginRequiredMixin, ListView):
+    model = Student
+    template_name = "gradebook/partials/students_table.html"
+    context_object_name = "students"
+
+    def get_queryset(self):
+        q = self.request.GET.get("q", "")
+        qs = Student.objects.all()
+        if q:
+            qs = qs.filter(
+                Q(first_name__icontains=q) | Q(last_name__icontains=q)
+            ).distinct()
+        return qs
 
 
 class StudentDetailView(LoginRequiredMixin, DetailView):
