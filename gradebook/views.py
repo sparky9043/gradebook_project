@@ -66,7 +66,7 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
         enrollments = Enrollment.objects.filter(course=self.get_object())
         context["enrollments"] = sorted(
             enrollments,
-            key=lambda e: e.student.last_name,
+            key=lambda e: (e.final_grade, e.student.last_name),
         )
         return context
 
