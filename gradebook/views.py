@@ -18,17 +18,17 @@ from django.http import (
     HttpResponseRedirect,
 )
 from django.contrib import messages
-from bokeh.models import ColumnDataSource
-import bokeh.palettes as palettes
-from bokeh.plotting import figure, show
-from bokeh.transform import factor_cmap
-from bokeh.embed import components
-from bokeh.models import HoverTool
+from .helpers import (
+    get_pie_graph,
+    convert_number_to_letter,
+    calculate_gpa,
+)
 from django.db.models import Q
-from math import pi
-import pandas as pd
-from bokeh.palettes import Category20c, Category10
-from bokeh.transform import cumsum
+
+# from bokeh.models import ColumnDataSource
+# import bokeh.palettes as palettes
+# from bokeh.transform import factor_cmap
+# from bokeh.models import HoverTool
 
 # Create your views here.
 
@@ -92,48 +92,8 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
             if grade:
                 grades_count[grade] += 1
 
-        grades = [*grades_count]
-        counts = [*grades_count.values()]
-
-        def convert_letter_to_number(letter: str) -> int:
-            if letter == "A":
-                return 4
-            elif letter == "B":
-                return 3
-            elif letter == "C":
-                return 2
-            elif letter == "D":
-                return 1
-            elif letter == "F":
-                return 0
-            else:
-                raise ValueError("Grades should only be A,B,C,D or F")
-
-        def convert_number_to_letter(number: int) -> str:
-            if 0 <= number < 1:
-                return "F"
-            elif number < 2:
-                return "D"
-            elif number < 3:
-                return "C"
-            elif number < 4:
-                return "B"
-            elif number == 4:
-                return "A"
-            else:
-                raise ValueError("Grade points must be between 0 to 4")
-
-        def calculate_gpa(grades: dict[str, int]):
-            if not len(grades):
-                return 0
-
-            total_points = 0
-            total_count = 0
-            for letter_grade, count in grades.items():
-                number_grade = convert_letter_to_number(letter_grade)
-                total_points += number_grade * count
-                total_count += count
-            return total_points / total_count
+        # grades = [*grades_count]
+        # counts = [*grades_count.values()]
 
         #  Graph logic starts here
         # source = ColumnDataSource(data=dict(grades=grades, counts=counts))
@@ -166,40 +126,7 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
         # p.legend.orientation = "horizontal"
         # p.legend.location = "top_center"
 
-        data = (
-            pd.Series(grades_count)
-            .reset_index(name="value")
-            .rename(columns={"index": "grades"})
-        )
-        data["angle"] = data["value"] / data["value"].sum() * 2 * pi
-        data["color"] = Category10[len(grades_count)]
-
-        p = figure(
-            height=400,
-            title="Student Grades",
-            toolbar_location=None,
-            tools="hover",
-            tooltips="@grades: @value students",
-            x_range=(-0.5, 1.0),
-        )
-
-        p.wedge(
-            x=0,
-            y=1,
-            radius=0.4,
-            start_angle=cumsum("angle", include_zero=True),
-            end_angle=cumsum("angle"),
-            line_color="white",
-            fill_color="color",
-            legend_field="grades",
-            source=data,
-        )
-
-        p.axis.axis_label = None
-        p.axis.visible = False
-        p.grid.grid_line_color = None
-
-        script, div = components(p)
+        script, div = get_pie_graph(grades_count)
 
         context["script"] = script
         context["div"] = div
