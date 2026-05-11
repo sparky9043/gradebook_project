@@ -66,11 +66,10 @@
             {% for enrollment in enrollments %}
             <tr class="hover:bg-surface-container-low transition-colors group">
               <td class="px-md py-sm font-body-md">
-                <a class="text-primary-container font-semibold hover:underline" href="
-                  {% if enrollment.final_grade  %}
-                    {% url 'gradebook:student_detail' enrollment.student.pk %}
-                  {% endif %}
-                ">
+                <a
+                  class="text-primary-container font-semibold hover:underline"
+                  href="{% url 'gradebook:student_detail' enrollment.student.pk %}"
+                >
                   {{ enrollment.student.first_name }}
                   {{ enrollment.student.last_name }}
                 </a>
@@ -85,7 +84,11 @@
                 {% if enrollment.final_grade %}
                   {{ enrollment.final_grade }}
                 {% else %}
-                  N/A
+                  {% if not enrollment.final_grade %}
+                    <a>
+                      Enter Final Grade
+                    </a>
+                  {% endif %}
                 {% endif %}
                 {% comment %} <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
                   title="Remove Student">
