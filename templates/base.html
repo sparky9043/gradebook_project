@@ -38,6 +38,7 @@
   {% include 'sticky.html' %}
   {% endif %} -->
   <script src="{% static 'js/script.js' %}"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   {{ script| safe }}
   {% if show_bokeh %}
     {% include 'partials/bokeh_script.html' %}
