@@ -67,6 +67,7 @@
             <tr>
               <th class="px-md py-sm font-label-sm text-label-sm text-left font-medium">Course Name</th>
               <th class="px-md py-sm font-label-sm text-label-sm text-right font-medium">Final Grade</th>
+              <th class="px-md py-sm font-label-sm text-label-sm text-right font-medium">Action</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-surface-variant">
@@ -89,15 +90,20 @@
                   <span class="font-h3 text-h3 text-primary">
                     {{ record.final_grade }}
                   </span>
-                  {% else %}
-                  <span class="text-sm">
-                    <a class="flex items-center justify-end" href="{% url 'gradebook:enroll_final_grade' record.pk %}">
-                      <span class="material-symbols-outlined">
-                        add_chart
-                      </span>
-                      Add grade
-                    </a>
+                {% endif %}
+              </td>
+              <td class="px-md py-md text-right">
+                {% if record.course.teacher.username == user.username %}
+                <a class="text-sm flex items-center justify-end" href="{% url 'gradebook:enroll_final_grade' record.pk %}">
+                  <span class="material-symbols-outlined">
+                    edit
                   </span>
+                  Edit
+                </a>
+                {% else %}
+                <span class="material-symbols-outlined">
+                do_not_disturb_on
+                </span>
                 {% endif %}
               </td>
             </tr>
