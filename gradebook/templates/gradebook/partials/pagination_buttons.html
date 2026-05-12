@@ -1,0 +1,23 @@
+<div class="grid grid-cols-3 py-md px-sm bg-white">
+  <div class="flex gap-xs justify-start">
+    {% if page_obj.has_previous %}
+    <a class="flex items-center gap-xs px-md py-xs rounded-lg text-label-sm font-medium text-on-surface hover:bg-surface-container-low transition-colors" href="?page={{ page_obj.previous_page_number }}">
+      <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+        Previous
+    </a>
+    {% endif %}
+  </div>
+  <div class="flex gap-xs justify-center">
+    <span class="px-xs text-on-surface-variant px-md py-xs text-label-sm font-medium">
+      Page {{ page_obj.number }} of {{ paginator.num_pages }}
+    </span>
+  </div>
+  <div class="flex gap-xs justify-end">
+    {% if page_obj.has_next %}
+    <a class="flex items-center gap-xs px-md py-xs rounded-lg text-label-sm font-medium text-on-surface hover:bg-surface-container-low transition-colors" href="?page={{ page_obj.next_page_number }}">
+      Next
+      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    </a>
+    {% endif %}
+  </div>
+</div>

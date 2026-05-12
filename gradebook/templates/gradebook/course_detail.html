@@ -117,15 +117,7 @@
           </tbody>
         </table>
       </div>
-      <p>
-          Page {{ page_obj.number }} of {{ paginator.num_pages }}
-          {% if page_obj.has_previous %}
-              | <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-          {% endif %}
-          {% if page_obj.has_next %}
-              | <a href="?page={{ page_obj.next_page_number }}">Next</a>
-          {% endif %}
-      </p>
+      {% include 'gradebook/partials/pagination_buttons.html' %}
       <div class="mt-md flex justify-end">
         <p class="font-label-sm text-outline">Total Students: {{ enrollments.count }}</p>
       </div>
