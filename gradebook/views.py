@@ -24,6 +24,7 @@ from .helpers import (
     calculate_gpa,
 )
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 # from bokeh.models import ColumnDataSource
 # import bokeh.palettes as palettes
@@ -69,10 +70,15 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         enrollments = Enrollment.objects.filter(course=self.get_object())
-        context["enrollments"] = sorted(
+        sorted_enrollments = sorted(
             enrollments,
-            key=lambda e: (e.final_grade, e.student.last_name),
+            key=lambda e: e.student.last_name,
         )
+        paginator = Paginator(sorted_enrollments, 10)
+        page_number = self.request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+        context["page_obj"] = page_obj
+        context["paginator"] = paginator
         return context
 
 
