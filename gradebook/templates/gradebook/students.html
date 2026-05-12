@@ -40,6 +40,12 @@ Students | Academic Atelier
     </div>
   </div>
   {% comment %} Pagination {% endcomment %}
+  <div
+    id="student-search-results"
+    class="bg-white border border-outline-variant overflow-hidden"
+  >
+    {% include 'gradebook/partials/students_table.html' %}
+  </div>
   <div class="grid grid-cols-3 py-md px-sm bg-white">
     <div class="flex gap-xs justify-start">
       {% if page_obj.has_previous %}
@@ -62,12 +68,6 @@ Students | Academic Atelier
       </a>
       {% endif %}
     </div>
-  </div>
-  <div
-    id="student-search-results"
-    class="bg-white border border-outline-variant overflow-hidden"
-  >
-    {% include 'gradebook/partials/students_table.html' %}
   </div>
 </main>
 {% endblock main %}
