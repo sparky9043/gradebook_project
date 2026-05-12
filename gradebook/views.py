@@ -69,12 +69,16 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        # Get records for only the specific course
         enrollments = Enrollment.objects.filter(course=self.get_object())
+        # Sort by student last name
         sorted_enrollments = sorted(
             enrollments,
             key=lambda e: e.student.last_name,
         )
+        # create paginator with sorted elements and 10 items per page
         paginator = Paginator(sorted_enrollments, 10)
+        # get page request according to <a href="?page={{ page_obj.next_page_number }}"
         page_number = self.request.GET.get("page")
         page_obj = paginator.get_page(page_number)
         context["page_obj"] = page_obj

@@ -1,0 +1,64 @@
+<table class="w-full text-left border-collapse">
+  <thead>
+    <tr class="bg-surface-container-high border-b border-outline-variant">
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+        NAME</th>
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+        GRADE LEVEL</th>
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+        DATE OF BIRTH</th>
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant">
+        Final Grade</th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-outline-variant">
+    <!-- Row 1 -->
+    {% for enrollment in page_obj %}
+    <tr class="hover:bg-surface-container-low transition-colors group">
+      <td class="px-md py-sm font-body-md">
+        <a
+          class="text-primary-container font-semibold hover:underline"
+          href="{% url 'gradebook:student_detail' enrollment.student.pk %}"
+        >
+          {{ enrollment.student.first_name }}
+          {{ enrollment.student.last_name }}
+        </a>
+      </td>
+      <td class="px-md py-sm font-body-md text-on-surface-variant">
+        {{ enrollment.student.grade_level }}th
+      </td>
+      <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+        {{ enrollment.student.dob|date }}
+      </td>
+      <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+        {% if enrollment.final_grade %}
+          {{ enrollment.final_grade }}
+        {% else %}
+          {% if not enrollment.final_grade %}
+            <a>
+              Enter Final Grade
+            </a>
+          {% endif %}
+        {% endif %}
+        {% comment %} <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
+          title="Remove Student">
+          <span class="material-symbols-outlined" data-icon="delete">delete</span>
+        </button> {% endcomment %}
+      </td>
+    </tr>
+    {% endfor %}
+    {% comment %} <tr class="hover:bg-surface-container-low transition-colors group">
+      <td class="px-md py-sm font-body-md">Saffron Kim</td>
+      <td class="px-md py-sm font-body-md text-on-surface-variant">
+        Junior</td>
+      <td class="px-md py-sm font-body-md text-on-surface-variant text-code">
+        1997-08-30</td>
+      <td class="px-md py-sm text-right">
+        <button class="text-error hover:bg-error-container p-1 rounded transition-colors"
+          title="Remove Student">
+          <span class="material-symbols-outlined" data-icon="delete">delete</span>
+        </button>
+      </td>
+    </tr> {% endcomment %}
+  </tbody>
+</table>
