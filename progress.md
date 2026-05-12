@@ -14,7 +14,8 @@
      (i.e. dialog should only appear when in Students list page and Student details page)
 [ x ] Add an `Enroll Class` button inside `StudentDetailView` \
 [ x ] Add `SearchView` using `HTMX` in the `StudentsListView` \
-[  ] Consider adding pagination in List View ? \
+[ x ] Consider adding pagination in List View \
+[ x ] Consider adding pagination in Detail View \
 
 ### 4/29/2026
   1. Start `gradebook` app
@@ -135,3 +136,13 @@
   4. Add `gradebook/enrollments/<int:pk>/add-grade` page to add or edit student final grade -> redirect to `gradebook:student_detail` upon success
   5. Allow teacher to edit student final grade only for students in their own course
   6. Prevent other teachers from entering grades for students not in their course
+
+### 5/12/2026
+  1. Add pagination using `paginate_by` in `ListView` and catching in templates with `page_obj` and `paginator`
+  2. Learned how to and employed pagination in `DetailView`
+    a. First use `get_context_data` to get list
+    b. `from django.core.paginator import Paginator`
+    c. Pass the fetched data into `Paginator(data, number)` and replace number with how many you want per page
+    d. use `context['page_obj']` and `context['paginator']` to manually pass the page_obj and paginator
+  3. Use Stitch to add styles to pagination buttons
+  4. Refactor tables and pagination buttons into their own `html` files
