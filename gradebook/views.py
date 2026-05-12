@@ -26,14 +26,8 @@ from .helpers import (
 from django.db.models import Q
 from django.core.paginator import Paginator
 
-# from bokeh.models import ColumnDataSource
-# import bokeh.palettes as palettes
-# from bokeh.transform import factor_cmap
-# from bokeh.models import HoverTool
 
 # Create your views here.
-
-
 class GradebookHomeView(LoginRequiredMixin, TemplateView):
     """Display Landing Page After Login"""
 
@@ -102,40 +96,6 @@ class CourseStatsView(LoginRequiredMixin, DetailView):
             if grade:
                 grades_count[grade] += 1
 
-        # grades = [*grades_count]
-        # counts = [*grades_count.values()]
-
-        #  Graph logic starts here
-        # source = ColumnDataSource(data=dict(grades=grades, counts=counts))
-
-        # hover = HoverTool(
-        #     tooltips=[(grade, str(count)) for grade, count in grades_count.items()]
-        # )
-
-        # p = figure(
-        #     x_range=grades,
-        #     height=350,
-        #     toolbar_location=None,
-        #     title=f"Grade Distribution",
-        #     tools=[hover],
-        # )
-
-        # p.vbar(
-        #     x="grades",
-        #     top="counts",
-        #     width=1,
-        #     source=source,
-        #     legend_field="grades",
-        #     line_color="white",
-        #     fill_color=factor_cmap("grades", palette=palettes.Bright5, factors=grades),
-        # )
-
-        # p.xgrid.grid_line_color = None
-        # p.y_range.start = 0
-        # p.y_range.end = max(counts) + 1
-        # p.legend.orientation = "horizontal"
-        # p.legend.location = "top_center"
-
         script, div = get_pie_graph(grades_count)
 
         context["script"] = script
@@ -196,12 +156,6 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
             course for course in courses if course not in already_enrolled
         ]
         return context
-
-
-# @login_required
-# def enroll_student_final_grade(request: HttpRequest, pk) -> HttpResponse:
-#     if request.method == "GET":
-#         return render(request, "gradebook/enroll_student_final_grade.html")
 
 
 class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
