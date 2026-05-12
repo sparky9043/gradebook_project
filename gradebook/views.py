@@ -145,15 +145,17 @@ class StudentsListView(LoginRequiredMixin, ListView):
     model = Student
     template_name = "gradebook/students.html"
     context_object_name = "students"
+    paginate_by = 10
 
     def get_queryset(self):
-        students = Student.objects.all().order_by("grade_level", "last_name")
+        students = Student.objects.all().order_by("last_name")
         return students
 
 
 class StudentSearchView(LoginRequiredMixin, ListView):
     model = Student
     template_name = "gradebook/partials/students_table.html"
+    paginate_by = 10
     context_object_name = "students"
 
     def get_queryset(self):

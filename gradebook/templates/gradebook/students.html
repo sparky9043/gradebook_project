@@ -23,24 +23,46 @@ Students | Academic Atelier
         Add Student
     </button>
   </div>
-  <!-- Student Data Table -->
-<div class="mb-md">
-  <div class="relative flex items-center border max-w-1/2 border-outline-variant rounded-lg bg-surface-container-lowest focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all duration-200">
-    <span class="material-symbols-outlined absolute left-sm text-on-surface-variant pointer-events-none text-[20px]">search</span>
-    <input
-      type="text"
-      class="w-full pl-11 pr-sm py-xs bg-transparent border-none focus:ring-0 text-body-md text-on-surface placeholder:text-outline"
-      type="search"
-      name="q"
-      placeholder="Search student by name..."
-      hx-get="{% url 'gradebook:student_search' %}"
-      hx-trigger="keyup changed delay:300ms"
-      hx-target="#student-search-results"
-      hx-swap="innerHTML"
-    />
+  <div class="mb-md">
+    <div class="relative flex items-center border max-w-1/2 border-outline-variant rounded-lg bg-surface-container-lowest focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all duration-200">
+      <span class="material-symbols-outlined absolute left-sm text-on-surface-variant pointer-events-none text-[20px]">search</span>
+      <input
+        type="text"
+        class="w-full pl-11 pr-sm py-xs bg-transparent border-none focus:ring-0 text-body-md text-on-surface placeholder:text-outline"
+        type="search"
+        name="q"
+        placeholder="Search student by name..."
+        hx-get="{% url 'gradebook:student_search' %}"
+        hx-trigger="keyup changed delay:300ms"
+        hx-target="#student-search-results"
+        hx-swap="innerHTML"
+      />
+    </div>
   </div>
-</div>
-
+  {% comment %} Pagination {% endcomment %}
+  <div class="grid grid-cols-3 py-md px-sm bg-white">
+    <div class="flex gap-xs justify-start">
+      {% if page_obj.has_previous %}
+      <a class="flex items-center gap-xs px-md py-xs rounded-lg text-label-sm font-medium text-on-surface hover:bg-surface-container-low transition-colors" href="?page={{ page_obj.previous_page_number }}">
+        <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+          Previous
+      </a>
+      {% endif %}
+    </div>
+    <div class="flex gap-xs justify-center">
+      <span class="px-xs text-on-surface-variant px-md py-xs text-label-sm font-medium">
+        Page {{ page_obj.number }} of {{ paginator.num_pages }}
+      </span>
+    </div>
+    <div class="flex gap-xs justify-end">
+      {% if page_obj.has_next %}
+      <a class="flex items-center gap-xs px-md py-xs rounded-lg text-label-sm font-medium text-on-surface hover:bg-surface-container-low transition-colors" href="?page={{ page_obj.next_page_number }}">
+        Next
+        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
   <div
     id="student-search-results"
     class="bg-white border border-outline-variant overflow-hidden"
