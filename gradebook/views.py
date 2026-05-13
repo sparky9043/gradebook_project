@@ -130,7 +130,7 @@ class StudentSearchView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         q = self.request.GET.get("q", "")
-        qs = Student.objects.all()
+        qs = Student.objects.all().order_by("last_name")
         if q:
             qs = qs.filter(
                 Q(first_name__icontains=q) | Q(last_name__icontains=q)
