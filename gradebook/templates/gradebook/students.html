@@ -1,51 +1,38 @@
 {% extends 'base.html' %}
-
 {% block title %}
-Students | Academic Atelier
+  Students | Academic Atelier
 {% endblock title %}
-
 {% block main %}
-{% include 'gradebook/partials/add_student_dialog.html' %}
-<main class="max-w-7xl mx-auto px-6 py-xl">
-  <div class="mb-lg">
-    <h1 class="font-h1 text-h1 text-on-background mb-base">Student Roster</h1>
-    <p class="font-body-lg text-body-lg text-on-surface-variant">Click on Student Name for Details</p>
-    <p class="font-body-lg text-body-lg text-on-surface-variant text-sm">
-      Total Students: {{ students.count }}
-    </p>
-    <button
-      id="show-student-dialog-btn"
-      class="flex items-center bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out"
-    >
-      <span class="material-symbols-outlined">
-      person_add
-      </span>
+  {% include 'gradebook/partials/add_student_dialog.html' %}
+  <main class="max-w-7xl mx-auto px-6 py-xl">
+    <div class="mb-lg">
+      <h1 class="font-h1 text-h1 text-on-background mb-base">Student Roster</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">Click on Student Name for Details</p>
+      <p class="font-body-lg text-body-lg text-on-surface-variant text-sm">Total Students: {{ students.count }}</p>
+      <button id="show-student-dialog-btn"
+              class="flex items-center bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out">
+        <span class="material-symbols-outlined">person_add</span>
         Add Student
-    </button>
-  </div>
-  <div class="mb-md">
-    <div class="relative flex items-center border max-w-1/2 border-outline-variant rounded-lg bg-surface-container-lowest focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all duration-200">
-      <span class="material-symbols-outlined absolute left-sm text-on-surface-variant pointer-events-none text-[20px]">search</span>
-      <input
-        type="text"
-        class="w-full pl-11 pr-sm py-xs bg-transparent border-none focus:ring-0 text-body-md text-on-surface placeholder:text-outline"
-        type="search"
-        name="q"
-        placeholder="Search student by name..."
-        hx-get="{% url 'gradebook:student_search' %}"
-        hx-trigger="keyup changed delay:300ms"
-        hx-target="#student-search-results"
-        hx-swap="innerHTML"
-      />
+      </button>
     </div>
-  </div>
-  <div
-    id="student-search-results"
-    class="bg-white border border-outline-variant overflow-hidden"
-  >
-    {% include 'gradebook/partials/students_table.html' %}
-  </div>
-  {% comment %} Pagination {% endcomment %}
-  {% include 'gradebook/partials/pagination_buttons.html' %}
-</main>
+    <div class="mb-md">
+      <div class="relative flex items-center border max-w-1/2 border-outline-variant rounded-lg bg-surface-container-lowest focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all duration-200">
+        <span class="material-symbols-outlined absolute left-sm text-on-surface-variant pointer-events-none text-[20px]">search</span>
+        <input class="w-full pl-11 pr-sm py-xs bg-transparent border-none focus:ring-0 text-body-md text-on-surface placeholder:text-outline"
+               type="search"
+               name="q"
+               placeholder="Search student by name..."
+               hx-get="{% url 'gradebook:student_search' %}"
+               hx-trigger="keyup changed delay:300ms"
+               hx-target="#student-search-results"
+               hx-swap="innerHTML" />
+      </div>
+    </div>
+    <div id="student-search-results"
+         class="bg-white border border-outline-variant overflow-hidden">
+      {% include 'gradebook/partials/students_table.html' %}
+    </div>
+    {% comment %} Pagination {% endcomment %}
+    {% include 'gradebook/partials/pagination_buttons.html' %}
+  </main>
 {% endblock main %}
