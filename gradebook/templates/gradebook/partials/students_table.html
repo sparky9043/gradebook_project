@@ -19,7 +19,10 @@
   <tbody class="divide-y divide-outline-variant">
     {% for student in students %}
       <tr class="bg-white transition-colors border-b border-outline-variant last:border-b-0 hover:bg-surface-container-low">
-        <td class="px-md py-sm font-body-md text-body-md">{{ student }}</td>
+        <td class="px-md py-sm font-body-md text-body-md font-medium text-lg tracking-wide">
+          {{ student.first_name }}
+          {{ student.last_name }}
+        </td>
         <td class="px-md py-sm font-body-md text-body-md">{{ student.grade_level }}th</td>
         <td class="px-md py-sm font-body-md text-body-md">{{ student.dob }}</td>
         <td class="px-md py-sm font-body-md text-body-md">
