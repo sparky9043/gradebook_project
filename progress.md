@@ -146,6 +146,8 @@
     d. use `context['page_obj']` and `context['paginator']` to manually pass the page_obj and paginator
   3. Use Stitch to add styles to pagination buttons
   4. Refactor tables and pagination buttons into their own `html` files
+  5. Correctly use `paginator.object_list.count` to get total number of students in students list
+  6. Add an actions column in students list
 
 
 ### 5/13/2026
