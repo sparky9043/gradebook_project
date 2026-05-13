@@ -1,56 +1,44 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% if show_bokeh %}
-    {% include 'partials/bokeh_cdn.html' %}
-  {% endif %}
-  <link
-    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <script src="{% static 'js/tailwindcss.js' %}"></script>
-  {% include 'style_tag.html' %}
-  <title>
-    {% block title %}
-    {% endblock title %}
-  </title>
-  <link
-    rel="icon"
-    type="image/png"
-    href="{% static 'images/book.png' %}"
-  >
-</head>
-
-<body class="font-body-md antialiased">
-  {% if not hide_nav %}
-    {% include 'nav.html' %}
-  {% endif %}
-
-  {% block main %} {% endblock main %}
-  {% include 'message_container.html' %}
-
-  {% if not hide_footer %}
-    {% include 'footer.html' %}
-  {% endif %}
-
-  <!-- {% if show_sticky %}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if show_bokeh %}
+      {% include 'partials/bokeh_cdn.html' %}
+    {% endif %}
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet" />
+    <script src="{% static 'js/tailwindcss.js' %}"></script>
+    {% include 'style_tag.html' %}
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+    <link rel="icon" type="image/png" href="{% static 'images/book.png' %}">
+  </head>
+  <body class="font-body-md antialiased">
+    {% if not hide_nav %}
+      {% include 'partials/nav.html' %}
+    {% endif %}
+    {% block main %}
+    {% endblock main %}
+    {% include 'message_container.html' %}
+    {% if not hide_footer %}
+      {% include 'partials/footer.html' %}
+    {% endif %}
+    <!-- {% if show_sticky %}
   {% include 'sticky.html' %}
   {% endif %} -->
-  <script src="{% static 'js/script.js' %}"></script>
-  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-  {{ script| safe }}
-  {% if show_bokeh %}
-    {% include 'partials/bokeh_script.html' %}
-  {% endif %}
-</body>
-
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    {{ script| safe }}
+    {% if show_bokeh %}
+      {% include 'partials/bokeh_script.html' %}
+    {% endif %}
+  </body>
 </html>
