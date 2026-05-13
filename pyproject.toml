@@ -1,0 +1,2 @@
+[tool.djlint]
+ignore = "T002,T003"
