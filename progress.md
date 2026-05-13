@@ -152,3 +152,5 @@
   1. Add `StudentEditView` by reusing `StudentCreationForm` in `gradebook/forms.py` and extending `UpdateView` class
   2. Add cancel button that redirects user to students list
   3. Make `StudentEditView` display success messages when user edits student and redirect back to list
+  4. Add `StudentDeleteView` for confirming if teacher wants to delete user
+  5. Add delete materials button in `student_detail.html` for easy access to delete page
