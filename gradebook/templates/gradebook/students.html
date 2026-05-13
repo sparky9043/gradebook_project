@@ -8,7 +8,9 @@
     <div class="mb-lg">
       <h1 class="font-h1 text-h1 text-on-background mb-base">Student Roster</h1>
       <p class="font-body-lg text-body-lg text-on-surface-variant">Click on Student Name for Details</p>
-      <p class="font-body-lg text-body-lg text-on-surface-variant text-sm">Total Students: {{ students.count }}</p>
+      <p class="font-body-lg text-body-lg text-on-surface-variant text-sm">
+        Total Students: {{ paginator.object_list.count }}
+      </p>
       <button id="show-student-dialog-btn"
               class="flex items-center bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm transition-colors duration-200 ease-in-out">
         <span class="material-symbols-outlined">person_add</span>
