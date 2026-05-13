@@ -14,6 +14,7 @@ from .views import (
     enroll_student_view,
     StudentEnrollFinalGrade,
     StudentEditView,
+    StudentDeleteView,
 )
 
 app_name = "gradebook"
@@ -31,6 +32,9 @@ urlpatterns = [
     path("students/<int:pk>/", StudentDetailView.as_view(), name="student_detail"),
     path("students/<int:pk>/enroll", enroll_student_view, name="enroll"),
     path("students/<int:pk>/edit", StudentEditView.as_view(), name="student_edit"),
+    path(
+        "students/<int:pk>/delete", StudentDeleteView.as_view(), name="student_delete"
+    ),
     path("students/create/", create_student_view, name="create_student"),
     # Enrollment Views
     path(

@@ -5,6 +5,7 @@ from django.views.generic import (
     CreateView,
     DetailView,
     UpdateView,
+    DeleteView,
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
@@ -164,12 +165,24 @@ class StudentEditView(LoginRequiredMixin, UpdateView):
     template_name = "gradebook/student_edit.html"
     success_url = reverse_lazy("gradebook:students")
 
-    def get_success_url(self):
+    def form_valid(self, form):
         student = self.get_object()
         messages.success(
             self.request, f"{student.first_name} {student.last_name} edit successful!"
         )
-        return super().get_success_url()
+        return super().form_valid(form)
+
+
+class StudentDeleteView(LoginRequiredMixin, DeleteView):
+    model = Student
+    template_name = "gradebook/student_delete.html"
+    success_url = reverse_lazy("gradebook:students")
+
+    def form_valid(self, form):
+        student = self.get_object()
+        print(student)
+        messages.success(self.request, "Student deleted")
+        return super().form_valid(form)
 
 
 class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):

@@ -59,8 +59,14 @@
         <div class="flex items-center justify-between mb-md">
           <h3 class="font-h3 text-h3 text-on-background">Enrolled Courses</h3>
           <div class="flex gap-sm">
-            <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
-                  data-icon="download">delete</span>
+            <a href="{% url "gradebook:student_edit" student.pk %}">
+              <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+                    data-icon="person_edit">person_edit</span>
+            </a>
+            <a href="{% url "gradebook:student_delete" student.pk %}">
+              <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+                    data-icon="delete">delete</span>
+            </a>
           </div>
         </div>
         <div class="overflow-x-auto">
