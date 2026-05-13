@@ -146,3 +146,9 @@
     d. use `context['page_obj']` and `context['paginator']` to manually pass the page_obj and paginator
   3. Use Stitch to add styles to pagination buttons
   4. Refactor tables and pagination buttons into their own `html` files
+
+
+### 5/13/2026
+  1. Add `StudentEditView` by reusing `StudentCreationForm` in `gradebook/forms.py` and extending `UpdateView` class
+  2. Add cancel button that redirects user to students list
+  3. Make `StudentEditView` display success messages when user edits student and redirect back to list
