@@ -9,7 +9,7 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
 from .models import Course, Student, Enrollment
-from .forms import CourseCreationForm
+from .forms import CourseCreationForm, StudentCreationForm
 from django.contrib.auth.decorators import login_required
 from django.http import (
     HttpRequest,
@@ -156,6 +156,13 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
             course for course in courses if course not in already_enrolled
         ]
         return context
+
+
+class StudentEditView(LoginRequiredMixin, UpdateView):
+    model = Student
+    form_class = StudentCreationForm
+    template_name = "gradebook/student_edit.html"
+    success_url = reverse_lazy("gradebook:students")
 
 
 class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):

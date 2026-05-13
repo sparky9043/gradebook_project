@@ -1,35 +1,43 @@
-<table class="w-full text-left border-collapse">
+<table class="w-full text-center border-collapse">
   <thead>
     <tr class="bg-surface-container border-b border-outline-variant">
-      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Name
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Name</th>
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+        Grade
+        Level
       </th>
-      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Grade
-        Level</th>
-      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Date of
-        Birth</th>
-      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Enrolled Courses</th>
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+        Date of
+        Birth
+      </th>
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+        Enrolled Courses
+      </th>
+      <th class="px-md py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Actions</th>
     </tr>
   </thead>
   <tbody class="divide-y divide-outline-variant">
     {% for student in students %}
-    <tr
-      class="bg-white transition-colors border-b border-outline-variant last:border-b-0 hover:bg-surface-container-low">
-      <td class="px-md py-sm font-body-md text-body-md">
-        <a class="text-primary-container font-semibold hover:underline"
-          href="{% url 'gradebook:student_detail' student.pk %}">
-          {{ student }}
-        </a>
-      </td>
-      <td class="px-md py-sm font-body-md text-body-md">{{ student.grade_level }}th</td>
-      <td class="px-md py-sm font-body-md text-body-md">{{ student.dob }}</td>
-      <td class="px-md py-sm font-body-md text-body-md">
-        {% if student.courses.count != 0 %}
-          {{ student.courses.count }}
-        {% else %}
-        n/a
-        {% endif %}
-      </td>
-    </tr>
+      <tr class="bg-white transition-colors border-b border-outline-variant last:border-b-0 hover:bg-surface-container-low">
+        <td class="px-md py-sm font-body-md text-body-md">
+          <a class="text-primary-container font-semibold hover:underline"
+             href="{% url 'gradebook:student_detail' student.pk %}">{{ student }}</a>
+        </td>
+        <td class="px-md py-sm font-body-md text-body-md">{{ student.grade_level }}th</td>
+        <td class="px-md py-sm font-body-md text-body-md">{{ student.dob }}</td>
+        <td class="px-md py-sm font-body-md text-body-md">
+          {% if student.courses.count != 0 %}
+            {{ student.courses.count }}
+          {% else %}
+            n/a
+          {% endif %}
+        </td>
+        <td class="px-md py-sm font-body-md text-body-md">
+          <a class="hover:cursor-pointer"
+             href="{% url "gradebook:student_edit" student.pk %}">Edit</a>
+          <a class="hover:cursor-pointer" href="#">Delete</a>
+        </td>
+      </tr>
     {% endfor %}
   </tbody>
 </table>
