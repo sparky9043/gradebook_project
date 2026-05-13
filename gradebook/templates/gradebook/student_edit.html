@@ -2,4 +2,5 @@
   {% csrf_token %}
   {{ form.as_div }}
   <button type="submit">Submit</button>
+  <a href="{% url "gradebook:students" %}">Cancel</a>
 </form>
