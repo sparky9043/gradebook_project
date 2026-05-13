@@ -164,6 +164,13 @@ class StudentEditView(LoginRequiredMixin, UpdateView):
     template_name = "gradebook/student_edit.html"
     success_url = reverse_lazy("gradebook:students")
 
+    def get_success_url(self):
+        student = self.get_object()
+        messages.success(
+            self.request, f"{student.first_name} {student.last_name} edit successful!"
+        )
+        return super().get_success_url()
+
 
 class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
     model = Enrollment
