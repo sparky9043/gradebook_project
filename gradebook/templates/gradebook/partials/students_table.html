@@ -19,10 +19,7 @@
   <tbody class="divide-y divide-outline-variant">
     {% for student in students %}
       <tr class="bg-white transition-colors border-b border-outline-variant last:border-b-0 hover:bg-surface-container-low">
-        <td class="px-md py-sm font-body-md text-body-md">
-          <a class="text-primary-container font-semibold hover:underline"
-             href="{% url 'gradebook:student_detail' student.pk %}">{{ student }}</a>
-        </td>
+        <td class="px-md py-sm font-body-md text-body-md">{{ student }}</td>
         <td class="px-md py-sm font-body-md text-body-md">{{ student.grade_level }}th</td>
         <td class="px-md py-sm font-body-md text-body-md">{{ student.dob }}</td>
         <td class="px-md py-sm font-body-md text-body-md">
@@ -32,10 +29,21 @@
             n/a
           {% endif %}
         </td>
-        <td class="px-md py-sm font-body-md text-body-md">
-          <a class="hover:cursor-pointer"
-             href="{% url "gradebook:student_edit" student.pk %}">Edit</a>
-          <a class="hover:cursor-pointer" href="#">Delete</a>
+        <td class="flex flex-col px-md py-sm font-body-md text-body-md">
+          <a class="flex items-center font-semibold hover:text-primary-container"
+             href="{% url 'gradebook:student_detail' student.pk %}">
+            <span class="material-symbols-outlined">search</span>
+            View
+          </a>
+          <a class="flex items-center font-semibold hover:text-primary-container"
+             href="{% url "gradebook:student_edit" student.pk %}">
+            <span class="material-symbols-outlined">person_edit</span>
+            Edit
+          </a>
+          <a class="flex items-center font-semibold hover:text-primary-container"
+             href="#">
+            <span class="material-symbols-outlined">delete</span>
+          Delete</a>
         </td>
       </tr>
     {% endfor %}
