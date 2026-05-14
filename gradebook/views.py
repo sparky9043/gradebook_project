@@ -17,6 +17,7 @@ from django.http import (
     HttpResponse,
     HttpResponseBadRequest,
     HttpResponseRedirect,
+    HttpResponseForbidden,
 )
 from django.contrib import messages
 from .helpers import (
@@ -165,6 +166,13 @@ class StudentEditView(LoginRequiredMixin, UpdateView):
     template_name = "gradebook/student_edit.html"
     success_url = reverse_lazy("gradebook:students")
 
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(request, "You do not have access to view this page")
+            return render(request, "403.html", status=403)
+
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):
         student = self.get_object()
         messages.success(
@@ -179,15 +187,9 @@ class StudentDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("gradebook:students")
 
     def dispatch(self, request, *args, **kwargs):
-        if not self.request.user.is_superuser or not self.request.user.is_authenticated:
+        if not self.request.user.is_superuser:
             messages.error(request, "You do not have access to view this page")
-
-            return redirect(
-                reverse(
-                    "gradebook:student_detail",
-                    kwargs={"pk": self.get_object().pk},
-                )
-            )
+            return render(request, "403.html", status=403)
 
         return super().dispatch(request, *args, **kwargs)
 
