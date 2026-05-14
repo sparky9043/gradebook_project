@@ -1,6 +1,65 @@
-<form method="post">
+{% extends 'base.html' %}
+{% block main %}
+  <main class="max-w-container-max mx-auto px-gutter py-xl">
+    <!-- Form Container -->
+    <div class="max-w-[600px] mx-auto">
+      <!-- Page Header -->
+      <div class="mb-lg">
+        <h1 class="font-h1 text-h1 text-on-background">Edit Student: Elias Abebe</h1>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-xs">
+          Update the student's profile information below. All fields are required for academic record integrity.
+        </p>
+      </div>
+      <!-- Form -->
+      <form class="space-y-md" method="post">
+        {% csrf_token %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+          <!-- First Name -->
+          <div class="flex flex-col gap-base">
+            <label class="font-label-sm text-label-sm text-on-surface-variant"
+                   for="id_first_name">First Name</label>
+            {{ form.first_name }}
+          </div>
+          <!-- Last Name -->
+          <div class="flex flex-col gap-base">
+            <label class="font-label-sm text-label-sm text-on-surface-variant"
+                   for="id_last_name">Last Name</label>
+            {{ form.last_name }}
+          </div>
+        </div>
+        <!-- Date of Birth -->
+        <div class="flex flex-col gap-base">
+          <label class="font-label-sm text-label-sm text-on-surface-variant"
+                 for="id_dob">Date of Birth</label>
+          {{ form.dob }}
+        </div>
+        <!-- Grade Level -->
+        <div class="flex flex-col gap-base">
+          <label class="font-label-sm text-label-sm text-on-surface-variant"
+                 for="id_grade_level">Grade Level</label>
+          {{ form.grade_level }}
+        </div>
+        <!-- Action Section -->
+        <div class="pt-lg flex items-center gap-md">
+          <button class="bg-[#2196F3] text-on-primary font-label-sm text-label-sm px-lg h-12 hover:saturate-150 active:opacity-80 transition-all uppercase tracking-widest"
+                  type="submit">Submit</button>
+          <a class="font-label-sm text-label-sm text-primary hover:underline transition-all uppercase tracking-widest"
+             href="{% url 'gradebook:students' %}">Cancel</a>
+        </div>
+      </form>
+      <!-- Metadata / Audit Info -->
+      <div class="mt-xl pt-md border-t border-surface-variant">
+        <div class="flex items-center gap-xs text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px]" data-icon="info">info</span>
+          <span class="font-label-sm text-label-sm italic text-on-surface-variant">Last modified: October 24, 2023 by Registrar Office</span>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock main %}
+{% comment %} <form method="post">
   {% csrf_token %}
   {{ form.as_div }}
   <button type="submit">Submit</button>
   <a href="{% url "gradebook:students" %}">Cancel</a>
-</form>
+</form> {% endcomment %}
