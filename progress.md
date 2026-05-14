@@ -156,3 +156,9 @@
   3. Make `StudentEditView` display success messages when user edits student and redirect back to list
   4. Add `StudentDeleteView` for confirming if teacher wants to delete user
   5. Add delete materials button in `student_detail.html` for easy access to delete page
+
+
+### 5/14/2026
+  1. Add customized `403.html` and `404.html` pages
+  2. Redirect user to `403.html` if the user is not `superuser` and they try to edit or delete student
+  3. Show edit and delete buttons only to `superuser`
