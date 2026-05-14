@@ -43,10 +43,12 @@
             <span class="material-symbols-outlined">person_edit</span>
             Edit
           </a>
-          <a class="flex items-center font-semibold hover:text-primary-container"
-             href="#">
-            <span class="material-symbols-outlined">delete</span>
-          Delete</a>
+          {% if user.is_superuser %}
+            <a class="flex items-center font-semibold hover:text-primary-container"
+               href="#">
+              <span class="material-symbols-outlined">delete</span>
+            Delete</a>
+          {% endif %}
         </td>
       </tr>
     {% endfor %}

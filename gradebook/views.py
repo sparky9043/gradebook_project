@@ -178,6 +178,19 @@ class StudentDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "gradebook/student_delete.html"
     success_url = reverse_lazy("gradebook:students")
 
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser or not self.request.user.is_authenticated:
+            messages.error(request, "You do not have access to view this page")
+
+            return redirect(
+                reverse(
+                    "gradebook:student_detail",
+                    kwargs={"pk": self.get_object().pk},
+                )
+            )
+
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):
         if self.request.user.is_superuser:
             messages.success(self.request, "Student deleted")

@@ -63,10 +63,12 @@
               <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
                     data-icon="person_edit">person_edit</span>
             </a>
-            <a href="{% url "gradebook:student_delete" student.pk %}">
-              <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
-                    data-icon="delete">delete</span>
-            </a>
+            {% if user.is_superuser %}
+              <a href="{% url "gradebook:student_delete" student.pk %}">
+                <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+                      data-icon="delete">delete</span>
+              </a>
+            {% endif %}
           </div>
         </div>
         <div class="overflow-x-auto">
