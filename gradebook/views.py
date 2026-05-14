@@ -179,10 +179,20 @@ class StudentDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("gradebook:students")
 
     def form_valid(self, form):
-        student = self.get_object()
-        print(student)
-        messages.success(self.request, "Student deleted")
-        return super().form_valid(form)
+        if self.request.user.is_superuser:
+            messages.success(self.request, "Student deleted")
+            return super().form_valid(form)
+        else:
+            messages.error(
+                self.request, "You do not have the permission to delete the student"
+            )
+            super().form_invalid(form)
+            return redirect(
+                reverse(
+                    "gradebook:student_detail",
+                    kwargs={"pk": self.get_object().pk},
+                )
+            )
 
 
 class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
