@@ -43,6 +43,26 @@ def get_pie_graph(user_data: dict):
     return components(p)
 
 
+def get_bar_graph(user_data: list[tuple], graph_title):
+    x_data = [data[0] for data in user_data]
+    y_data = [data[1] for data in user_data]
+
+    p = figure(
+        x_range=x_data,
+        height=350,
+        title=graph_title,
+        toolbar_location=None,
+        tools="",
+    )
+
+    p.vbar(x=x_data, top=y_data, width=0.9)
+
+    p.xgrid.grid_line_color = None
+    p.y_range.start = 0
+
+    return components(p)
+
+
 def convert_number_to_letter(number: int) -> str:
     if 0 <= number < 1:
         return "F"

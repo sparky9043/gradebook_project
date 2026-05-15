@@ -24,6 +24,7 @@ from .helpers import (
     get_pie_graph,
     convert_number_to_letter,
     calculate_gpa,
+    get_bar_graph,
 )
 from django.db.models import Q
 from django.core.paginator import Paginator
@@ -283,3 +284,25 @@ def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
 
 class StatsView(LoginRequiredMixin, TemplateView):
     template_name = "gradebook/stats.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        students = Student.objects.all()
+
+        grade_level_count = {}
+        for student in students:
+            if not student.grade_level in grade_level_count:
+                grade_level_count[student.grade_level] = 0
+            grade_level_count[student.grade_level] += 1
+
+        grade_stats = [
+            (f"{grade}th grade", count) for grade, count in grade_level_count.items()
+        ]
+
+        script, div = get_bar_graph(grade_stats, "Grade Levels")
+
+        context["show_bokeh"] = True
+        context["script"] = script
+        context["div"] = div
+
+        return context
