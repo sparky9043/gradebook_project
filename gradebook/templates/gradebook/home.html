@@ -1,60 +1,51 @@
 {% extends 'base.html' %}
-
 {% block title %}
-Home | Academic Atelier
+  Home | Academic Atelier
 {% endblock title %}
-
 {% block main %}
-<main class="max-w-7xl mx-auto px-6 py-xl min-h-[calc(100vh-160px)]">
-  <!-- Hero Section Header -->
-  <!-- Bento Grid / Cards Section -->
-  <div class="mb-lg">
-    <h1 class="font-h1 text-h2 text-on-background">Welcome, {{ user.first_name }} {{ user.last_name }}. What would you like to do?</h1>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-md">
-    <!-- Courses Card -->
-    <a href="{% url 'gradebook:courses' %}">
-      <div
-        class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+  <main class="max-w-7xl mx-auto px-6 py-xl min-h-[calc(100vh-160px)]">
+    <!-- Hero Section Header -->
+    <!-- Bento Grid / Cards Section -->
+    <div class="mb-lg">
+      <h1 class="font-h1 text-h2 text-on-background">
+        Welcome, {{ user.first_name }} {{ user.last_name }}. What would you like to do?
+      </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-md">
+      <!-- Courses Card -->
+      <a href="{% url 'gradebook:courses' %}">
+        <div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+          <div class="mt-4">
+            <h2 class="font-h1 text-h2 text-on-background mb-sm">Courses</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">View, Add, and Delete Courses</p>
+          </div>
+          <div class="flex justify-end">
+            <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+      <!-- Students Card -->
+      <a href="{% url 'gradebook:students' %}">
+        <div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+          <div class="mt-4">
+            <h2 class="font-h1 text-h2 text-on-background mb-sm">Students</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Search and View Student Records</p>
+          </div>
+          <div class="flex justify-end">
+            <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+      <div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
         <div class="mt-4">
-          <h2 class="font-h1 text-h2 text-on-background mb-sm">Courses</h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant">View, Add, and Delete Courses</p>
+          <h2 class="font-h1 text-h2 text-on-background mb-sm">Stats</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">View Stats and Trends of All Students.</p>
         </div>
         <div class="flex justify-end">
-
-
-          <span
-            class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+          <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
         </div>
-      </div>
-    </a>
-    <!-- Students Card -->
-    <a href="{% url 'gradebook:students' %}">
-      <div
-        class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-        <div class="mt-4">
-          <h2 class="font-h1 text-h2 text-on-background mb-sm">Students</h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant">Search and View Student Records</p>
-        </div>
-        <div class="flex justify-end">
-          <span
-            class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
-        </div>
-      </div>
-    </a>
-    <!-- Grades Card -->
-    <div
-      class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-      <div class="mt-4">
-        <h2 class="font-h1 text-h2 text-on-background mb-sm">Grades</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant">Academic performance tracking.</p>
-      </div>
-      <div class="flex justify-end">
-        <span
-          class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
       </div>
     </div>
-  </div>
-  <!-- Optional Subtle Image Placeholder to ground the minimalism -->
-</main>
+    <!-- Optional Subtle Image Placeholder to ground the minimalism -->
+  </main>
 {% endblock main %}
