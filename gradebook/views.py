@@ -78,6 +78,7 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
         # get page request according to <a href="?page={{ page_obj.next_page_number }}"
         page_number = self.request.GET.get("page")
         page_obj = paginator.get_page(page_number)
+        context["total_enrollments"] = enrollments.count()
         context["page_obj"] = page_obj
         context["paginator"] = paginator
         return context

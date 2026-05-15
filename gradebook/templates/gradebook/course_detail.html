@@ -1,64 +1,68 @@
 {% extends 'base.html' %}
-
 {% block title %}
-{{ course.title }} | Academic Atelier
+  {{ course.title }} | Academic Atelier
 {% endblock title %}
-
 {% block main %}
-<main class="w-full flex-1 p-md bg-white">
-  <div class="max-w-[960px] mx-auto py-lg">
-    <!-- Header -->
-    <div class="mb-xl border-b border-outline-variant pb-md">
-      <h1 class="font-h1 text-h1 text-on-surface">Course Details</h1>
+  <main class="w-full flex-1 p-md bg-white">
+    <div class="max-w-[960px] mx-auto py-lg">
+      <!-- Header -->
+      <div class="mb-xl border-b border-outline-variant pb-md">
+        <h1 class="font-h1 text-h1 text-on-surface">Course Details</h1>
+      </div>
+      <!-- Course Info Section -->
+      <section class="mb-xl">
+        <div class="bg-surface-container-low p-md border border-outline-variant rounded-lg">
+          <h2 class="font-h3 text-h3 mb-md text-primary">Metadata</h2>
+          <dl class="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <div>
+              <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">Title</dt>
+              <span class="font-body-lg text-body-lg text-on-surface">{{ course.title }}</span>
+            </div>
+            <div>
+              <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">Instructor Username</dt>
+              <dd class="font-body-lg text-body-lg text-on-surface">
+                {{ course.teacher.first_name }} {{ course.teacher.last_name }}
+              </dd>
+            </div>
+            <div>
+              <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">Teacher Department</dt>
+              <dd class="font-body-lg text-body-lg text-on-surface">
+                {{ course.teacher.department }}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <!-- Enrolled Students Section -->
+      <section>
+        <div class="flex justify-between items-end mb-md">
+          <h2 class="font-h2 text-h2">Enrolled Students</h2>
+          {% if total_enrollments %}
+            <a class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors"
+               href="{% url 'gradebook:course_stats' course.pk %}">
+              <span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+              <span class="font-label-sm">View Stats</span>
+            </a>
+          {% else %}
+            <a class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors"
+               href="{% url 'gradebook:students' %}">
+              <span class="material-symbols-outlined" data-icon="person">person</span>
+              <span class="font-label-sm">Student Page</span>
+            </a>
+          {% endif %}
+        </div>
+        {% if total_enrollments %}
+          <div class="overflow-x-auto border border-outline-variant">
+            {% include 'gradebook/partials/course_detail_students_table.html' %}
+          </div>
+          {% include 'gradebook/partials/pagination_buttons.html' %}
+          <div class="mt-md flex justify-end">
+            <p class="font-label-sm text-outline">Total Students: {{ total_enrollments }}</p>
+          </div>
+        {% else %}
+          <h2>There are no students enrolled in this course. Click the "Student Page" button to add students to the course</h2>
+        {% endif %}
+      </section>
     </div>
-    <!-- Course Info Section -->
-    <section class="mb-xl">
-      <div class="bg-surface-container-low p-md border border-outline-variant rounded-lg">
-        <h2 class="font-h3 text-h3 mb-md text-primary">Metadata</h2>
-        <dl class="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <div>
-            <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">
-              Title</dt>
-            <span class="font-body-lg text-body-lg text-on-surface">
-              {{ course.title }}</span>
-          </div>
-          <div>
-            <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">
-              Instructor Username</dt>
-            <dd class="font-body-lg text-body-lg text-on-surface">
-              {{course.teacher.first_name }}
-              {{course.teacher.last_name }}
-
-            </dd>
-          </div>
-          <div>
-            <dt class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-xs">
-              Teacher Department</dt>
-            <dd class="font-body-lg text-body-lg text-on-surface">{{ course.teacher.department }}</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-    <!-- Enrolled Students Section -->
-    <section>
-      <div class="flex justify-between items-end mb-md">
-        <h2 class="font-h2 text-h2">Enrolled Students</h2>
-        <a
-          class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors"
-          href="{% url 'gradebook:course_stats' course.pk %}"
-        >
-          <span class="material-symbols-outlined" data-icon="person_add">query_stats</span>
-          <span class="font-label-sm">View Stats</span>
-        </a>
-      </div>
-      <div class="overflow-x-auto border border-outline-variant">
-        {% include 'gradebook/partials/course_detail_students_table.html' %}
-      </div>
-      {% include 'gradebook/partials/pagination_buttons.html' %}
-      <div class="mt-md flex justify-end">
-        <p class="font-label-sm text-outline">Total Students: {{ enrollments.count }}</p>
-      </div>
-    </section>
-  </div>
-</main>
+  </main>
 {% endblock main %}
