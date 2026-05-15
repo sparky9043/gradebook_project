@@ -36,16 +36,18 @@
           </div>
         </div>
       </a>
-      <div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
-        <div class="mt-4">
-          <h2 class="font-h1 text-h2 text-on-background mb-sm">Stats</h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant">View Stats and Trends of All Students.</p>
-        </div>
-        <div class="flex justify-end">
-          <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+      <a href="{% url 'gradebook:stats' %}">
+        <div class="bg-white border border-outline-variant p-lg flex flex-col justify-between transition-colors duration-200 hover:border-primary group cursor-pointer min-h-[450px] relative">
+          <div class="mt-4">
+            <h2 class="font-h1 text-h2 text-on-background mb-sm">Stats</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">View Stats and Trends of All Students.</p>
+          </div>
+          <div class="flex justify-end">
+            <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">arrow_forward</span>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
     <!-- Optional Subtle Image Placeholder to ground the minimalism -->
   </main>
 {% endblock main %}

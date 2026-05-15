@@ -279,3 +279,7 @@ def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
         return redirect("gradebook:student_detail", pk=pk)
     else:
         return HttpResponseRedirect(reverse(""))
+
+
+class StatsView(LoginRequiredMixin, TemplateView):
+    template_name = "gradebook/stats.html"

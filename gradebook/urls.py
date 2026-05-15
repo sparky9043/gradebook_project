@@ -15,6 +15,8 @@ from .views import (
     StudentEnrollFinalGrade,
     StudentEditView,
     StudentDeleteView,
+    # Stats View
+    StatsView,
 )
 
 app_name = "gradebook"
@@ -42,4 +44,6 @@ urlpatterns = [
         StudentEnrollFinalGrade.as_view(),
         name="enroll_final_grade",
     ),
+    # Stats View
+    path("stats/", StatsView.as_view(), name="stats"),
 ]
