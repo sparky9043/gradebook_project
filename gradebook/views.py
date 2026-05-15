@@ -216,6 +216,15 @@ class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
     fields = ["final_grade"]
     template_name = "gradebook/enroll_student_final_grade.html"
 
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.username != self.get_object().course.teacher.username:
+            messages.error(
+                request, "You do not have access to edit this student's grade"
+            )
+            return render(request, "403.html", status=403)
+
+        return super().dispatch(request, *args, **kwargs)
+
     def get_success_url(self):
         student_pk = self.get_object().student.pk
         return reverse_lazy("gradebook:student_detail", kwargs={"pk": student_pk})
