@@ -94,8 +94,6 @@ def convert_letter_to_number(letter: str) -> int:
 
 
 def calculate_gpa(grades: dict[str, int]):
-    if not len(grades):
-        return 0
 
     total_points = 0
     total_count = 0
@@ -103,4 +101,7 @@ def calculate_gpa(grades: dict[str, int]):
         number_grade = convert_letter_to_number(letter_grade)
         total_points += number_grade * count
         total_count += count
-    return total_points / total_count
+    if total_count != 0:
+        return total_points / total_count
+    else:
+        return 0
