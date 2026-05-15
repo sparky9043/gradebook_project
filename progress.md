@@ -162,3 +162,8 @@
   1. Add customized `403.html` and `404.html` pages
   2. Redirect user to `403.html` if the user is not `superuser` and they try to edit or delete student
   3. Show edit and delete buttons only to `superuser`
+
+
+### 5/15/2026
+  1. Add `Stats` page to `gradebook/stats` url path
+  2. Display grade level distribution and final grade distribution in stats page
