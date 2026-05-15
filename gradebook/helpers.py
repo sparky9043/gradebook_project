@@ -20,7 +20,7 @@ def get_pie_graph(user_data: dict):
         title="Student Grades",
         toolbar_location=None,
         tools="hover",
-        tooltips="@grades: @value students",
+        tooltips="@grades: @value",
         x_range=(-0.5, 1.0),
     )
 
@@ -43,14 +43,14 @@ def get_pie_graph(user_data: dict):
     return components(p)
 
 
-def get_bar_graph(user_data: list[tuple], graph_title):
+def get_bar_graph(user_data: list[tuple]):
     x_data = [data[0] for data in user_data]
     y_data = [data[1] for data in user_data]
 
     p = figure(
         x_range=x_data,
         height=350,
-        title=graph_title,
+        title="",
         toolbar_location=None,
         tools="",
     )

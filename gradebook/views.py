@@ -288,6 +288,7 @@ class StatsView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         students = Student.objects.all()
+        enrollments = Enrollment.objects.all()
 
         grade_level_count = {}
         for student in students:
@@ -299,10 +300,29 @@ class StatsView(LoginRequiredMixin, TemplateView):
             (f"{grade}th grade", count) for grade, count in grade_level_count.items()
         ]
 
-        script, div = get_bar_graph(grade_stats, "Grade Levels")
+        script, div = get_bar_graph(grade_stats)
 
+        final_grade_count = {}
+        for enrollment in enrollments:
+            if enrollment.final_grade:
+                if not enrollment.final_grade in final_grade_count:
+                    final_grade_count[enrollment.final_grade] = 0
+                final_grade_count[enrollment.final_grade] += 1
+
+        final_grade_count_sorted = dict(
+            sorted(list(final_grade_count.items()), key=lambda item: item[0])
+        )
+
+        script2, div2 = get_pie_graph(final_grade_count_sorted)
+
+        context["total_students"] = students.count()
+        context["grade_levels"] = grade_level_count
         context["show_bokeh"] = True
         context["script"] = script
         context["div"] = div
+        context["script2"] = script2
+        context["div2"] = div2
+        context["total_enrollments"] = enrollments.count()
+        context["final_grades"] = final_grade_count_sorted
 
         return context

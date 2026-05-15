@@ -1,5 +1,68 @@
 {% extends 'base.html' %}
 {% block main %}
-  <h1>This is the stats page</h1>
-  {{ div|safe }}
-{% endblock main %}
+  <main class="max-w-[960px] mx-auto px-gutter py-xl flex flex-col gap-xl w-full">
+    <!-- Hero Section -->
+    <section class="text-center">
+      <h1 class="font-h1 text-h1 text-on-surface mb-sm">Student Enrollment Statistics</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Comprehensive data analysis of student demographics and academic outcomes for the current term.
+      </p>
+    </section>
+    <!-- Key Metric: Total Enrollment -->
+    <section class="text-center">
+      <div class="inline-block p-lg border border-outline-variant bg-white">
+        <span class="font-label-sm text-label-sm text-on-surface-variant block mb-xs">TOTAL STUDENTS ENROLLED</span>
+        <div class="text-[5rem] leading-none font-bold text-primary tracking-tighter">{{ total_students }}</div>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-sm">2023-2024 Academic Year Overview</p>
+      </div>
+    </section>
+    <!-- Main Charts Section (Stacked Vertically) -->
+    <div class="flex flex-col gap-lg">
+      <!-- Grade Level Distribution -->
+      <section class="p-lg border border-outline-variant bg-white">
+        <div class="flex items-center gap-xs mb-md">
+          <h2 class="font-h3 text-h3 text-on-surface">Grade Level Distribution</h2>
+        </div>
+        {{ div|safe }}
+      </section>
+      <!-- Grade Performance -->
+      <section class="p-lg border border-outline-variant bg-white">
+        <div class="flex items-center gap-xs mb-md">
+          <h2 class="font-h3 text-h3 text-on-surface">Grade Performance</h2>
+        </div>
+        {{ div2|safe }}
+        <div class="mt-md border-t border-outline-variant pt-sm">
+          <p class="font-label-sm text-label-sm text-on-surface-variant text-center italic">
+            Calculated across {{ total_enrollments }}
+            unique course enrollments.
+          </p>
+        </div>
+      </section>
+    </div>
+    <!-- Detailed Breakdown Section -->
+    <section class="flex flex-col gap-lg">
+      <h2 class="font-h3 text-h3 text-on-surface">Detailed Breakdown</h2>
+      <!-- Row 1: Grade Level Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+        {% for grade_level, count in grade_levels.items %}
+          <div class="p-md border border-outline-variant bg-white flex flex-col items-center">
+            <span class="font-label-sm text-on-surface-variant mb-xs">Grade {{ grade_level }}</span>
+            <span class="text-h2 text-primary font-bold">{{ count }}</span>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- Row 2: Grade Performance Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-md">
+        {% for final_grade, count in final_grades.items %}
+          <div class="p-md border border-outline-variant bg-white flex flex-col items-center">
+            <span class="font-label-sm text-on-surface-variant mb-xs">{{ final_grade }}</span>
+            {% if final_grade == "F" %}
+              <span class="text-h2 text-secondary-container font-bold">{{ count }}</span>
+            {% else %}
+              <span class="text-h2 text-primary font-bold">{{ count }}</span>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </section>
+    </main>
+  {% endblock main %}
