@@ -47,7 +47,7 @@
           {% endif %}
           {% if user.is_superuser %}
             <a class="flex items-center font-semibold hover:text-primary-container"
-               href="#">
+               href="{% url 'gradebook:student_delete' student.pk %}">
               <span class="material-symbols-outlined">delete</span>
             Delete</a>
           {% endif %}
