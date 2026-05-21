@@ -38,11 +38,20 @@
         <div class="flex justify-between items-end mb-md">
           <h2 class="font-h2 text-h2">Enrolled Students</h2>
           {% if total_enrollments %}
+          <div class="flex gap-2">
             <a class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors"
                href="{% url 'gradebook:course_stats' course.pk %}">
               <span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
               <span class="font-label-sm">View Stats</span>
             </a>
+            {% if user.is_superuser %}
+            <a class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors"
+               href="{% url 'gradebook:course_delete' course.pk %}">
+              <span class="material-symbols-outlined" data-icon="query_stats">delete</span>
+              <span class="font-label-sm">Delete Course</span>
+            </a>
+            {% endif %}
+          </div>
           {% else %}
             <a class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium hover:bg-primary transition-colors"
                href="{% url 'gradebook:students' %}">

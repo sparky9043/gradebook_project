@@ -87,6 +87,35 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
+class CourseDeleteView(LoginRequiredMixin, DeleteView):
+    model = Course
+    template_name = "gradebook/course_delete.html"
+    success_url = reverse_lazy("gradebook:courses")
+
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(request, "You do not have access to view this page")
+            return render(request, "403.html", status=403)
+
+        return super().dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        if self.request.user.is_superuser:
+            messages.success(self.request, "Student deleted")
+            return super().form_valid(form)
+        else:
+            messages.error(
+                self.request, "You do not have the permission to delete the course"
+            )
+            super().form_invalid(form)
+            return redirect(
+                reverse(
+                    "gradebook:course_detail",
+                    kwargs={"pk": self.get_object().pk},
+                )
+            )
+
+
 class CourseStatsView(LoginRequiredMixin, DetailView):
     model = Course
     template_name = "gradebook/course_stats.html"
