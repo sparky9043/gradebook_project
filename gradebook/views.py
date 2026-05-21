@@ -47,7 +47,7 @@ class CoursesListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         if self.request.user.is_superuser:
-            return self.model.objects.all()
+            return self.model.objects.all().order_by("teacher__last_name")
 
         return self.model.objects.filter(teacher=self.request.user)
 
