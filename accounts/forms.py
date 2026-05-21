@@ -4,7 +4,6 @@ from django.contrib.auth.forms import (
     AuthenticationForm,
 )
 from .models import Teacher
-from django import forms
 
 
 class TeacherCreationForm(UserCreationForm):
