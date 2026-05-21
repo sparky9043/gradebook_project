@@ -46,6 +46,9 @@ class CoursesListView(LoginRequiredMixin, ListView):
     context_object_name = "courses"
 
     def get_queryset(self):
+        if self.request.user.is_superuser:
+            return self.model.objects.all()
+
         return self.model.objects.filter(teacher=self.request.user)
 
 
