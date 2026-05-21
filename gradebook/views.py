@@ -101,7 +101,7 @@ class CourseDeleteView(LoginRequiredMixin, DeleteView):
 
     def form_valid(self, form):
         if self.request.user.is_superuser:
-            messages.success(self.request, "Student deleted")
+            messages.success(self.request, "Course deleted")
             return super().form_valid(form)
         else:
             messages.error(
