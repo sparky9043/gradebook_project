@@ -7,3 +7,7 @@ class IndexView(TemplateView):
     """View of index at home url"""
 
     template_name = "core/index.html"
+
+
+class AboutView(TemplateView):
+    template_name = "core/about.html"

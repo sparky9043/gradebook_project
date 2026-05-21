@@ -19,7 +19,7 @@
         {% else %}
             <nav class="hidden md:flex gap-6 flex-1 justify-center">
                 <a class="text-slate-600 dark:text-slate-400 hover:border-b-4 hover:text-blue-600 font-body-md text-body-md duration-200 ease-in-out"
-                   href="#">About</a>
+                   href="{% url 'core:about' %}">About</a>
             </nav>
         {% endif %}
         <div class="flex-1 flex justify-end">

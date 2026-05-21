@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+  <!-- Hero Section -->
+  <section class="mb-xl">
+    <h1 class="font-h1 text-h1 text-on-surface mb-md">About the Developer</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+      I specialize in the architectural design and implementation of academic utility systems. My focus lies in creating
+      scholarly, focused environments that prioritize information transparency and cognitive efficiency over decorative
+      complexity.
+    </p>
+  </section>
+  <!-- Skills Section -->
+  <section class="mb-xl">
+    <h2 class="font-h2 text-h2 text-on-surface mb-lg">Technical Expertise</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+      <!-- Languages -->
+      <div class="p-md bg-surface-container-low border-l-4 border-primary">
+        <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Languages</h3>
+        <ul class="space-y-base">
+          <li class="font-code text-code">JavaScript</li>
+          <li class="font-code text-code">TypeScript</li>
+          <li class="font-code text-code">Python</li>
+        </ul>
+      </div>
+      <!-- Frontend -->
+      <div class="p-md bg-surface-container-low border-l-4 border-primary">
+        <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Frontend</h3>
+        <ul class="space-y-base">
+          <li class="font-code text-code">React</li>
+          <li class="font-code text-code">CSS</li>
+          <li class="font-code text-code">Tailwind</li>
+          <li class="font-code text-code">Django</li>
+        </ul>
+      </div>
+      <!-- Backend -->
+      <div class="p-md bg-surface-container-low border-l-4 border-primary">
+        <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Backend</h3>
+        <ul class="space-y-base">
+          <li class="font-code text-code">Node.js</li>
+          <li class="font-code text-code">Express</li>
+          <li class="font-code text-code">TypeScript</li>
+        </ul>
+      </div>
+      <!-- Database -->
+      <div class="p-md bg-surface-container-low border-l-4 border-primary">
+        <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Database</h3>
+        <ul class="space-y-base">
+          <li class="font-code text-code">SQL</li>
+          <li class="font-code text-code">MongoDB</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Links -->
+  <section class="flex flex-col sm:flex-row gap-lg py-md border-t border-outline-variant">
+    <a class="text-primary hover:underline font-label-sm text-label-sm uppercase tracking-widest inline-flex items-center gap-xs"
+      href="https://sparky9043.github.io/portfolio-website/">
+      Portfolio
+      <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+    </a>
+    <a class="text-primary hover:underline font-label-sm text-label-sm uppercase tracking-widest inline-flex items-center gap-xs"
+      href="https://linkedin.com">
+      LinkedIn
+      <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+    </a>
+    <a class="text-primary hover:underline font-label-sm text-label-sm uppercase tracking-widest inline-flex items-center gap-xs"
+      href="https://github.com">
+      GitHub
+      <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+    </a>
+  </section>
+</main>
+{% endblock main %}
