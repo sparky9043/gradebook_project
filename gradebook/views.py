@@ -193,7 +193,12 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
         student = self.get_object()
         context["records"] = student.enrollments.filter(student=student).distinct()
         # Courses by the current teacher
-        courses_queryset = self.request.user.courses.all()
+
+        if self.request.user.is_superuser:
+            courses_queryset = Course.objects.all()
+        else:
+            courses_queryset = self.request.user.courses.all()
+
         courses = [course.title for course in courses_queryset]
         already_enrolled = list(course.title for course in student.courses.all())
         # Filter courses that student is already enrolled in
