@@ -69,12 +69,27 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.username != self.get_object().teacher.username:
+            if request.user.is_superuser:
+                return super().dispatch(request, *args, **kwargs)
+
             messages.error(
                 request, "You do not have access to edit this student's grade"
             )
             return render(request, "403.html", status=403)
 
         return super().dispatch(request, *args, **kwargs)
+
+    # def dispatch(self, request, *args, **kwargs):
+    #     if (
+    #         not request.user.is_superuser
+    #         or request.user.username != self.get_object().teacher.username
+    #     ):
+    #         messages.error(
+    #             request, "You do not have access to edit this student's grade"
+    #         )
+    #         return render(request, "403.html", status=403)
+
+    #     return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
