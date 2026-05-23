@@ -102,7 +102,7 @@
                     {% if record.final_grade %}<span class="font-h3 text-h3 text-primary">{{ record.final_grade }}</span>{% endif %}
                   </td>
                   <td class="px-md py-md text-right">
-                    {% if record.course.teacher.username == user.username %}
+                    {% if record.course.teacher.username == user.username or user.is_superuser %}
                       <a class="text-sm flex items-center justify-end"
                          href="{% url 'gradebook:enroll_final_grade' record.pk %}">
                         Edit Grade
