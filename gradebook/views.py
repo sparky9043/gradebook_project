@@ -337,8 +337,9 @@ def enroll_student_view(request: HttpResponse, pk) -> HttpRequest:
             return HttpResponseBadRequest("")
 
         if course.teacher.username != request.user.username:
-            messages.error(request, "Teacher does not have access to this course")
-            return HttpResponseBadRequest("")
+            if not request.user.is_superuser:
+                messages.error(request, "Teacher does not have access to this course")
+                return render(request, "403.html", status=403)
 
         try:
             enrollment = Enrollment.objects.create(
