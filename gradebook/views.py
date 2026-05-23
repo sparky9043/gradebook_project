@@ -60,6 +60,10 @@ class CreateCourseView(LoginRequiredMixin, CreateView):
     template_name = "gradebook/create_course.html"
     success_url = reverse_lazy("gradebook:courses")
 
+    def form_valid(self, form):
+        messages.success(self.request, "Course created!")
+        return super().form_valid(form)
+
 
 class CourseDetailView(LoginRequiredMixin, DetailView):
     """Display Course Detail"""
