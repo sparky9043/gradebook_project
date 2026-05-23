@@ -284,6 +284,8 @@ class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.username != self.get_object().course.teacher.username:
+            if request.user.is_superuser:
+                return super().dispatch(request, *args, **kwargs)
             messages.error(
                 request, "You do not have access to edit this student's grade"
             )
