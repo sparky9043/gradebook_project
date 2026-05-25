@@ -284,6 +284,26 @@ class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
         return reverse_lazy("gradebook:student_detail", kwargs={"pk": student_pk})
 
 
+class StudentEnrollmentDeleteView(LoginRequiredMixin, DeleteView):
+    model = Enrollment
+    template_name = "gradebook/student_enrollment_delete.html"
+
+    def form_valid(self, form):
+        enrollment = self.get_object()
+        course_title = enrollment.course.title
+        student_name = f"{enrollment.student.first_name} {enrollment.student.last_name}"
+
+        messages.success(
+            self.request, f"{student_name} has been removed from {course_title}"
+        )
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse(
+            "gradebook:student_detail", kwargs={"pk": self.get_object().student.pk}
+        )
+
+
 @login_required
 def create_student_view(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":

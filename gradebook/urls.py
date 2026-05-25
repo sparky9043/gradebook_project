@@ -14,6 +14,7 @@ from .views import (
     create_student_view,
     enroll_student_view,
     StudentEnrollFinalGrade,
+    StudentEnrollmentDeleteView,
     StudentEditView,
     StudentDeleteView,
     # Stats View
@@ -45,6 +46,11 @@ urlpatterns = [
         "enrollments/<int:pk>/add-grade/",
         StudentEnrollFinalGrade.as_view(),
         name="enroll_final_grade",
+    ),
+    path(
+        "enrollments/<int:pk>/unenroll/",
+        StudentEnrollmentDeleteView.as_view(),
+        name="enrollment_delete",
     ),
     # Stats View
     path("stats/", StatsView.as_view(), name="stats"),

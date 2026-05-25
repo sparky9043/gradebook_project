@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block main %}
+  <main class="min-h-[calc(100vh-144px)] flex items-center justify-center px-gutter py-xl">
+    <form method="post"
+          class="w-1/2 bg-surface-container-lowest border border-outline-variant p-lg">
+      {% csrf_token %}
+      <!-- Warning Icon & Context -->
+      <div class="mb-md flex justify-center">
+        <div class="bg-error-container text-on-error-container p-sm rounded-full">
+          <span class="material-symbols-outlined text-[32px]"
+                data-icon="person_remove">person_remove</span>
+        </div>
+      </div>
+      <!-- Content Section -->
+      <div class="text-center">
+        <h1 class="font-h3 text-h3 text-on-surface mb-xs">Delete {{ enrollment.student.first_name }} {{ enrollment.student.last_name }}</h1>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+          Are you sure you want to unenroll this student from {{ enrollment.course.title }}? This cannot be undone.
+        </p>
+      </div>
+      <!-- Actions -->
+      <div class="flex flex-col gap-sm">
+        <button class="w-full bg-error text-on-error font-body-md text-body-md py-sm rounded-lg hover:opacity-90 transition-all"
+                type="submit">Unenroll Student</button>
+        <a class="w-full text-center py-sm font-body-md text-body-md text-primary hover:underline transition-all"
+           href="{% url 'gradebook:student_detail' enrollment.student.pk %}">Cancel</a>
+      </div>
+      <!-- Metadata/Utility Section -->
+      <div class="mt-lg pt-md border-t border-surface-variant">
+        <div class="flex items-center gap-xs text-on-surface-variant">
+          <span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+          <span class="font-label-sm text-label-sm">Student ID</span>
+        </div>
+      </div>
+    </form>
+  </main>
+{% endblock main %}
+
+
+{% comment %} {{ enrollment.student.first_name }} {{ enrollment.student.last_name }} {% endcomment %}
