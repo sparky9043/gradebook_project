@@ -200,9 +200,9 @@ class StudentDetailView(LoginRequiredMixin, DetailView):
         # Courses by the current teacher
 
         if self.request.user.is_superuser:
-            courses_queryset = Course.objects.all()
+            courses_queryset = Course.objects.all().order_by("title")
         else:
-            courses_queryset = self.request.user.courses.all()
+            courses_queryset = self.request.user.courses.all().order_by("title")
 
         courses = [course.title for course in courses_queryset]
         already_enrolled = list(course.title for course in student.courses.all())
