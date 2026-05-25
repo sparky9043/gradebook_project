@@ -288,6 +288,18 @@ class StudentEnrollmentDeleteView(LoginRequiredMixin, DeleteView):
     model = Enrollment
     template_name = "gradebook/student_enrollment_delete.html"
 
+    def dispatch(self, request, *args, **kwargs):
+        print(request.user.username, self.get_object().course.teacher.username)
+        enrollment = self.get_object()
+        if request.user.username != enrollment.course.teacher.username:
+            if request.user.is_superuser:
+                return super().dispatch(request, *args, **kwargs)
+
+            messages.error(request, "You do not have access to view this page")
+            return render(request, "403.html", status=403)
+
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):
         enrollment = self.get_object()
         course_title = enrollment.course.title
