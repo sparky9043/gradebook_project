@@ -70,8 +70,14 @@ Edit Final Grade | Academic Atelier
     <div class="mt-lg flex gap-md">
       <div class="flex-1 p-md bg-surface-container-low border border-outline-variant flex items-start gap-sm">
         <span class="material-symbols-outlined text-primary" data-icon="info">info</span>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Grades assigned are final once submitted to the
-          central registrar. Please verify student attendance before confirmation.</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">Press the button to unenroll Student from {{ enrollment.course.title }}</p>
+        <a
+          class="bg-primary text-on-primary px-lg py-md font-body-lg font-semibold border-none hover:bg-surface-tint transition-colors duration-200 flex items-center gap-xs"
+          href="{% url 'gradebook:enrollment_delete' enrollment.pk %}"
+        >
+          <span class="material-symbols-outlined" data-icon="person_remove">person_remove</span>
+          Unenroll
+      </a>
       </div>
     </div>
   </section>
