@@ -269,7 +269,8 @@ class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
     template_name = "gradebook/enroll_student_final_grade.html"
 
     def dispatch(self, request, *args, **kwargs):
-        if request.user.username != self.get_object().course.teacher.username:
+        enrollment = self.get_object()
+        if request.user.username != enrollment.course.teacher.username:
             if request.user.is_superuser:
                 return super().dispatch(request, *args, **kwargs)
             messages.error(
@@ -282,6 +283,16 @@ class StudentEnrollFinalGrade(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         student_pk = self.get_object().student.pk
         return reverse_lazy("gradebook:student_detail", kwargs={"pk": student_pk})
+
+    def form_valid(self, form):
+        enrollment = self.get_object()
+        student = enrollment.student
+        messages.success(
+            self.request,
+            f"Grade Updated for {student.first_name} {student.last_name}",
+        )
+
+        return super().form_valid(form)
 
 
 class StudentEnrollmentDeleteView(LoginRequiredMixin, DeleteView):
