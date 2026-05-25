@@ -360,6 +360,8 @@ class StatsView(LoginRequiredMixin, TemplateView):
                 grade_level_count[student.grade_level] = 0
             grade_level_count[student.grade_level] += 1
 
+        grade_level_count = dict(sorted(list(grade_level_count.items())))
+
         grade_stats = [
             (f"{grade}th grade", count) for grade, count in grade_level_count.items()
         ]
