@@ -4,6 +4,11 @@ A full-stack Django web application for high school teachers to manage courses, 
 
 ---
 
+## Links
+
+Live Version: `https://gradebook-project.onrender.com/`
+GitHub Repo: `https://github.com/sparky9043/gradebook_project/`
+
 ## Features
 
 ### Authentication
